@@ -4,9 +4,7 @@ In this article we will show how to send one or multiple files trough a datadiod
 
 For this example we use 2 proxies with a gigabit datadiode in the middle. 
 
-## Single file
-
-*all items between <<variable>> are variables and can be found in the application man pages.*
+## Create a 5Gb file
 
 **Create random file of 5Gb**
 
@@ -15,6 +13,8 @@ For this example we use 2 proxies with a gigabit datadiode in the middle.
 ## Transfer single 5Gb file
 
 **Transfer using udpcast trough datadiode with different parameters**
+
+*all items between <<variable>> are variables and can be found in the application man pages.*
 
 Sender: 
 
