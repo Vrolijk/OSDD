@@ -37,7 +37,7 @@ or use netstat
 
 ```to do add netstat command | grep IP:PORT```
 
-** TO DO **
+**TO DO**
 
 By monitoring the UDP RX_QUEUE during a fast and large file transfer we can see the queue filling up and after a few seconds followed by packets dropped.
 
@@ -45,8 +45,12 @@ We did not try to monitor the softnet_stat to find out the root cause of the rx_
 
 ```cat /proc/net/softnet_stat```
 
-** Helpfull links: **
+**Helpfull links**
 
 https://arthurchiao.github.io/blog/monitoring-network-stack/ 
+
+https://github.com/wavestone-cdt/dyode 
+
+https://securitydelta.nl/nl/projects/project/99-open-source-data-diode 
 
 
