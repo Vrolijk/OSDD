@@ -93,3 +93,6 @@ sudo sysctl -w net.core.wmem_default=26214400
 Set MTU on all to the OSDD connected interfaces to jumboframes. No impact on UDPCAST due to fixed maximum packetsize but will be useful for other applications. 
 
 ```ifconfig <<enp0s3>> mtu 9000```
+
+## Packet loss (almost) explained
+[Packet loss explained](packetloss_explained.md)
