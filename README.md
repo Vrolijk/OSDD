@@ -48,7 +48,7 @@ Sender:
 
 ## Tail files using netcat
 
-For sending data directly to an IP address first we need to add an arp entry at the sender. To simplefy this we use a layer 2 broadcast address. 
+For sending data directly to an IP address first we need to add an arp entry at the sender. To simplefy this we use a layer 2 broadcast address. Please note that sending data to fast can cause packetloss and netcat will crash.
 
 ```sudo arp -i <<enp0s8>> -s <<192.168.1.2>> ff:ff:ff:ff:ff:ff```
   
