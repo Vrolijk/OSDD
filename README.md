@@ -1,8 +1,8 @@
 # Send single large file and multiple files datadiode test using UDPcast: 
 
-In this article we will show how to send one or multiple files trough a datadiode using UDPCAST.
+In this article we will show how to send one or multiple files trough a datadiode using UDPCAST using Linux. UDPcast is also available for Windows. For more information about UDPcast see http://www.udpcast.linux.lu/
 
-For this example we use 2 proxies with a gigabit datadiode in the middle. 
+For this example we used 2 proxies with a gigabit datadiode in the middle. 
 
 ## Create a 5Gb file
 
