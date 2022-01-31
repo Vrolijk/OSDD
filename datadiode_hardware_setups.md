@@ -31,7 +31,7 @@ In this example we prevent the IDS to connect back to the switch via the SPAN po
 
 ## Virtual datadiode
 
-For simple testing on one machine its possible to create a simple Ubuntu VM with 2 interfaces connected to separate local networks.
-Using the application daemonlogger it is possible to forward all packets from the first interface to the second.
+For testing datadiode applications on one machine its possible to create a Ubuntu VM with 2 interfaces connected to separate local networks.
+Using the application daemonlogger you can forward all packets from the first interface to the second.
 
 ![Virtual datadiode](img_virtual_datadiode_setup.png)
