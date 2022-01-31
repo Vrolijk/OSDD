@@ -75,7 +75,7 @@ Open VLC mediaplayer and go to
 
 ``` Media -> stream -> <<choose source: example http://icecast.omroep.nl/radio4-bb-mp3>> -> Stream button-> next -> new destination -> RTP / MPEG transport stream -> add -> address <<192.168.1.2>> base Port 5004 stream name <<OSDD>> -> next -> profile Video - H264 + mp3 (mp4) -> next -> stream ```
 
-It takes a few seconds to start the video on the receiver due tot caching.
+It takes a few seconds to start the video on the receiver because of caching.
 
 For more Dutch sources: https://mediamagazine.nl/live-links-nederland/livestreams-nederland-landelijk/  
   
