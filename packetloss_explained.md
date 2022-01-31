@@ -1,4 +1,4 @@
-# Packet loss explained
+# Packet loss (almost) explained
 
 :exclamation: *I like telling UDP jokes because I **do** care if you don't get them.*
 
