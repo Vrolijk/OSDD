@@ -12,7 +12,7 @@ For this example we use 2 proxies with a gigabit datadiode in the middle.
 
 ```head -c 5120M /dev/urandom > 5gb-testfile.tmp```
 
-## Multiple files
+## Transfer single 5Gb file
 
 **Transfer using udpcast trough datadiode with different parameters**
 
@@ -32,7 +32,7 @@ On both proxies the outcome should be identical:
 
 
 
-**Example multiple files/directory**
+## Send multiple files or directories
 
 Sending large and multiple files trough a datadiode / unidirectional network connection using udpcast and tar
 
