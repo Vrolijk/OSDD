@@ -36,7 +36,7 @@ On both proxies the outcome should be identical:
 
 ## Send multiple files or directories
 
-Sending large and multiple files trough a datadiode / unidirectional network connection using udpcast and tar
+Sending large and multiple files trough a datadiode / unidirectional network connection using udpcast and tar.
 
 Receiver:
 
@@ -44,7 +44,7 @@ Receiver:
 
 Sender: 
 
-```tar -c /data/ | udp-sender --interface <<enp0s8>> --async --fec 8x8/64 --max-bitrate 800Mbps --broadcast --autostart 1 --nokbd ```
+```tar -c <</data/>> | udp-sender --interface <<enp0s8>> --async --fec 8x8/64 --max-bitrate 800Mbps --broadcast --autostart 1 --nokbd ```
 
 ## Tail files using netcat
 
