@@ -1,4 +1,4 @@
-# Example datadiode setups
+# Example datadiode hardware setups
 
 ## Basic setup
 
