@@ -100,4 +100,4 @@ Set MTU on all to the OSDD connected interfaces to jumboframes. No impact on UDP
 [Packet loss explained](packetloss_explained.md)
 
 ## Example datadiode hardware setups
-[Examples](datadiode_setups.md)
+[Examples](datadiode_hardware_setups.md)
