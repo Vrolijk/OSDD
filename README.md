@@ -1,4 +1,4 @@
-# Simple datadiode examples
+# Simple datadiode proxy examples
 
 ## Send large file or multiple files datadiode using UDPcast: 
 
@@ -99,5 +99,5 @@ Set MTU on all to the OSDD connected interfaces to jumboframes. No impact on UDP
 ## Packet loss (almost) explained
 [Packet loss explained](packetloss_explained.md)
 
-## Example datadiode setups
+## Example datadiode hardware setups
 [Examples](datadiode_setups.md)
