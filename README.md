@@ -44,7 +44,7 @@ Receiver:
 
 Sender: 
 
-```tar -c <</data/>> | udp-sender --interface <<enp0s8>> --async --fec 8x8/64 --max-bitrate 800Mbps --broadcast --autostart 1 --nokbd ```
+```tar -c <</data/>> | udp-sender --interface <<enp0s8>> --async --fec 8x8/64 --max-bitrate <<600Mbps>> --broadcast --autostart 1 --nokbd ```
 
 ## Tail files using netcat
 
