@@ -30,22 +30,6 @@ On both proxies the outcome should be identical:
 
 ```sha256sum 1gb-testfile.tmp```
 
-**Possibilities for tweaking:**
-
-UDP buffers to 25Mb.
-
-```
-sudo sysctl -w net.core.rmem_max=26214400
-sudo sysctl -w net.core.rmem_default=26214400
-sudo sysctl -w net.core.wmem_max=26214400 
-sudo sysctl -w net.core.wmem_default=26214400
-```
-
-Set MTU on all to the OSDD connected interfaces to jumboframes. No impact on UDPCAST due to fixed maximum packetsize but will be useful for other applications. 
-
-```ifconfig <<enp0s3>> mtu 9000```
-
-
 
 
 **Example multiple files/directory**
@@ -59,3 +43,19 @@ Receiver:
 Sender: 
 
 ```tar -c /data/ | udp-sender --interface enp0s8 --async --fec 8x8/64 --max-bitrate 800Mbps --broadcast --autostart 1 --nokbd ```
+
+  
+  **Possibilities for tweaking:**
+
+UDP buffers to 25Mb.
+
+```
+sudo sysctl -w net.core.rmem_max=26214400
+sudo sysctl -w net.core.rmem_default=26214400
+sudo sysctl -w net.core.wmem_max=26214400 
+sudo sysctl -w net.core.wmem_default=26214400
+```
+
+Set MTU on all to the OSDD connected interfaces to jumboframes. No impact on UDPCAST due to fixed maximum packetsize but will be useful for other applications. 
+
+```ifconfig <<enp0s3>> mtu 9000```
