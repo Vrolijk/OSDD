@@ -28,7 +28,7 @@ Receiver:
 
 On both proxies the outcome should be identical: 
 
-```sha256sum 1gb-testfile.tmp```
+```sha256sum 5gb-testfile.tmp```
 
 
 
