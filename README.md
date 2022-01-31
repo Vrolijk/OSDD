@@ -6,15 +6,15 @@ In this example we will show how to send one or multiple files trough a datadiod
 
 For this example we used 2 proxies with a gigabit datadiode in the middle. 
 
-## Create a 5Gb file
+### Create a 5Gb file
 
 **Create random file of 5Gb**
 
 ```head -c 5120M /dev/urandom > 5gb-testfile.tmp```
 
-## Transfer single 5Gb file
+### Transfer single 5Gb file
 
-**Transfer using udpcast trough datadiode with different parameters**
+UDPCAST sends data using UDP and has the possibility to send the data over unidirectional connections like radio. It also adds the possibility to add FEC (Forward Erro Correction) and to limit the transfer speed. This makes UDPcast an ideal tool to send data trough a datadiode.
 
 *all items between \<\<variable\>\> are variables and can be found in the application man pages.*
 
@@ -26,7 +26,7 @@ Receiver:
 
 ```udp-receiver –nosync –interface <<enp0s3>> --file 5gb-testfile.tmp```
 
-**validate received file using sha256sum**
+### validate received file using sha256sum
 
 On both proxies the outcome should be identical: 
 
