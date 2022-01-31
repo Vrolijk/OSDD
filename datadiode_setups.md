@@ -13,7 +13,7 @@ In this expample we send an OpenSSL certificate request trough the diode to be s
 
 ## One proxy to many destionations
 
-Since we are using one way communication it's also possible to use multiple destionations.
+Since we are using one way communication it's also possible to use multiple datadiodes and destionations using a switch.
 
 ![](img_one_to_many_datadiode_setup.png)
 
@@ -25,7 +25,7 @@ This example shows an example to distribute NTP to multiple networks. Note that 
 
 ## Garanteed one way span poort to IDS
 
-In this example we prevent the IDS to connect to the switch via the SPAN port
+In this example we prevent the IDS to connect back to the switch via the SPAN port.
 
 ![](img_span_port_with_diode.png)
 
