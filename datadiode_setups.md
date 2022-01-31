@@ -7,18 +7,21 @@
 ## 2 way uni-directional setup
 
 To be able to send and receive data via seperate interfaces causing a protocol break for most network attacks. This setup also provides control over the received and send data.
+In this expample we send an OpenSSL certificate request trough the diode to be signed by the CA. After signing the CA sends the signed certificate trough the second datadiode back to the sender.
 
 ![2 way datadiode](img_2_way_datadiode_setup.png)
 
 ## One proxy to many destionations
 
-Since we are using one way communication it's also possible to use multiple destionations
+Since we are using one way communication it's also possible to use multiple destionations.
+
+![](img_one_to_many_datadiode_setup.png)
 
 ## NTP distribution to multiple stand alone networks
 
 This example shows an example to distribute NTP to multiple networks. Note that this configuration does not support NTPv4 folley's.
 
-![](img_one_to_many_datadiode_setup.png)
+![](img_NTP_timeserver_to_multiple_networks.png)
 
 ## Garanteed one way span poort to IDS
 
