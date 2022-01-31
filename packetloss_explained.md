@@ -35,8 +35,6 @@ Monitor UDP queues and packets dropped
 
 or use netstat
 
-```to do add netstat command | grep IP:PORT```
-
 **TO DO**
 
 By monitoring the UDP RX_QUEUE during a fast and large file transfer we can see the queue filling up and after a few seconds followed by packets dropped.
