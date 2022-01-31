@@ -45,7 +45,7 @@ Sender:
 ```tar -c /data/ | udp-sender --interface enp0s8 --async --fec 8x8/64 --max-bitrate 800Mbps --broadcast --autostart 1 --nokbd ```
 
   
-  **Possibilities for tweaking:**
+## Possibilities for tweaking
 
 UDP buffers to 25Mb.
 
