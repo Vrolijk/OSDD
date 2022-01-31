@@ -16,7 +16,7 @@ For this example we used 2 proxies with a gigabit datadiode in the middle.
 
 **Transfer using udpcast trough datadiode with different parameters**
 
-*all items between <<variable>> are variables and can be found in the application man pages.*
+*all items between \<\<variable\>\> are variables and can be found in the application man pages.*
 
 Sender: 
 
@@ -44,8 +44,22 @@ Receiver:
 
 Sender: 
 
-```tar -c /data/ | udp-sender --interface enp0s8 --async --fec 8x8/64 --max-bitrate 800Mbps --broadcast --autostart 1 --nokbd ```
+```tar -c /data/ | udp-sender --interface <<enp0s8>> --async --fec 8x8/64 --max-bitrate 800Mbps --broadcast --autostart 1 --nokbd ```
 
+## Tail files using netcat
+
+For sending data directly to an IP address first we need to add an arp entry at the sender. To simplefy this we use a layer 2 broadcast address. 
+
+```sudo arp -i <<enp0s8>> -s <<192.168.1.2>> ff:ff:ff:ff:ff:ff```
+  
+Receiver:
+  
+```nc -l -u -p 9999 >> /tmp/netcat.log```
+
+Sender 
+
+```tail -F /var/log/syslog | nc -u <<192.168.1.2>> 9999```
+  
   
 ## Possibilities for tweaking
 
