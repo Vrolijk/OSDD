@@ -1,6 +1,6 @@
 # Packet loss explained
 
- *I like telling UDP jokes because I **do** care if you don't get them.*
+:exclamation: *I like telling UDP jokes because I **do** care if you don't get them.*
 
 On of the main issues when using datadiodes is not being able to check if the UDP packets you send arrived at the receiving proxy. During testing using large files we found out that one of the main issues is that the receiving application is not able to read the UDP packets quick enough from the rx_queue.
 In this overview we try to explain this. 
