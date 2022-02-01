@@ -46,11 +46,3 @@ We did not try to monitor the softnet_stat to find out the root cause of the rx_
 **Helpfull links**
 
 https://arthurchiao.github.io/blog/monitoring-network-stack/ 
-
-https://github.com/wavestone-cdt/dyode 
-
-https://github.com/klockcykel/godiode 
-
-https://securitydelta.nl/nl/projects/project/99-open-source-data-diode 
-
-
