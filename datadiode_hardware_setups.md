@@ -35,3 +35,30 @@ For testing datadiode applications on one machine its possible to create a Ubunt
 Using the application daemonlogger you can forward all packets from the first interface to the second.
 
 <img src="img_virtual_datadiode_setup.png" width=300>
+
+**Helpfull links**
+
+***Wavestone-cdt DIY Dyode*** 
+
+DIY Datadiode using 3 copper to fiber converters and a light version using 2 PI zero's and an optocoupler.
+
+Software includes
+* Modbus data transfer
+* File transfer (DYODE full only)
+* Screen sharing (DYODE full only)
+
+https://github.com/wavestone-cdt/dyode 
+
+***Klockcykel Godiode***
+
+DIY Datadiode using 2 modded TPlink copper to fiber converters. Costs +- €65,-
+
+Software includes Go code and Docker. Transferspeed up to 750Mbit.
+
+https://github.com/klockcykel/godiode 
+
+***Open Source Datadiode project ***
+
+Dutch project to build an open source datadiode
+
+https://securitydelta.nl/nl/projects/project/99-open-source-data-diode 
