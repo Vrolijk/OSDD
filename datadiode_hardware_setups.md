@@ -19,7 +19,7 @@ Since we are using one way communication it's also possible to use multiple data
 
 ## NTP distribution to multiple stand alone networks
 
-This example shows an example to distribute NTP to multiple networks. Note that this configuration does not support NTPv4 folley's.
+This example shows an example to distribute NTP to multiple networks. Note that this configuration does not support NTPv4 foley's.
 
 <img src="img_NTP_timeserver_to_multiple_networks.png" width=300>
 
