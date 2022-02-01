@@ -38,7 +38,7 @@ Using the application daemonlogger you can forward all packets from the first in
 
 # Helpfull links
 
-***Wavestone-cdt DIY Dyode*** 
+## Wavestone-cdt DIY Dyode
 
 DIY Datadiode using 3 copper to fiber converters and a light version using 2 PI zero's and an optocoupler.
 
@@ -49,7 +49,7 @@ Software includes
 
 https://github.com/wavestone-cdt/dyode 
 
-***Klockcykel Godiode***
+## Klockcykel Godiode
 
 DIY Datadiode using 2 modded TPlink copper to fiber converters. Costs +- €65,-
 
@@ -57,7 +57,7 @@ Software includes Go code and Docker. Transferspeed up to 750Mbit.
 
 https://github.com/klockcykel/godiode 
 
-***Open Source Datadiode project ***
+## Dutch Open Source Datadiode project
 
 Dutch project to build an open source datadiode
 
