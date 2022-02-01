@@ -36,7 +36,7 @@ Using the application daemonlogger you can forward all packets from the first in
 
 <img src="img_virtual_datadiode_setup.png" width=300>
 
-**Helpfull links**
+# Helpfull links
 
 ***Wavestone-cdt DIY Dyode*** 
 
