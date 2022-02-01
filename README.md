@@ -6,7 +6,7 @@ In this example we will show how to send one or multiple files trough a datadiod
 
 For this example we used 2 proxies with a gigabit datadiode in the middle. 
 
-![Simple datadiode setup](img_simple_datadiode_setup.png)
+<img src="img_simple_datadiode_setup.png" width=300>
 
 ### Create a 5Gb file
 
