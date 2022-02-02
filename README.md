@@ -1,5 +1,11 @@
 # Simple datadiode proxy examples
 
+## Packet loss (almost) explained
+[Packet loss explained](packetloss_explained.md)
+
+## Example datadiode hardware setups
+[Examples](datadiode_hardware_setups.md)
+
 ## Send large file or multiple files datadiode using UDPcast: 
 
 In this example we will show how to send one or multiple files trough a datadiode using UDPCAST on Linux. UDPcast is also available for Windows. For more information about UDPcast see http://www.udpcast.linux.lu/
@@ -96,8 +102,4 @@ Set MTU on all to the OSDD connected interfaces to jumboframes. No impact on UDP
 
 ```ifconfig <<enp0s3>> mtu 9000```
 
-## Packet loss (almost) explained
-[Packet loss explained](packetloss_explained.md)
 
-## Example datadiode hardware setups
-[Examples](datadiode_hardware_setups.md)
