@@ -49,6 +49,12 @@ Software includes
 
 https://github.com/wavestone-cdt/dyode 
 
+## EBUJOLD data-diode
+
+DIY datadiode like the Wavestone solution. Good explanation about the configuration of the mediaconverters in the wiki under hardware.
+
+https://github.com/EBUJOLD/data-diode 
+
 ## Klockcykel Godiode
 
 DIY Datadiode using 2 modded TPlink copper to fiber converters. Costs +- €65,-
