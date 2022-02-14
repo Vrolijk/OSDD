@@ -86,6 +86,24 @@ https://github.com/georgesrusu/managementSecuDataDiode/blob/master/Rapport/rappo
 
 ### Cylab-be
 
-Good resource for documentation and webbased solution
+Good resource for documentation and webbased solution.
 
 https://gitlab.cylab.be/cylab/data-diode
+
+### MeghaSharma31
+
+Nice report on data-diodes using the ATM protocol.
+
+https://github.com/MeghaSharma31
+
+### Cea-sec Hairgap
+
+Hairgap is a set of tools to transfer data over a unidirectional network link. (Aplha)
+
+https://github.com/cea-sec/hairgap
+
+### Bhanq
+
+The goal of this project was to implement a (virtual) Data Diode according to some CyberSecurity frameworks NIST SP 800-30 : Risk analysis report and Common criteria.
+
+https://github.com/BHanq/DataDiode
