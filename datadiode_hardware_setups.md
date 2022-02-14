@@ -65,6 +65,13 @@ Please note: Soldering requires a microscope due to the size of the pcb
 
 https://github.com/klockcykel/godiode 
 
+### Mitcdh 
+
+Example how to configure a Cisco switch as an data-diode
+
+https://github.com/mitcdh/diode-switch-config 
+
+
 ## Dutch Open Source Datadiode project
 
 Dutch project to build an open source datadiode
