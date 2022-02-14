@@ -1,4 +1,4 @@
-# Example datadiode hardware setups
+# Example data-diode hardware setups
 
 ## Basic setup
 
@@ -6,14 +6,14 @@
 
 ## 2 way uni-directional setup
 
-To be able to send and receive data via seperate interfaces causing a protocol break for most network attacks. This setup also provides control over the received and send data.
-In this expample we send an OpenSSL certificate request trough the diode to be signed by the CA. After signing the CA sends the signed certificate trough the second datadiode back to the sender.
+To be able to send and receive data via separate interfaces causing a protocol break for most network attacks. This setup also provides control over the received and send data.
+In this example we send an OpenSSL certificate request trough the data-diode to be signed by the CA. After signing the CA sends the signed certificate trough the second data-diode back to the sender.
 
 <img src="img_2_way_datadiode_setup.png" width=300>
 
-## One proxy to many destionations
+## One proxy to many destinations
 
-Since we are using one way communication it's also possible to use multiple datadiodes and destionations using a switch.
+Since we are using one way communication it's also possible to use multiple data-diodes and destinations using a switch.
 
 <img src="img_one_to_many_datadiode_setup.png" width=300>
 
@@ -23,20 +23,20 @@ This example shows an example to distribute NTP to multiple networks. Note that 
 
 <img src="img_NTP_timeserver_to_multiple_networks.png" width=300>
 
-## Garanteed one way span poort to IDS
+## Guaranteed one way span port to IDS
 
 In this example we prevent the IDS to connect back to the switch via the SPAN port.
 
 <img src="img_span_port_with_diode.png" width=300>
 
-## Virtual datadiode
+## Virtual data-diode
 
-For testing datadiode applications on one machine its possible to create a Ubuntu VM with 2 interfaces connected to separate local networks.
+For testing data-diode applications on one machine its possible to create a Ubuntu VM with 2 interfaces connected to separate local networks.
 Using the application daemonlogger you can forward all packets from the first interface to the second.
 
 <img src="img_virtual_datadiode_setup.png" width=300>
 
-# Helpfull links
+# Helpful links
 
 ## Wavestone-cdt DIY Dyode
 
@@ -51,15 +51,17 @@ https://github.com/wavestone-cdt/dyode
 
 ## EBUJOLD data-diode
 
-DIY datadiode like the Wavestone solution. Good explanation about the configuration of the mediaconverters in the wiki under hardware.
+DIY data-diode like the Wavestone solution. Good explanation about the configuration of the media converters in the wiki under hardware.
 
 https://github.com/EBUJOLD/data-diode 
 
 ## Klockcykel Godiode
 
-DIY Datadiode using 2 modded TPlink copper to fiber converters. Costs +- €65,-
+DIY Data-diode using 2 modded TP-link copper to fiber converters. Costs +- €65,-
 
-Software includes Go code and Docker. Transferspeed up to 750Mbit.
+Software includes Go code and Docker. Transfer speed up to 750Mbit.
+
+Please note: Soldering requires a microscope due to the size of the pcb 
 
 https://github.com/klockcykel/godiode 
 
