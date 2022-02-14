@@ -70,3 +70,15 @@ https://github.com/klockcykel/godiode
 Dutch project to build an open source datadiode
 
 https://securitydelta.nl/nl/projects/project/99-open-source-data-diode 
+
+### georgesrusu
+
+Webportal in combination with BlindFTP (not tested). Read the (good) report first.
+
+https://github.com/georgesrusu/managementSecuDataDiode/blob/master/Rapport/rapport.pdf 
+
+### Cylab-be
+
+Good resource for documentation and webbased solution
+
+https://gitlab.cylab.be/cylab/data-diode
