@@ -78,7 +78,7 @@ Dutch project to build an open source datadiode
 
 https://securitydelta.nl/nl/projects/project/99-open-source-data-diode 
 
-### georgesrusu
+### Georgesrusu
 
 Webportal in combination with BlindFTP (not tested). Read the (good) report first.
 
