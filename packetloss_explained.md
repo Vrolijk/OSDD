@@ -2,10 +2,10 @@
 
 :exclamation: *I like telling UDP jokes because I **do** care if you don't get them.*
 
-On of the main issues when using datadiodes is not being able to check if the UDP packets you send arrived at the receiving proxy. During testing using large files we found out that one of the main issues is that the receiving application is not able to read the UDP packets quick enough from the rx_queue.
+One of the main issues when using data-diodes is not being able to check if the UDP packets you send arrived at the receiving proxy. During testing using large files we found out that one of the main issues is that the receiving application is not able to read the UDP packets quick enough from the rx_queue.
 In this overview we try to explain this. 
 
-*Please add an issue for this article if you can help because we still havent found a final solution for this problem.*
+*Please add an issue for this article if you can help because we still haven't found a final solution for this problem.*
 
 ![Overview packet loss](/datadiode_packetloss.png)
 
@@ -13,9 +13,9 @@ In this overview we use 5 steps to explain the issue:
 
 1. Sender application sends/receive the data
 2. The application sends the data to the TX_QUEUE in kernel space
-3. The UDP packets are transfed over the cable trough the datadiode to the receiver
+3. The UDP packets are send over the cable trough the data-diode to the receiver
 4. The receiver receives the UDP packets and places them in the RX_QUEUE
-5. The receiver application **reads** the UDP packets from the RX_QUEUE, processes them and writes the packets to the datafile
+5. The receiver application **reads** the UDP packets from the RX_QUEUE, processes them and writes the packets to the file
 
 We found out that most of the packet loss happens on the receiving machine when the application is not able to read the RX_QUEUE fast enough. When the RX_QUEUE is full the kernel drops the packets and data is lost.
 
@@ -27,7 +27,7 @@ We found out that most of the packet loss happens on the receiving machine when 
 4. Faster processing at the receiving application. Try to reduce the CPU load of the receiving application and/or limit other applications using the CPU
 5. Faster writing to disk. Use SSD or memdisk to write the data.
 
-## Monitoring packetloss
+## Monitoring packet loss
 
 Monitor UDP queues and packets dropped
 
@@ -52,6 +52,6 @@ Monitoring the softnet_stat we saw no increase of queues.
 
 ```cat /proc/net/softnet_stat```
 
-**Helpfull links**
+**Helpful links**
 
 https://arthurchiao.github.io/blog/monitoring-network-stack/ 
