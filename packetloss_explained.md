@@ -35,11 +35,20 @@ Monitor UDP queues and packets dropped
 
 or use netstat
 
-**TO DO**
+```sudo netstat -c -udp -an | grep ".255:9000"```
 
-By monitoring the UDP RX_QUEUE during a fast and large file transfer we can see the queue filling up and after a few seconds followed by packets dropped.
+or use ss
 
-We did not try to monitor the softnet_stat to find out the root cause of the rx_queue filling up.
+```watch -n 1 "ss -u -a -p -t '( sport = :9000 )'"```
+
+Bottom line, we noticed that the Recv-Q fills and the UDP-receiver application stops/crashed. 
+Recv-Q is the count of bytes not copied by the user program connected to this socket.
+
+Except for increasing the sysctl net.core.rmem_max we are still looking for a solution how to prevent the Recv-Q dropping packets. Please comment if you can help.
+
+```sudo sysctl -w net.core.rmem_max=32777216```
+
+Monitoring the softnet_stat we saw no increase of queues.
 
 ```cat /proc/net/softnet_stat```
 
