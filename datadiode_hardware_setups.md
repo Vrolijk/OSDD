@@ -3,12 +3,13 @@
 ## Physical setup
 
 In this setup we used 3 TP-Link MC200CM Gigabit mediaconverters and a PLC Fibre Splitter 1X4 SC/UPC-interface.
-The TX-mediaconverter TX-port is connected with the IN-fiber from the splitter and the 4th splitted fiber to the RX-port to simulate a link.
-The RX3 mediaconverter RX-port is connected with the 3th splitter fiber
-The RX2 mediaconverter RX-port is connected with the 2th splitter fiber
+
+The TX-mediaconverter TX-port is connected with the IN-fiber from the splitter and the 4th splitted fiber to the RX-port to simulate a link.<br>
+The RX3 mediaconverter RX-port is connected with the 3th splitter fiber. <br>
+The RX2 mediaconverter RX-port is connected with the 2th splitter fiber. <br>
 The 1th fiber is not connected but could also be connected to a  mediaconverter but i only had three converters available.
 
-This way we created a one to many datadiode setup but this could also be done with a 1x2 PLC splitter with only 2 mediaconverters. 
+This way we created a one to many datadiode setup but this could also be done with a 1x2 PLC splitter with only 2 mediaconverters. See 2nd image.
 
 <img src="TP-Link-1to4-datadiode.jpg" width=300> <img src="TP-Link-1to4-datadiode-simple.jpg" width=300>
 
