@@ -1,6 +1,6 @@
 # Example data-diode hardware setups
 
-## Physical setup
+## Physical data-diode setup
 
 In this setup we used 3 TP-Link MC200CM Gigabit mediaconverters and a PLC Fibre Splitter 1X4 SC/UPC-interface.
 
@@ -12,6 +12,8 @@ The 1th fiber is not connected but could also be connected to a  mediaconverter 
 This way we created a one to many datadiode setup but this could also be done with a 1x2 PLC splitter with only 2 mediaconverters. <br> See 2nd simplyfied image.
 
 <img src="TP-Link-1to4-datadiode.jpg" width=300> <img src="TP-Link-1to4-datadiode-simple.jpg" width=300>
+
+# Examples with proxies
 
 ## Basic setup
 
