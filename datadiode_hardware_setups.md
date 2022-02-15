@@ -10,7 +10,8 @@ The 1th fiber is not connected but could also be connected to a  mediaconverter 
 
 This way we created a one to many datadiode setup but this could also be done with a 1x2 PLC splitter with only 2 mediaconverters. 
 
-<img src="TP-Link-1to4-datadiode.jpg" width=300>
+<img src="TP-Link-1to4-datadiode.jpg" width=300>  
+<img src="TP-Link-1to4-datadiode-simple.jpg" width=300>
 
 ## Basic setup
 
