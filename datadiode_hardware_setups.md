@@ -9,7 +9,7 @@ The RX3 mediaconverter RX-port is connected with the 3th splitter fiber. <br>
 The RX2 mediaconverter RX-port is connected with the 2th splitter fiber. <br>
 The 1th fiber is not connected but could also be connected to a  mediaconverter but i only had three converters available.
 
-This way we created a one to many datadiode setup but this could also be done with a 1x2 PLC splitter with only 2 mediaconverters. See 2nd image.
+This way we created a one to many datadiode setup but this could also be done with a 1x2 PLC splitter with only 2 mediaconverters. <br> See 2nd simplyfied image.
 
 <img src="TP-Link-1to4-datadiode.jpg" width=300> <img src="TP-Link-1to4-datadiode-simple.jpg" width=300>
 
