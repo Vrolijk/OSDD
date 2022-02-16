@@ -28,11 +28,11 @@ UDPCAST sends data using UDP and has the possibility to send the data over unidi
 
 Sender: 
 
-```udp-sender --interface <<enp0s8>> --async --fec <<8x8/128>> --max-bitrate <<600Mbps>> --file 5gb-testfile.tmp –broadcast```
+```udp-sender --interface <<enp0s8>> --async --fec <<8x8/64>> --max-bitrate <<600Mbps>> --file 5gb-testfile.tmp --broadcast```
 
 Receiver: 
 
-```udp-receiver –nosync –interface <<enp0s3>> --file 5gb-testfile.tmp```
+```udp-receiver --nosync --interface <<enp0s3>> --file 5gb-testfile.tmp```
 
 ### validate received file using sha256sum
 
