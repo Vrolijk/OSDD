@@ -20,6 +20,7 @@ TCPDUMP output:
 20:10:26.441796 MPCP, Opcode Pause, length 46
 20:10:26.442321 MPCP, Opcode Pause, length 46
 20:10:26.442845 MPCP, Opcode Pause, length 46
+...... and many more..... 
 ```
 
 Testing with standard cables prevents the MPCP errors. Note: this not a true data-diode due to the loop in the system. 
