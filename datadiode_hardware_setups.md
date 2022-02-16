@@ -13,6 +13,19 @@ This way we created a one to many datadiode setup but this could also be done wi
 
 <img src="TP-Link-1to4-datadiode.jpg" width=300> <img src="TP-Link-1to4-datadiode-simple.jpg" width=300>
 
+<b>Update:</b> We noticed network errors on the TX proxy. The assumption is a faulty fibersplitter or the wrong type of cable. <br>
+TCPDUMP output:
+
+```
+20:10:26.441796 MPCP, Opcode Pause, length 46
+20:10:26.442321 MPCP, Opcode Pause, length 46
+20:10:26.442845 MPCP, Opcode Pause, length 46
+```
+
+Testing with standard cables prevents the MPCP errors. Note: this not a true data-diode due to the loop in the system. 
+
+<img src="TP-Link-1to4-datadiode-test.jpg" width=300>
+
 # Examples with proxies
 
 ## Basic setup
