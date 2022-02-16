@@ -4,7 +4,7 @@
 [Packet loss explained](packetloss_explained.md)
 
 ## Example data-diode hardware setups
-[Examples](datadiode_hardware_setups.md)
+[Datadiode hardware setups](datadiode_hardware_setups.md)
 
 ## Send large file or multiple files data-diode using UDPcast: 
 
