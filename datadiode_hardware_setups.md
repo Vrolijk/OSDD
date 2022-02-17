@@ -13,7 +13,7 @@ This way we created a one to many datadiode setup but this could also be done wi
 
 <img src="TP-Link-1to4-datadiode.jpg" width=300> <img src="TP-Link-1to4-datadiode-simple.jpg" width=300>
 
-<b>Update:</b> We noticed network errors on the TX proxy. The assumption is a faulty fibersplitter or the wrong type of cable. <br>
+<b>Update:</b> We noticed network errors on the TX proxy. The assumption is a faulty fiber splitter or the wrong type of cable. <br>
 TCPDUMP output:
 
 ```
