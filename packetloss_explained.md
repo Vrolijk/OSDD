@@ -7,7 +7,7 @@ In this overview we try to explain this.
 
 *Please add an issue for this article if you can help because we still haven't found a final solution for this problem.*
 
-![Overview packet loss](/datadiode_packetloss.png)
+![Overview packet loss](img/datadiode_packetloss.png)
 
 In this overview we use 5 steps to explain the issue:
 
