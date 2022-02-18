@@ -11,7 +11,7 @@ The 1th fiber is not connected but could also be connected to a  mediaconverter 
 
 This way we created a one to many datadiode setup but this could also be done with a 1x2 PLC splitter with only 2 mediaconverters. <br> See 2nd simplyfied image.
 
-<img src="TP-Link-1to4-datadiode.jpg" width=300> <img src="TP-Link-1to4-datadiode-simple.jpg" width=300>
+<img src="img/TP-Link-1to4-datadiode.jpg" width=300> <img src="img/TP-Link-1to4-datadiode-simple.jpg" width=300>
 
 <b>Update:</b> We noticed network errors on the TX proxy. The assumption is a faulty fiber splitter or the wrong type of cable. <br>
 TCPDUMP output:
@@ -25,7 +25,7 @@ TCPDUMP output:
 
 Testing with standard cables prevents the MPCP errors. Note: this not a true data-diode due to the loop in the system. 
 
-<img src="TP-Link-1to4-datadiode-test.jpg" width=300>
+<img src="img/TP-Link-1to4-datadiode-test.jpg" width=300>
 
 When we created a direct loop on TX-RX using only one mediaconverter with a standard cable we only received the MPCP message 4 times when sending 5Gb on full speed from the Transmitter proxy. Educated guess is a faulty splitter. Waiting for a new splitter to arrive to check if its a broken fiber or the wrong type of hardware/cable.
 
@@ -33,39 +33,39 @@ When we created a direct loop on TX-RX using only one mediaconverter with a stan
 
 ## Basic setup
 
-<img src="img_simple_datadiode_setup.png" width=300>
+<img src="img/img_simple_datadiode_setup.png" width=300>
 
 ## 2 way uni-directional setup
 
 To be able to send and receive data via separate interfaces causing a protocol break for most network attacks. This setup also provides control over the received and send data.
 In this example we send an OpenSSL certificate request trough the data-diode to be signed by the CA. After signing the CA sends the signed certificate trough the second data-diode back to the sender.
 
-<img src="img_2_way_datadiode_setup.png" width=300>
+<img src="img/img_2_way_datadiode_setup.png" width=300>
 
 ## One proxy to many destinations
 
 Since we are using one way communication it's also possible to use multiple data-diodes and destinations using a switch.
 
-<img src="img_one_to_many_datadiode_setup.png" width=300>
+<img src="img/img_one_to_many_datadiode_setup.png" width=300>
 
 ## NTP distribution to multiple stand alone networks
 
 This example shows an example to distribute NTP to multiple networks. Note that this configuration does not support NTPv4 foley's.
 
-<img src="img_NTP_timeserver_to_multiple_networks.png" width=300>
+<img src="img/img_NTP_timeserver_to_multiple_networks.png" width=300>
 
 ## Guaranteed one way span port to IDS
 
 In this example we prevent the IDS to connect back to the switch via the SPAN port.
 
-<img src="img_span_port_with_diode.png" width=300>
+<img src="img/img_span_port_with_diode.png" width=300>
 
 ## Virtual data-diode
 
 For testing data-diode applications on one machine its possible to create a Ubuntu VM with 2 interfaces connected to separate local networks.
 Using the application daemonlogger you can forward all packets from the first interface to the second.
 
-<img src="img_virtual_datadiode_setup.png" width=300>
+<img src="img/img_virtual_datadiode_setup.png" width=300>
 
 # Helpful links
 
