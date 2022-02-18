@@ -12,7 +12,7 @@ In this example we will show how to send one or multiple files trough a data-dio
 
 For this example we used 2 proxies with a gigabit data-diode in the middle. 
 
-<img src="img_simple_datadiode_setup.png" width=300>
+<img src="img/img_simple_datadiode_setup.png" width=300>
 
 ### Create a 5Gb file
 
