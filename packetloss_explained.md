@@ -29,7 +29,7 @@ We found out that most of the packet loss happens on the receiving machine when 
 
 ## Monitoring packet loss
 
-Monitor UDP queues and packets dropped
+Monitor UDP queues and packets dropped. We are still looking into the best way to monitor the queues and this can be done on several ways.
 
 ```cat /proc/net/udp```
 
@@ -40,6 +40,10 @@ or use netstat
 or use ss
 
 ```watch -n 1 "ss -u -a -p -t '( sport = :9000 )'"```
+
+or use traffic control (tc). 
+
+```tc -s qdisc show dev eth0```
 
 Bottom line, we noticed that the Recv-Q fills and the UDP-receiver application stops/crashed. 
 Recv-Q is the count of bytes not copied by the user program connected to this socket.
