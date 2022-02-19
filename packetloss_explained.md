@@ -52,6 +52,17 @@ Monitoring the softnet_stat we saw no increase of queues.
 
 ```cat /proc/net/softnet_stat```
 
+### To do 
+
+Good story about tuning TCP. Perhaps lowering the garbage collection could help to reduce packet loss on the receiving side.
+
+https://blog.cloudflare.com/the-story-of-one-latency-spike/ 
+
+
 **Helpful links**
 
 https://arthurchiao.github.io/blog/monitoring-network-stack/ 
+
+More details about UDP tuning: <br>
+https://gilbertasm.github.io/2018/09/13/tunning-udp-buffers.html <br>
+https://blog.packagecloud.io/monitoring-tuning-linux-networking-stack-sending-data/#monitoring-udp-protocol-layer-statistics
