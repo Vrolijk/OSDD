@@ -49,6 +49,7 @@ Go to the menu Monitoring, Loop Prevention
 ## Step 6: Enjoy your data-diode for development purposes 
 - Connect your TX proxy to interface 1 
 - Connect your RX proxy to interface 5
+
 Enjoy your data-diode demonstrator. 
 
 <img src="/img/img_simple_datadiode_setup.png" width=300>
