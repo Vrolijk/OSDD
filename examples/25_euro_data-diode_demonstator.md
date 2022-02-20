@@ -60,6 +60,6 @@ Enjoy your data-diode demonstrator.
 - Run TCPDump on both the TX and RX proxies to validate packets are sent and received.
 
 ## Do not use in production!!!
-Since we are limiting the functionality of bidirectional by VLAN separation and port mirroring is still possible for an attacker to access the web interface on the switch. <br>
+Since we are limiting the functionality of bidirectional by VLAN separation and port mirroring its still possible for an attacker to access the web interface on the switch. <br>
 A real data-diode doesn't have any function for bi-directional traffic.
 Example how to hack the TP-Link: https://www.pentestpartners.com/security-blog/how-i-can-gain-control-of-your-tp-link-home-switch/
