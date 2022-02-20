@@ -35,6 +35,8 @@ When we created a direct loop on TX-RX using only one mediaconverter with a stan
 
 <img src="img/img_simple_datadiode_setup.png" width=300>
 
+For training you can use a managed switch: [€25 euro data-diode demonstrator](https://github.com/Vrolijk/OSDD/blob/main/examples/25_euro_data-diode_demonstator.md)
+
 ## 2 way uni-directional setup
 
 To be able to send and receive data via separate interfaces causing a protocol break for most network attacks. This setup also provides control over the received and send data.
