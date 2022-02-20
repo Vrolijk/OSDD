@@ -9,7 +9,9 @@ Please note: this does not provide the same security as a real data-diode since 
 
 ## Step 1: Buy a €25,- TP-link TL-SG105e managed switch. 
 This can be done with most managed switches that support vlans and port mirroring. We choose the TP-link for the price and easy availability. <br>
-Connect the switch directly to your PC and change your IP for the connected interface manually to 192.168.0.2. Open your browser and go to the (default) IP from the TP-link http://192.168.0.1. UserID/Password is admin/admin.<br> 
+Connect the switch directly to your PC and change your IP for the connected interface manually to 192.168.0.2. <br>
+Open your browser and go to the (default) IP from the TP-link http://192.168.0.1. <br>
+Default UserID/Password is admin/admin.<br> 
 
 <img src="/img/tp-link_hardware.jpg" width=300>
 
@@ -31,7 +33,7 @@ Go to the menu Monitoring -> Port Mirror
 
 ## Step 4: Disable DHCP 
 By default DHCP is enabled to provide access to the web based management interface. We want to disable DHCP to prevent the switch asking for DHCP servers which generates traffic.<br>
-This can also be abused by hackers to identify the management IP and modify the setting back to bi-directional traffic.
+This can also be abused by hackers to identify the management IP and modify the setting back to bi-directional traffic.<br>
 Go to the menu System -> IP Setting
 - IP Address Setting, DHCP setting select Disable
 - You could change the IP but this is not needed.
