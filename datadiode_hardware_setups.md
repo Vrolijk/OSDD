@@ -27,7 +27,7 @@ Testing with standard cables prevents the MPCP errors. Note: this not a true dat
 
 <img src="img/TP-Link-1to4-datadiode-test.jpg" width=300>
 
-When we created a direct loop on TX-RX using only one mediaconverter with a standard cable we only received the MPCP message 4 times when sending 5Gb on full speed from the Transmitter proxy. Educated guess is a faulty splitter. Waiting for a new splitter to arrive to check if its a broken fiber or the wrong type of hardware/cable.
+When we created a direct loop on TX-RX using only one mediaconverter with a standard cable we only received the MPCP message 4 times when sending 50Gb on full speed from the Transmitter proxy. Educated guess is a faulty splitter. Waiting for a new splitter to arrive to check if its a broken fiber or the wrong type of hardware/cable.
 
 # Examples with proxies
 
