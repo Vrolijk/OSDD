@@ -95,13 +95,13 @@ For more Dutch sources: https://mediamagazine.nl/live-links-nederland/livestream
   
 ## Possibilities for tweaking
 
-UDP buffers to 25Mb.
+UDP buffers to 32Mb.
 
 ```
-sudo sysctl -w net.core.rmem_max=26214400
-sudo sysctl -w net.core.rmem_default=26214400
-sudo sysctl -w net.core.wmem_max=26214400 
-sudo sysctl -w net.core.wmem_default=26214400
+sudo sysctl -w net.core.rmem_max=32777216
+sudo sysctl -w net.core.rmem_default=32777216
+sudo sysctl -w net.core.wmem_max=32777216 
+sudo sysctl -w net.core.wmem_default=32777216
 ```
 
 Set MTU on all to the OSDD connected interfaces to jumbo frames. No impact on UDPCAST due to fixed maximum packet size but will be useful for other applications. 
