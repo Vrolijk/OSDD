@@ -10,7 +10,9 @@
 
 In this example we will show how to send one or multiple files trough a data-diode using UDPCAST on Linux. UDPcast is also available for Windows. For more information about UDPcast see http://www.udpcast.linux.lu/
 
-For this example we used 2 proxies with a gigabit data-diode in the middle. 
+For this example we used 2 proxies with a gigabit data-diode in the middle. <br>
+Manulay configure the senders IP address to 10.0.0.1 with a subnet 255.255.255.0 and no gateway. <br>
+Manulay configure the receivers IP address to 10.0.0.2 with a subnet 255.255.255.0 and no gateway.
 
 <img src="img/img_simple_datadiode_setup.png" width=300>
 
@@ -58,7 +60,7 @@ Sender:
 
 For sending data directly to an IP address first we need to add an arp entry at the sender. To simplify this we use a layer 2 broadcast address. Please note that sending data to fast can cause packet loss and netcat will crash.
 
-```sudo arp -i <<enp0s8>> -s <<192.168.1.2>> ff:ff:ff:ff:ff:ff```
+```sudo arp -i <<enp0s8>> -s <<10.0.0.2>> ff:ff:ff:ff:ff:ff```
   
 Receiver:
   
@@ -66,7 +68,7 @@ Receiver:
 
 Sender 
 
-```tail -F /var/log/syslog | nc -u <<192.168.1.2>> 9999```
+```tail -F /var/log/syslog | nc -u <<10.0.0.2>> 9999```
   
   
 ## Send audio or video stream using VLC media player
@@ -79,9 +81,13 @@ Open VLC media player and go to
 
 Sender:
 
+First make sure your sender knowns the correct interface to send the data with an ARP inject.
+
+```sudo arp -i <<enp0s8>> -s <<10.0.0.2>> ff:ff:ff:ff:ff:ff```
+
 Open VLC media player and go to
 
-``` Media -> stream -> <<choose source: example http://icecast.omroep.nl/radio4-bb-mp3>> -> Stream button-> next -> new destination -> RTP / MPEG transport stream -> add -> address <<192.168.1.2>> base Port 5004 stream name <<OSDD>> -> next -> profile Video - H264 + mp3 (mp4) -> next -> stream ```
+``` Media -> stream -> <<choose source: example http://icecast.omroep.nl/radio4-bb-mp3>> -> Stream button-> next -> new destination -> RTP / MPEG transport stream -> add -> address <<10.0.0.2>> base Port 5004 stream name <<OSDD>> -> next -> profile Video - H264 + mp3 (mp4) -> next -> stream ```
 
 It takes a few seconds to start the video on the receiver because of caching.
 
