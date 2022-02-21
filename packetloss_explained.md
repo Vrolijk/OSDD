@@ -36,13 +36,14 @@ Monitor both the sender and receiver.
 
 or use netstat
 
-# sender [video]
-(https://raw.githubusercontent.com/Vrolijk/OSDD/main/img/OSDD-send-512Mb.mp4)
-```sudo netstat -c -udp -an | grep "9001"```
+**sender** <br>
+```sudo netstat -c -udp -an | grep "9001"``` <br>
+[recording](https://raw.githubusercontent.com/Vrolijk/OSDD/main/img/OSDD-send-512Mb.mp4) 
 
-# receiver 
-[video](https://raw.githubusercontent.com/Vrolijk/OSDD/main/img/OSDD-receive-512Mb.mp4)
-```sudo netstat -c -udp -an | grep ".255:9000"```
+**receiver** <br> 
+```sudo netstat -c -udp -an | grep ".255:9000"``` <br>
+[recording](https://raw.githubusercontent.com/Vrolijk/OSDD/main/img/OSDD-receive-512Mb.mp4)
+
 
 or use ss
 
