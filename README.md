@@ -11,8 +11,8 @@
 In this example we will show how to send one or multiple files trough a data-diode using UDPCAST on Linux. UDPcast is also available for Windows. For more information about UDPcast see http://www.udpcast.linux.lu/
 
 For this example we used 2 proxies with a gigabit data-diode in the middle. <br>
-Configure the senders network interface connected to the data-diode to 10.0.0.1 with a subnet 255.255.255.0 and no gateway. <br>
-Configure the receivers network interface connected to the data-diode to 10.0.0.2 with a subnet 255.255.255.0 and no gateway.
+Configure the senders network interface connected to the data-diode to 10.0.0.1 and subnet 255.255.255.0 and no gateway. <br>
+Configure the receivers network interface connected to the data-diode to 10.0.0.2 and subnet 255.255.255.0 and no gateway.
 
 <img src="img/img_simple_datadiode_setup.png" width=300>
 
