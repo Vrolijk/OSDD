@@ -29,13 +29,19 @@ We found out that most of the packet loss happens on the receiving machine when 
 
 ## Monitoring packet loss
 
-Monitor UDP queues and packets dropped. We are still looking into the best way to monitor the queues and this can be done on several ways.
+Monitor UDP queues and packets dropped. We are still looking into the best way to monitor the queues and this can be done on several ways.<br>
+Monitor both the sender and receiver. 
 
 ```cat /proc/net/udp```
 
 or use netstat
 
-```sudo netstat -c -udp -an | grep ".255:9000"```
+```
+# sender 
+sudo netstat -c -udp -an | grep "9001"```
+
+# receiver
+sudo netstat -c -udp -an | grep ".255:9000"```
 
 or use ss
 
