@@ -100,7 +100,7 @@ https://github.com/klockcykel/godiode
 
 ### Mitcdh 
 
-Example how to configure a Cisco switch as an data-diode
+Example how to configure a Cisco switch as a data-diode
 
 https://github.com/mitcdh/diode-switch-config 
 
