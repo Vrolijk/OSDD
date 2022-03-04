@@ -13,7 +13,7 @@ This way we created a one to many datadiode setup but this could also be done wi
 
 <img src="img/TP-Link-1to4-datadiode.jpg" width=300> <img src="img/TP-Link-1to4-datadiode-simple.jpg" width=300>
 
-<b>Update:</b> We noticed network errors on the TX proxy. The assumption is a faulty fiber splitter or the wrong type of cable. <br>
+<b>Update:</b> We noticed network errors on the TX proxy. The assumption is a faulty fiber splitter or the wrong type of cable.
 TCPDUMP output:
 
 ```
@@ -29,6 +29,8 @@ Testing with standard cables prevents the MPCP errors. Note: this not a true dat
 
 When we created a direct loop on TX-RX using only one mediaconverter with a standard cable we only received the MPCP message 4 times when sending 50Gb on full speed from the Transmitter proxy. Educated guess is a faulty splitter. Waiting for a new splitter to arrive to check if its a broken fiber or the wrong type of hardware/cable. <br>
 Update march 02, 2022: Recieved a new splitter with the same result. This splitter doesn't work in this setup. 
+<br> 
+update 03-03-2022 probably this is due to singlemode vs multimode fiber.... waiting for the tp-link MC210CS to test<br>
 
 # Examples with proxies
 
