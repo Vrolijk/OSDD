@@ -22,6 +22,13 @@ This way we created a one to many datadiode setup but this could also be done wi
 
 For training you can use a managed switch: [€25 euro data-diode demonstrator](https://github.com/Vrolijk/OSDD/blob/main/examples/25_euro_data-diode_demonstator.md)
 
+## More secure basic setup
+
+In this setup we used 2 TP-Link MC210CS single mode Gigabit mediaconverters, one single mode 50/50 splitter and a fiber filter for additional security.
+
+<img src="img/OSDD_splitter_and_filter.png" width=300>
+
+
 ## 2 way uni-directional setup
 
 To be able to send and receive data via separate interfaces causing a protocol break for most network attacks. This setup also provides control over the received and send data.
