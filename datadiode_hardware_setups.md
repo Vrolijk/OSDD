@@ -2,7 +2,7 @@
 
 ## Physical data-diode setup
 
-In this setup we used 3 TP-Link MC200CM Gigabit mediaconverters and a PLC Fibre Splitter 1X4 SC/UPC-interface.
+In this setup we used 3 TP-Link ~~MC200CM multi mode~~ MC210CS single mode Gigabit mediaconverters and a PLC Fibre Splitter 1X4 SC/UPC-interface. Please note that the splitter is single mode, not multi mode!
 
 The TX-mediaconverter TX-port is connected with the IN-fiber from the splitter and the 4th splitted fiber to the RX-port to simulate a link.<br>
 The RX3 mediaconverter RX-port is connected with the 3th splitter fiber. <br>
@@ -13,24 +13,6 @@ This way we created a one to many datadiode setup but this could also be done wi
 
 <img src="img/TP-Link-1to4-datadiode.jpg" width=300> <img src="img/TP-Link-1to4-datadiode-simple.jpg" width=300>
 
-<b>Update:</b> We noticed network errors on the TX proxy. The assumption is a faulty fiber splitter or the wrong type of cable.
-TCPDUMP output:
-
-```
-20:10:26.441796 MPCP, Opcode Pause, length 46
-20:10:26.442321 MPCP, Opcode Pause, length 46
-20:10:26.442845 MPCP, Opcode Pause, length 46
-...... and many more..... 
-```
-
-Testing with standard cables prevents the MPCP errors. Note: this not a true data-diode due to the loop in the system. 
-
-<img src="img/TP-Link-1to4-datadiode-test.jpg" width=300>
-
-When we created a direct loop on TX-RX using only one mediaconverter with a standard cable we only received the MPCP message 4 times when sending 50Gb on full speed from the Transmitter proxy. Educated guess is a faulty splitter. Waiting for a new splitter to arrive to check if its a broken fiber or the wrong type of hardware/cable. <br>
-Update march 02, 2022: Recieved a new splitter with the same result. This splitter doesn't work in this setup. 
-<br> 
-update 03-03-2022 probably this is due to singlemode vs multimode fiber.... waiting for the tp-link MC210CS to test<br>
 
 # Examples with proxies
 
@@ -149,3 +131,16 @@ https://github.com/cea-sec/hairgap
 The goal of this project was to implement a (virtual) Data Diode according to some CyberSecurity frameworks NIST SP 800-30 : Risk analysis report and Common criteria.
 
 https://github.com/BHanq/DataDiode
+
+# Lessons learned
+
+Understand the difference between multi mode and single mode fiber. 
+We noticed network errors on the TX proxy. The cause was a single mode fiber splitter in combination with multi mode mediaconverters.
+TCPDUMP output:
+
+```
+20:10:26.441796 MPCP, Opcode Pause, length 46
+20:10:26.442321 MPCP, Opcode Pause, length 46
+20:10:26.442845 MPCP, Opcode Pause, length 46
+...... and many more..... 
+```
