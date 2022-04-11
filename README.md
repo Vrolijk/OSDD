@@ -5,6 +5,7 @@
 
 ## Example data-diode hardware setups
 [Datadiode hardware setups](datadiode_hardware_setups.md)
+Extra: [€25 euro functional data-diode demonstrator](https://github.com/Vrolijk/OSDD/blob/main/examples/25_euro_data-diode_demonstator.md)
 
 ## Send large file or multiple files data-diode using UDPcast: 
 
