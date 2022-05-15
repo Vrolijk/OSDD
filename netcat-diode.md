@@ -34,8 +34,6 @@ The goal is to create a permanent uni-directional tunnel between 2 computers. <b
 - could be able to run a speed optimization to determine optiomal speed and settings and advice optimal settings
 - could prevent packet loss as described in ref [^3]
 
-During the research we also found an issue with how 
-
 [^1]:  https://www.devkb.org/linux/115-TCP-tunnel-port-forwarding-using-Netcat 
 [^2]:  https://github.com/elisescu/udpcast/blob/master/fec.c
 [^3]: https://github.com/Vrolijk/OSDD/blob/main/packetloss_explained.md
