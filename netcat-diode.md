@@ -1,6 +1,6 @@
 Working with UDPCast to transfer files made me wonder is there is an other application to create a one way tunnel that has the Forward Error Control (FEC) functionality combined with rate limiting. If there is no such application this could be an idea for a hackathon or a development team.
 
-In my opinion the software should contain a sender and receiver that is able to receive data from a variation of applications. The goal is to create a permanent unidirectional tunnel between 2 (or more) computers. Using this tool it should be able to send the information via a data-diode. An other use-case is limiting network bandwidth by only sending the data of using a unidirectional radio link..<br>
+In my opinion the software should contain a sender and receiver that is able to receive data from a variation of applications. The goal is to create a permanent unidirectional tunnel between 2 (or more) computers. Using this tool it should be able to send the information via a data-diode. An other use-case is limiting network bandwidth by only sending the data of using a unidirectional radio link.<br>
 <img src="img/netcat-diode.png" width=400>
 
 
