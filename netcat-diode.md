@@ -1,13 +1,11 @@
-Working with UDPCast to transfer files made me wonder is there is an other application to create a one way tunnel that has the Forward Error Control (FEC) functionality combined with rate limiting.
-
-If there is no application this could be an idea for a hackaton or a development team.
+Working with UDPCast to transfer files made me wonder is there is an other application to create a one way tunnel that has the Forward Error Control (FEC) functionality combined with rate limiting. If there is no such application this could be an idea for a hackaton or a development team.
 
 In my opionion the software should contain a sender and receiver that is able to recieve data from a variation of applications.
 The goal is to create a permanent uni-directional tunnel between 2 computers. <br>
-<img src="img/netcat-diode.png" width=300>
+<img src="img/netcat-diode.png" width=400>
 
 
-Sender
+<b>Sender</b>
 - should run constantly waiting for input from an application like a NETCAT tunnel [^1]
 - should be able to configure the transfer speed
 - should send a keep alive every X receiver
@@ -22,15 +20,15 @@ Sender
 - should be able to run as an application or a service 
 - could be able to run a speed optimization to determine optiomal speed and settings
 
-Receiver
-a) should run constantly waiting for input from a sender like a NETCAT tunnel [^1]
-b) should listen for a keep alive every X from the sender
-c) should monitor the packet sequencenumber and report on missing packets and report on missing packets
-d) could be able to receive a manifest and report on missing items
-e) could be able to log and report on missing sequencenumbers 
-f) could be able to add encryption using a defined password of public/private key
-g) should be able to run as an application or a service 
-h) could be able to run a speed optimization to determine optiomal speed and settings and advice optimal settings
+<b>Receiver</b>
+- should run constantly waiting for input from a sender like a NETCAT tunnel [^1]
+- should listen for a keep alive every X from the sender
+- should monitor the packet sequencenumber and report on missing packets and report on missing packets
+- could be able to receive a manifest and report on missing items
+- could be able to log and report on missing sequencenumbers 
+- could be able to add encryption using a defined password of public/private key
+- should be able to run as an application or a service 
+- could be able to run a speed optimization to determine optiomal speed and settings and advice optimal settings
 
 [^1]:  https://www.devkb.org/linux/115-TCP-tunnel-port-forwarding-using-Netcat 
 [^2]:  https://github.com/elisescu/udpcast/blob/master/fec.c
