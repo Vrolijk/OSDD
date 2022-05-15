@@ -7,6 +7,8 @@ The goal is to create a permanent uni-directional tunnel between 2 computers. <b
 
 <b>Sender</b>
 - should run constantly waiting for input from an application like a NETCAT tunnel [^1]
+- should use UDP 
+- should support Linux
 - should be able to configure the transfer speed
 - should send a keep alive every X receiver
 - should add a sequencenumber to each packet
@@ -19,6 +21,7 @@ The goal is to create a permanent uni-directional tunnel between 2 computers. <b
 - should send every message/file/object as a separate session (to prevent the tunnel to terminate when one session fails)
 - should be able to run as an application or a service 
 - could be able to run a speed optimization to determine optiomal speed and settings
+- could prevent packet loss as described in ref [^3]
 
 <b>Receiver</b>
 - should run constantly waiting for input from a sender like a NETCAT tunnel [^1]
@@ -29,6 +32,10 @@ The goal is to create a permanent uni-directional tunnel between 2 computers. <b
 - could be able to add encryption using a defined password of public/private key
 - should be able to run as an application or a service 
 - could be able to run a speed optimization to determine optiomal speed and settings and advice optimal settings
+- could prevent packet loss as described in ref [^3]
+
+During the research we also found an issue with how 
 
 [^1]:  https://www.devkb.org/linux/115-TCP-tunnel-port-forwarding-using-Netcat 
 [^2]:  https://github.com/elisescu/udpcast/blob/master/fec.c
+[^3]: https://github.com/Vrolijk/OSDD/blob/main/packetloss_explained.md
