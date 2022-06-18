@@ -139,6 +139,12 @@ The goal of this project was to implement a (virtual) Data Diode according to so
 
 https://github.com/BHanq/DataDiode
 
+###TFC
+
+https://github.com/maqp/tfc/wiki/TTL-Data-Diode-(PCB)
+https://www.kitploit.com/2020/03/tinfoil-chat-onion-routed-endpoint.html 
+
+
 # Lessons learned
 
 Understand the difference between multi mode and single mode fiber. 
