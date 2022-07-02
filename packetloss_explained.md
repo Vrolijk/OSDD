@@ -70,12 +70,15 @@ Good story about tuning TCP. Perhaps lowering the garbage collection could help 
 
 https://blog.cloudflare.com/the-story-of-one-latency-spike/ 
 
+https://unix.stackexchange.com/questions/611981/udp-packet-drops
 
 **Helpful links**
 
 https://arthurchiao.github.io/blog/monitoring-network-stack/ 
 
 https://www.sobyte.net/post/2022-05/linux-udp-packet-drop-debug/
+
+
 
 More details about UDP tuning: <br>
 https://gilbertasm.github.io/2018/09/13/tunning-udp-buffers.html <br>
