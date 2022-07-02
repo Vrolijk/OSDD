@@ -78,7 +78,7 @@ https://arthurchiao.github.io/blog/monitoring-network-stack/
 
 https://www.sobyte.net/post/2022-05/linux-udp-packet-drop-debug/
 
-https://iopscience.iop.org/article/10.1088/1748-0221/15/09/T09005/pdf
+https://iopscience.iop.org/article/10.1088/1748-0221/15/09/T09005/pdf <br>
   B System configuration<br>
   The following commands were used (performed as superuser) to change the system parameters on CentOS. The examples below modifies network interface eno49. This should be changed to match the name of the interface on the actual system. <br>
 > sysctl -w net.core.rmem_max=12582912 <br>
