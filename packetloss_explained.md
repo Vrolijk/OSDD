@@ -75,6 +75,8 @@ https://blog.cloudflare.com/the-story-of-one-latency-spike/
 
 https://arthurchiao.github.io/blog/monitoring-network-stack/ 
 
+https://www.sobyte.net/post/2022-05/linux-udp-packet-drop-debug/
+
 More details about UDP tuning: <br>
 https://gilbertasm.github.io/2018/09/13/tunning-udp-buffers.html <br>
 https://blog.packagecloud.io/monitoring-tuning-linux-networking-stack-sending-data/#monitoring-udp-protocol-layer-statistics
