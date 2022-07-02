@@ -78,7 +78,13 @@ https://arthurchiao.github.io/blog/monitoring-network-stack/
 
 https://www.sobyte.net/post/2022-05/linux-udp-packet-drop-debug/
 
-
+https://iopscience.iop.org/article/10.1088/1748-0221/15/09/T09005/pdf
+  B System configuration
+  The following commands were used (performed as superuser) to change the system parameters on CentOS. The examples below modifies network interface eno49. This should be changed to match the name of the interface on the actual system.
+> sysctl -w net.core.rmem_max=12582912
+> sysctl -w net.core.wmem_max=12582912
+> sysctl -w net.core.netdev_max_backlog=5000
+> ifconfig eno49 mtu 9000 txqueuelen 10000 up
 
 More details about UDP tuning: <br>
 https://gilbertasm.github.io/2018/09/13/tunning-udp-buffers.html <br>
