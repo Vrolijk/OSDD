@@ -29,13 +29,13 @@ UDPCAST sends data using UDP and has the possibility to send the data over unidi
 
 *all items between \<\<variable\>\> are variables and can be found in the application man pages.*
 
-Sender: 
-
-```udp-sender --interface <<enp0s8>> --async --fec <<8x8/64>> --max-bitrate <<600Mbps>> --file 5gb-testfile.tmp --broadcast```
-
 Receiver: 
 
 ```udp-receiver --nosync --interface <<enp0s3>> --file 5gb-testfile.tmp```
+
+Sender: 
+
+```udp-sender --interface <<enp0s8>> --async --fec <<8x8/64>> --max-bitrate <<600Mbps>> --file 5gb-testfile.tmp --broadcast --rexmit-hello-interval 1000 --autostart  3```
 
 ### validate received file using sha256sum
 
@@ -55,7 +55,7 @@ Receiver:
 
 Sender: 
 
-```tar -c <</data/>> | udp-sender --interface <<enp0s8>> --async --fec 8x8/64 --max-bitrate <<600Mbps>> --broadcast --autostart 1 --nokbd ```
+```tar -c <</data/>> | udp-sender --interface <<enp0s8>> --async --fec 8x8/64 --max-bitrate <<600Mbps>> --broadcast --autostart 3 --rexmit-hello-interval 1000  --nokbd ```
 
 ## Tail files using netcat
 
