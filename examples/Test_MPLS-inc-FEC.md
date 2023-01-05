@@ -1,4 +1,6 @@
-ChatGPT: Hieronder staat de volledige configuratie om een unidirectionele MPLS-verbinding op te zetten tussen de machines PING en PONG, met een datadiode ertussen, en om Forward Error Correction (FEC) in te stellen op de verbinding met behulp van Reed-Solomon FEC, met een netwerkmasker van 255.255.255.0 (/24) en IP-adressen 10.0.0.1 voor PING en 10.0.0.2 voor PONG:
+ChatGPT suggestie, niet getest!
+
+Hieronder staat de volledige configuratie om een unidirectionele MPLS-verbinding op te zetten tussen de machines PING en PONG, met een datadiode ertussen, en om Forward Error Correction (FEC) in te stellen op de verbinding met behulp van Reed-Solomon FEC, met een netwerkmasker van 255.255.255.0 (/24) en IP-adressen 10.0.0.1 voor PING en 10.0.0.2 voor PONG:
 
 Installeer de nodige software: Voer de volgende opdracht uit om de benodigde software te installeren:
 ```
