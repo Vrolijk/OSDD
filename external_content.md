@@ -8,3 +8,10 @@ Slides: https://csiac.org/wp-content/uploads/2021/11/CSIAC_Deck_Final_1-2022.pdf
 
 # Vendors
 
+
+# Projects 
+### FLUTE - File Delivery over Unidirectional Transport
+Massively scalable multicast distribution solution
+
+The library implements a unidirectional file delivery, without the need of a return channel.
+https://github.com/ypo/flute 
