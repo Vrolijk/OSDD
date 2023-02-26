@@ -7,7 +7,8 @@
 Slides: https://csiac.org/wp-content/uploads/2021/11/CSIAC_Deck_Final_1-2022.pdf 
 
 ### ESTCP project overview Data Diodes
-https://youtube.com/watch?v=HC3_Dd8KM0E&si=EnSIkaIECMiOmarE
+https://youtube.com/watch?v=HC3_Dd8KM0E&si=EnSIkaIECMiOmarE <br>
+https://www.serdp-estcp.org/projects/details/30717e9d-8325-43fd-a813-6396ae5f7ff6/ew19-5156-project-overview
 
 
 # Vendors
