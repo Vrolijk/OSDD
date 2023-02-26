@@ -6,6 +6,10 @@
 
 Slides: https://csiac.org/wp-content/uploads/2021/11/CSIAC_Deck_Final_1-2022.pdf 
 
+ESTCP project overview Data Diodes
+https://youtube.com/watch?v=HC3_Dd8KM0E&si=EnSIkaIECMiOmarE
+
+
 # Vendors
 ## Link22
 https://link22.eu/products/diode-proxy/
