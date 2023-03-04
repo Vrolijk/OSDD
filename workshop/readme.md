@@ -50,7 +50,7 @@ First install net-tools <br>
 ```sudo apt install net-tools -y``` <br>
 To tell PING that PONG 'lives' behind interface enp1s0 add the following ARP entry. <br>
 ```sudo arp -i enp1s0 -s 10.0.0.2 ff:ff:ff:ff:ff:ff``` <br>
-Note that we are broadcasting the packets to ff:ff:ff:ff:ff:ff. You could also add the mac address of PONG here.<br>
+Note that we are broadcasting the packets to ff:ff:ff:ff:ff:ff. You could also add the mac address of PONG here.<br><br>
 Now ping PONG again. You notice that there is no more ARP reply on PONG. <br>
 ``` << add tcpdump example >> ``` <br>
 
@@ -64,7 +64,7 @@ Then start on PING: <br>
 ## Step 6: Send large files using UDPCAST
 UDPCAST sends data using UDP and has the possibility to send the data over unidirectional connections like radio. It also adds the possibility to add FEC (Forward Error Correction) and to limit the transfer speed. This makes UDPcast an ideal tool to send data trough a data-diode.
 
-**Create random file of 5Gb**
+**Create random file of 1Gb**
 
 ```head -c 1024M /dev/urandom > 1gb-testfile.tmp```
 
