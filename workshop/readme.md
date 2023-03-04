@@ -31,12 +31,19 @@ PING: Change the IP to 10.0.0.1 with subnet 255.255.255.0 <br>
 PONG: Change the IP to 10.0.0.2 with subnet 255.255.255.0 <br>
 << TO DO ADD PHOTO >> <br>
 
+## Step 3: monitoring
+**tcpdump** 
 * Open <b>tcpdump</b> on both machines on the interface connected to the data diode <br>
 ```sudo tcpdump -i enp1s0```
 * Ping 10.0.0.2 from TX/PING
 * Note that on PONG there is an ARP reply <br>
 ``` << add tcpdump example >> ``` <br>
 On PING you only see the request, not the reply
+
+**ss network queue**
+
+TO DO add monitoring
+
 
 ## Step 4: Add ARP entry to TX/PING
 First install net-tools <br>
@@ -46,6 +53,7 @@ To tell PING that PONG 'lives' behind interface enp1s0 add the following ARP ent
 Note that we are broadcasting the packets to ff:ff:ff:ff:ff:ff. You could also add the mac address of PONG here.<br>
 Now ping PONG again. You notice that there is no more ARP reply on PONG. <br>
 ``` << add tcpdump example >> ``` <br>
+
 ## Step 5: Netcat hello world
 On PONG start: <br>
 ```nc -l -u -p 9999```
@@ -53,7 +61,29 @@ On PONG start: <br>
 Then start on PING: <br>
 ```echo "Hello world | nc -u <<10.0.0.2>> 9999```
 
+## Step 6: Send large files using UDPCAST
+UDPCAST sends data using UDP and has the possibility to send the data over unidirectional connections like radio. It also adds the possibility to add FEC (Forward Error Correction) and to limit the transfer speed. This makes UDPcast an ideal tool to send data trough a data-diode.
 
+**Create random file of 5Gb**
 
+```head -c 1024M /dev/urandom > 1gb-testfile.tmp```
+
+**send the file**
+
+On PONG: 
+
+```udp-receiver --nosync --interface enp1s0 --file 1gb-testfile.tmp```
+
+On PING: 
+
+```udp-sender --interface enp1s0 --async --fec 8x8/64 --max-bitrate 600Mbps --file 1gb-testfile.tmp --broadcast --rexmit-hello-interval 1000 --autostart  3```
+
+**Validate received file using sha256sum**
+
+On both proxies the outcome should be identical: 
+
+```sha256sum 5gb-testfile.tmp```
+
+***
 Futher reading:
 [^1]: https://blog.cloudflare.com/how-to-receive-a-million-packets/ 
