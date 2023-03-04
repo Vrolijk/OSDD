@@ -84,6 +84,26 @@ On both proxies the outcome should be identical:
 
 ```sha256sum 5gb-testfile.tmp```
 
+## Step 7: Send audio or video stream using VLC media player
+
+PONG:
+
+Open VLC media player and go to
+
+``` Media-> open network stream -> network url rtp://@:5004 ``` 
+
+PING:
+
+Open VLC media player and go to
+
+``` Media -> stream -> <<choose source: example http://icecast.omroep.nl/radio4-bb-mp3>> -> Stream button-> next -> new destination -> RTP / MPEG transport stream -> add -> address 10.0.0.2 base Port 5004 stream name OSDD -> next -> profile Video - H264 + mp3 (mp4) -> next -> stream ```
+
+It takes a few seconds to start the video on the receiver because of caching.
+
+For more Dutch sources: https://mediamagazine.nl/live-links-nederland/livestreams-nederland-landelijk/  
+  
+
+
 ***
 Futher reading:
 [^1]: https://blog.cloudflare.com/how-to-receive-a-million-packets/ 
