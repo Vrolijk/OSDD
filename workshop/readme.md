@@ -8,10 +8,17 @@ By the end of the workshop, you will have a strong understanding of data diodes 
 <b> CAUTION: WORK IN PROGRESS!! </b>
 
 # Data diode basics and problems
-![Communication layers](/img/TCP-IP-model-vs-OSI-model.png) <br>
+Position of the data diode in the security landscape 
 
+<img src="/img/datadiode_position_security_landscape.png" width="600"> <br>
 
-![Overview packet loss](/img/datadiode_packetloss.png) <br>
+High level overview of the network connection layers 
+
+<img src="/img/TCP-IP-model-vs-OSI-model.png" width="300"> <br>
+
+Data and packet flow explained
+
+<img src="/img/datadiode_packetloss.png" width="600"> <br>
 1: The application/script needs to support uni-directional communication. UDP is the most common protocol to use.<br>
 2: At the kernel UDP is a low priority and packets can be dropped. See footnote[^1] <br>
 3: Depending on the speed of the data diode we didn't found any packet drops with the TP-Link switch<br>
@@ -19,6 +26,7 @@ By the end of the workshop, you will have a strong understanding of data diodes 
 5: Packets are send to the application. Depending on your hardware there could be a processing or disk IO write issue. <br>
 6: If you send data directly to the IP address of RX/PONG machine you need to add an ARP inject on TX/PONG 
 
+***
 # Setup 
 ## step 1: Prepare the data diode
 If not allready prepared follow the instructions on [€25,- data diode demonstrator](https://github.com/Vrolijk/OSDD/blob/main/examples/25_euro_data-diode_demonstator.md) <br>
