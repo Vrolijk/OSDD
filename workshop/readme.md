@@ -9,7 +9,7 @@ By the end of the workshop, you will have a strong understanding of data diodes 
 ![Overview packet loss](/img/datadiode_packetloss.png)
 
 ## step 1: Prepare the data diode
-If not allready prepared follow the instructions on https://github.com/Vrolijk/OSDD/blob/main/examples/25_euro_data-diode_demonstator.md
+If not allready prepared follow the instructions on https://github.com/Vrolijk/OSDD/blob/main/examples/25_euro_data-diode_demonstator.md <br>
 After this connect PING to the IN (port 1) and PONG to OUT (port 5) connection.
 << TO DO ADD PHOTO >>
 
