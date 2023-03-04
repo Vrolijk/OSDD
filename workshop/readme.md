@@ -35,8 +35,8 @@ Connect PING to the IN (port 1) and PONG to OUT (port 5) connection.<br>
 << TO DO ADD PHOTO >>
 
 ## Step 2: Change the IP settings
-PING: Change the IP to 10.0.0.1 with subnet 255.255.255.0 <br>
-PONG: Change the IP to 10.0.0.2 with subnet 255.255.255.0 <br>
+PING: Change the IP to 10.0.0.1 and subnet 255.255.255.0 <br>
+PONG: Change the IP to 10.0.0.2 and subnet 255.255.255.0 <br>
 << TO DO ADD PHOTO >> <br>
 
 ## Step 3: monitoring
