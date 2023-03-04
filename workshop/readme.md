@@ -6,7 +6,9 @@ Throughout the workshop, we will be working with Ubuntu and learning how to upda
 By the end of the workshop, you will have a strong understanding of data diodes and proxies, and how they can be used to enhance network security. So, let's get started and dive into the exciting world of network security!
 
 # Data diode basics and problems
-![Overview packet loss](/img/datadiode_packetloss.png)
+![Overview packet loss](/img/datadiode_packetloss.png) ![Communication layers](/img/TCP-IP-model-vs-OSI-model.png)
+1: The application/script needs to support uni-directional communication. UDP is the most common 
+2: At the kernel 
 
 ## step 1: Prepare the data diode
 If not allready prepared follow the instructions on https://github.com/Vrolijk/OSDD/blob/main/examples/25_euro_data-diode_demonstator.md <br>
