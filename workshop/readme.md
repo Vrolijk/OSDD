@@ -33,7 +33,7 @@ Data and packet flow explained
 ***
 # Setup 
 ## step 1: Prepare the data diode
-If not allready prepared follow the instructions on [€25,- data diode demonstrator](https://github.com/Vrolijk/OSDD/blob/main/examples/25_euro_data-diode_demonstator.md) <br>
+If not already prepared follow the instructions on [€25,- data diode demonstrator](https://github.com/Vrolijk/OSDD/blob/main/examples/25_euro_data-diode_demonstator.md) <br>
 
 Connect PING to the IN (port 1) and PONG to OUT (port 5) connection.<br>
 << TO DO ADD PHOTO >>
