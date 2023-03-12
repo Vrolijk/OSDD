@@ -7,14 +7,18 @@ By the end of the workshop, you will have a strong understanding of data diodes 
 
 <b> CAUTION: WORK IN PROGRESS!! </b>
 
+# Target 
+
 # Data diode basics and problems
 Position of the data diode in the security landscape 
 
 <img src="/img/datadiode_position_security_landscape.png" width="600"> <br>
+And Cross Domain Solutions.. <br>
 
 High level overview of the network connection layers 
 
 <img src="/img/TCP-IP-model-vs-OSI-model.png" width="300"> <br>
+And the data layer. If we want to prevent data leakage we need to filter on the data level. This makes the data diode not only a network solution but combines all layers including the content (layer 8?).
 
 Data and packet flow explained
 
@@ -67,7 +71,7 @@ On PONG start: <br>
 ```nc -l -u -p 9999```
 
 Then start on PING: <br>
-```echo "Hello world | nc -u <<10.0.0.2>> 9999```
+```echo "Hello world" | nc -u 10.0.0.2 9999```
 
 ## Step 6: Send large files using UDPCAST
 UDPCAST sends data using UDP and has the possibility to send the data over unidirectional connections like radio. It also adds the possibility to add FEC (Forward Error Correction) and to limit the transfer speed. This makes UDPcast an ideal tool to send data trough a data-diode.
@@ -90,7 +94,7 @@ On PING:
 
 On both proxies the outcome should be identical: 
 
-```sha256sum 5gb-testfile.tmp```
+```sha256sum 1gb-testfile.tmp```
 
 ## Step 7: Send audio or video stream using VLC media player
 
@@ -110,6 +114,21 @@ It takes a few seconds to start the video on the receiver because of caching.
 
 For more Dutch sources: https://mediamagazine.nl/live-links-nederland/livestreams-nederland-landelijk/  
   
+## Step 8: Netcat pipe large file (fails)
+On PONG start: <br>
+```nc -l -u -p 9999 > 1gb-testfile.tmp```
+
+Then start on PING: <br>
+```cat 1gb-testfile.tmp | nc -u 10.0.0.2 9999```
+
+Probably this went wrong. Try to reduce the speed with PipeViewer PV. <br>
+On PONG start: <br>
+```nc -l -u -p 9999 > 1gb-testfile.tmp```
+
+Then start on PING: <br>
+```sudo apt install pv```
+<br>
+```cat 1gb-testfile.tmp | pv -L 30m | nc -u 10.0.0.2 9999```
 
 
 ***
