@@ -18,7 +18,7 @@ And Cross Domain Solutions.. <br>
 High level overview of the network connection layers 
 
 <img src="/img/TCP-IP-model-vs-OSI-model.png" width="300"> <br>
-And the data layer. If we want to prevent data leakage we need to filter on the data level. This makes the data diode not only a network solution but combines all layers including the content (layer 8?).
+And the data layer. If we want to prevent data leakage we need to filter on the data level. This makes the data diode not only a network solution but combines all OSI layers including the content (layer 8?).
 
 ### Data and packet flow explained
 
@@ -58,8 +58,9 @@ sudo sysctl -w net.core.wmem_default=32777216
 **tcpdump** 
 * Open <b>tcpdump</b> on both machines on the interface connected to the data diode <br>
 ```sudo tcpdump -i enp1s0```
-* Ping 10.0.0.2 from TX/PING
-* Note that on PONG there is an ARP reply <br>
+* In a new terminal ping 10.0.0.2 from PING<br>
+```ping 10.0.0.2```
+* Note that on PONG tcpdump shows is an ARP reply <br>
 ```1c:6f:65:4f:54:6b > ff:ff:ff:ff:ff:ff, ARP, length 42: Request who-has 10.0.0.2 (ff:ff:ff:ff:ff:ff) tell 192.168.1.3, length 28 ```
 ```1c:6f:65:4d:bb:98 > 1c:6f:65:4f:54:6b, ARP, length 60: Reply 10.0.0.2 is-at 1c:6f:65:4d:bb:98, length 46 ```
   <br>
