@@ -28,7 +28,7 @@ Data and packet flow explained
 3: Depending on the speed of the data diode we didn't found any packet drops with the TP-Link switch<br>
 4: At the kernel UDP is a low priority and packets can be dropped. See footnote[^1] <br>
 5: Packets are send to the application. Depending on your hardware there could be a processing or disk IO write issue. <br>
-6: If you send data directly to the IP address of RX/PONG machine you need to add an ARP inject on TX/PONG 
+6: If you send data directly to the IP address of RX/PONG machine you need to add an ARP inject on PONG 
 
 ***
 # Setup 
