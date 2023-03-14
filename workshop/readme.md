@@ -143,7 +143,7 @@ Then start on PING: <br>
 <br>
 ```cat 1gb-testfile.tmp | pv -L 30m | nc -u 10.0.0.2 9999```
 
-## to do ##
+## Open items ##
 
 **ss network queue**
 
@@ -156,6 +156,17 @@ Open on both machines in a seperate terminal to monitor the UDP queue on destion
 sudo gedit /etc/ethers
 ff:ff:ff:ff:ff:ff 10.0.0.2
 ``` 
+**Permanent UDP queue increase**
+To make the udp buffer change permanent you need to edit /etc/sysctl.conf file on both machines and put following lines so that after reboot the setting will remain as it is:
+```sudo gedit /etc/sysctl.conf```
+
+Append a config directive as follows:
+```
+net.core.rmem_max = 32777216
+net.core.rmem_default = 32777216
+net.core.wmem_max = 32777216 
+net.core.wmem_default = 32777216
+```
 
 ***
 Futher reading:
