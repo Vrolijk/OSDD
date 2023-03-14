@@ -42,6 +42,7 @@ Connect PING to the IN (port 1) and PONG to OUT (port 5) connection.<br>
 PING: Change the IP to 10.0.0.1 and subnet 255.255.255.0 <br>
 PONG: Change the IP to 10.0.0.2 and subnet 255.255.255.0 <br>
 <img src="/img/datadiode_workshop_ip.png" width="600"> <br>
+We advice to reboot after this step. <br>
 
 ## Step 3: monitoring
 **tcpdump** 
@@ -50,12 +51,7 @@ PONG: Change the IP to 10.0.0.2 and subnet 255.255.255.0 <br>
 * Ping 10.0.0.2 from TX/PING
 * Note that on PONG there is an ARP reply <br>
 ``` << add tcpdump example >> ``` <br>
-On PING you only see the request, not the reply
-
-**ss network queue**
-
-TO DO add monitoring
-
+On PING you only see the request, not the reply <br>
 
 ## Step 4: Add ARP entry to TX/PING
 First install net-tools <br>
@@ -120,6 +116,11 @@ On PONG start: <br>
 
 Then start on PING: <br>
 ```cat 1gb-testfile.tmp | nc -u 10.0.0.2 9999```
+
+**ss network queue**
+
+Open on both machines in a seperate terminal. Need to test<br>
+``` watch -n 1 "ss -u -a -p -t '( dport = :9999 )'" ``` 
 
 Probably this went wrong. Try to reduce the speed with PipeViewer PV. <br>
 On PONG start: <br>
