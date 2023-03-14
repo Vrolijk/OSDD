@@ -36,12 +36,12 @@ Data and packet flow explained
 If not already prepared follow the instructions on [€25,- data diode demonstrator](https://github.com/Vrolijk/OSDD/blob/main/examples/25_euro_data-diode_demonstator.md) <br>
 
 Connect PING to the IN (port 1) and PONG to OUT (port 5) connection.<br>
-<< TO DO ADD PHOTO >>
+<img src="/img/datadiode_workshop_setup" width="600"> <br>
 
 ## Step 2: Change the IP settings
 PING: Change the IP to 10.0.0.1 and subnet 255.255.255.0 <br>
 PONG: Change the IP to 10.0.0.2 and subnet 255.255.255.0 <br>
-<< TO DO ADD PHOTO >> <br>
+<img src="/img/datadiode_workshop_ip" width="600"> <br>
 
 ## Step 3: monitoring
 **tcpdump** 
