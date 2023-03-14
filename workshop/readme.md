@@ -44,16 +44,31 @@ PONG: Change the IP to 10.0.0.2 and subnet 255.255.255.0 <br>
 <img src="/img/datadiode_workshop_ip.png" width="600"> <br>
 We advice to reboot after this step. <br>
 
-## Step 3: monitoring
+## Step 3 Possibilities for tweaking
+
+Increase UDP buffers to 32Mb. This is needed after every reboot.
+```
+sudo sysctl -w net.core.rmem_max=32777216
+sudo sysctl -w net.core.rmem_default=32777216
+sudo sysctl -w net.core.wmem_max=32777216 
+sudo sysctl -w net.core.wmem_default=32777216
+```
+
+## Step 4: monitoring
 **tcpdump** 
 * Open <b>tcpdump</b> on both machines on the interface connected to the data diode <br>
 ```sudo tcpdump -i enp1s0```
 * Ping 10.0.0.2 from TX/PING
 * Note that on PONG there is an ARP reply <br>
-``` << add tcpdump example >> ``` <br>
-On PING you only see the request, not the reply <br>
+```1c:6f:65:4f:54:6b > ff:ff:ff:ff:ff:ff, ARP, length 42: Request who-has 10.0.0.2 (ff:ff:ff:ff:ff:ff) tell 192.168.1.3, length 28 ```
+```1c:6f:65:4d:bb:98 > 1c:6f:65:4f:54:6b, ARP, length 60: Reply 10.0.0.2 is-at 1c:6f:65:4d:bb:98, length 46 ```
+  <br>
+On PING you only see the request, not the reply. <br>
+This is the most common problem when working with data diodes. <br>
 
-## Step 4: Add ARP entry to TX/PING
+## Step 5: Add ARP entry to TX/PING
+To tell PONG that 10.0.0.2 lives on enp1s0 add an ARP entry. This is needed after every reboot. <br><br>
+
 First install net-tools <br>
 ```sudo apt install net-tools -y``` <br>
 To tell PING that PONG 'lives' behind interface enp1s0 add the following ARP entry. <br>
@@ -62,14 +77,14 @@ Note that we are broadcasting the packets to ff:ff:ff:ff:ff:ff. You could also a
 Now ping PONG again. You notice that there is no more ARP reply on PONG. <br>
 ``` << add tcpdump example >> ``` <br>
 
-## Step 5: Netcat hello world
+## Step 6: Netcat hello world
 On PONG start: <br>
 ```nc -l -u -p 9999```
 
 Then start on PING: <br>
 ```echo "Hello world" | nc -u 10.0.0.2 9999```
 
-## Step 6: Send large files using UDPCAST
+## Step 7: Send large files using UDPCAST
 UDPCAST sends data using UDP and has the possibility to send the data over unidirectional connections like radio. It also adds the possibility to add FEC (Forward Error Correction) and to limit the transfer speed. This makes UDPcast an ideal tool to send data trough a data-diode.
 
 **Create random file of 1Gb**
@@ -92,7 +107,7 @@ On both proxies the outcome should be identical:
 
 ```sha256sum 1gb-testfile.tmp```
 
-## Step 7: Send audio or video stream using VLC media player
+## Step 8: Send audio or video stream using VLC media player
 
 PONG:
 
@@ -110,17 +125,13 @@ It takes a few seconds to start the video on the receiver because of caching.
 
 For more Dutch sources: https://mediamagazine.nl/live-links-nederland/livestreams-nederland-landelijk/  
   
-## Step 8: Netcat pipe large file (fails)
+## Step 9: Netcat pipe large file (fails)
 On PONG start: <br>
 ```nc -l -u -p 9999 > 1gb-testfile.tmp```
 
 Then start on PING: <br>
 ```cat 1gb-testfile.tmp | nc -u 10.0.0.2 9999```
 
-**ss network queue**
-
-Open on both machines in a seperate terminal. Need to test<br>
-``` watch -n 1 "ss -u -a -p -t '( dport = :9999 )'" ``` 
 
 Probably this went wrong. Try to reduce the speed with PipeViewer PV. <br>
 On PONG start: <br>
@@ -131,6 +142,10 @@ Then start on PING: <br>
 <br>
 ```cat 1gb-testfile.tmp | pv -L 30m | nc -u 10.0.0.2 9999```
 
+**ss network queue**
+
+Open on both machines in a seperate terminal to monitor the UDP queue on destionation port 9999. Still need to test<br>
+``` watch -n 1 "ss -u -a -p -t '( dport = :9999 )'" ``` 
 
 ***
 Futher reading:
