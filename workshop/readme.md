@@ -63,11 +63,11 @@ sudo sysctl -w net.core.wmem_default=32777216
 ```1c:6f:65:4f:54:6b > ff:ff:ff:ff:ff:ff, ARP, length 42: Request who-has 10.0.0.2 (ff:ff:ff:ff:ff:ff) tell 192.168.1.3, length 28 ```
 ```1c:6f:65:4d:bb:98 > 1c:6f:65:4f:54:6b, ARP, length 60: Reply 10.0.0.2 is-at 1c:6f:65:4d:bb:98, length 46 ```
   <br>
-On PING you only see the request, not the reply. <br>
-This is the most common problem when working with data diodes. <br>
+On PING you only see the request, not the reply. This is the most common problem when working with data diodes. <br>
+For troubleshooting data diodes starting TCPDUMP on both machines is the first step.
 
-## Step 5: Add ARP entry to TX/PING
-To tell PONG that 10.0.0.2 lives on enp1s0 add an ARP entry. This is needed after every reboot. <br><br>
+## Step 5: Add ARP entry to PING
+To tell PONG that 10.0.0.2 is behind the interface enp1s0 we need to add an ARP entry. This is needed after every reboot. <br><br>
 
 First install net-tools <br>
 ```sudo apt install net-tools -y``` <br>
@@ -146,6 +146,13 @@ Then start on PING: <br>
 
 Open on both machines in a seperate terminal to monitor the UDP queue on destionation port 9999. Still need to test<br>
 ``` watch -n 1 "ss -u -a -p -t '( dport = :9999 )'" ``` 
+
+**Permanent ARP on PONG**
+
+```
+sudo gedit /etc/ethers
+ff:ff:ff:ff:ff:ff 10.0.0.2
+``` 
 
 ***
 Futher reading:
