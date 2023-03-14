@@ -119,7 +119,7 @@ PING:
 
 Open VLC media player and go to
 
-``` Media -> stream -> <<choose source: example http://icecast.omroep.nl/radio4-bb-mp3>> -> Stream button-> next -> new destination -> RTP / MPEG transport stream -> add -> address 10.0.0.2 base Port 5004 stream name OSDD -> next -> profile Video - H264 + mp3 (mp4) -> next -> stream ```
+``` Media -> stream -> http://icecast.omroep.nl/radio4-bb-mp3 -> Stream button-> next -> new destination -> RTP / MPEG transport stream -> add -> address 10.0.0.2 base Port 5004 stream name OSDD -> next -> profile Video - H264 + mp3 (mp4) -> next -> stream ```
 
 It takes a few seconds to start the video on the receiver because of caching.
 
