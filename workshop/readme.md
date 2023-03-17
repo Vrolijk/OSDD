@@ -52,9 +52,10 @@ sudo sysctl -w net.core.rmem_max=32777216
 sudo sysctl -w net.core.rmem_default=32777216
 sudo sysctl -w net.core.wmem_max=32777216 
 sudo sysctl -w net.core.wmem_default=32777216
+sudo sysctl -w net.core.netdev_max_backlog=100000
 ```
 
-## Step 4: monitoring
+## Step 4: Test connection and ARP
 **tcpdump** 
 * Open <b>tcpdump</b> on both machines on the interface connected to the data diode <br>
 ```sudo tcpdump -i enp1s0```
@@ -64,8 +65,8 @@ sudo sysctl -w net.core.wmem_default=32777216
 ```1c:6f:65:4f:54:6b > ff:ff:ff:ff:ff:ff, ARP, length 42: Request who-has 10.0.0.2 (ff:ff:ff:ff:ff:ff) tell 192.168.1.3, length 28 ```
 ```1c:6f:65:4d:bb:98 > 1c:6f:65:4f:54:6b, ARP, length 60: Reply 10.0.0.2 is-at 1c:6f:65:4d:bb:98, length 46 ```
   <br>
-On PING you only see the request, not the reply. This is the most common problem when working with data diodes. <br>
-For troubleshooting data diodes starting TCPDUMP on both machines is the first step.
+On PING you only see the request, not the reply. This is the most common problem when working with data diodes because PING has no information about PONG. Pong tries to inform PING but the data diode blocks the reply. In the next step we will manualy supply this information to PING. <br>
+Remember: For troubleshooting data diodes using <b>tcpdump</b> on both machines is the first thing to do. Check if you see traffic on both machines, check for ARP replies on PONG.
 
 ## Step 5: Add ARP entry to PING
 To tell PONG that 10.0.0.2 is behind the interface enp1s0 we need to add an ARP entry. This is needed after every reboot. <br><br>
@@ -76,7 +77,7 @@ To tell PING that PONG 'lives' behind interface enp1s0 add the following ARP ent
 ```sudo arp -i enp1s0 -s 10.0.0.2 ff:ff:ff:ff:ff:ff``` <br>
 Note that we are broadcasting the packets to ff:ff:ff:ff:ff:ff. You could also add the mac address of PONG here.<br><br>
 Now ping PONG again. You notice that there is no more ARP reply on PONG. <br>
-``` << add tcpdump example >> ``` <br>
+``` << To do: add succesfull tcpdump example >> ``` <br>
 
 ## Step 6: Netcat hello world
 On PONG start: <br>
@@ -104,7 +105,8 @@ On PING:
 
 **Validate received file using sha256sum**
 
-On both proxies the outcome should be identical: 
+On both proxies the outcome should be identical. It often happens that after starting udpcast for the first time PONG stops receiving data before the transfer is done. We asume this is due how Linux handles the udp queue. Repeat this step often works. 
+<< to do: add udp-sender screen when the session is not complete >> 
 
 ```sha256sum 1gb-testfile.tmp```
 
@@ -166,6 +168,7 @@ net.core.rmem_max = 32777216
 net.core.rmem_default = 32777216
 net.core.wmem_max = 32777216 
 net.core.wmem_default = 32777216
+net.core.netdev_max_backlog = 100000
 ```
 
 ***
