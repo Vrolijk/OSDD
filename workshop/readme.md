@@ -24,7 +24,7 @@ And the data layer. If we want to prevent data leakage we need to filter on the 
 
 <img src="/img/datadiode_packetloss.png" width="600"> <br>
 1: The application/script needs to support uni-directional communication. UDP is the most common protocol to use.<br>
-2: At the kernel UDP is a low priority and packets can be dropped. See footnote[^1] <br>
+2: At the kernel UDP is a low priority and packets can be dropped. See footnote[^1] [^2] <br>
 3: Depending on the speed of the data diode we didn't found any packet drops with the TP-Link switch<br>
 4: At the kernel UDP is a low priority protocol and packets can be dropped. See footnote[^1] <br>
 5: Packets are send to the application. Depending on your hardware there could be a processing or disk IO write issue. <br>
@@ -174,4 +174,5 @@ net.core.netdev_max_backlog = 100000
 ***
 Futher reading:
 [^1]: https://blog.cloudflare.com/how-to-receive-a-million-packets/ 
+
 [^2]: https://alibaba-cloud.medium.com/analysis-of-udp-packet-loss-problem-in-linux-system-a5b6bd59d97b
