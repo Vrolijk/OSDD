@@ -174,3 +174,4 @@ net.core.netdev_max_backlog = 100000
 ***
 Futher reading:
 [^1]: https://blog.cloudflare.com/how-to-receive-a-million-packets/ 
+[^2]: https://alibaba-cloud.medium.com/analysis-of-udp-packet-loss-problem-in-linux-system-a5b6bd59d97b
