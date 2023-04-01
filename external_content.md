@@ -21,3 +21,8 @@ Massively scalable multicast distribution solution
 
 The library implements a unidirectional file delivery, without the need of a return channel.
 https://github.com/ypo/flute 
+
+
+## UDPcast as a service
+
+https://github.com/azzid/pmddft
