@@ -27,52 +27,6 @@ https://github.com/ypo/flute
 
 https://github.com/azzid/pmddft
 
-# Examples with proxies
-
-## Basic setup
-
-<img src="img/img_simple_datadiode_setup.png" width=300>
-
-For training you can use a managed switch: [€25 euro data-diode demonstrator](https://github.com/Vrolijk/OSDD/blob/main/examples/25_euro_data-diode_demonstator.md)
-
-## More secure basic setup
-
-In this setup we used 2 TP-Link MC210CS single mode Gigabit mediaconverters, one single mode 50/50 splitter and a fiber filter for additional security.
-
-<img src="img/OSDD_splitter_and_filter.png" width=300>
-
-
-## 2 way uni-directional setup
-
-To be able to send and receive data via separate interfaces causing a protocol break for most network attacks. This setup also provides control over the received and send data.
-In this example we send an OpenSSL certificate request trough the data-diode to be signed by the CA. After signing the CA sends the signed certificate trough the second data-diode back to the sender.
-
-<img src="img/img_2_way_datadiode_setup.png" width=300>
-
-## One proxy to many destinations
-
-Since we are using one way communication it's also possible to use multiple data-diodes and destinations using a switch.
-
-<img src="img/img_one_to_many_datadiode_setup.png" width=300>
-
-## NTP distribution to multiple stand alone networks
-
-This example shows an example to distribute NTP to multiple networks. Note that this configuration does not support NTPv4 foley's.
-
-<img src="img/img_NTP_timeserver_to_multiple_networks.png" width=300>
-
-## Guaranteed one way span port to IDS
-
-In this example we prevent the IDS to connect back to the switch via the SPAN port.
-
-<img src="img/img_span_port_with_diode.png" width=300>
-
-## Virtual data-diode
-
-For testing data-diode applications on one machine its possible to create a Ubuntu VM with 2 interfaces connected to separate local networks.
-Using the application daemonlogger you can forward all packets from the first interface to the second.
-
-<img src="img/img_virtual_datadiode_setup.png" width=300>
 
 # Helpful links
 
