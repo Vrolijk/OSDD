@@ -147,6 +147,8 @@ Then start on PING: <br>
 
 ## Open items, help appreciated to test and improve ##
 
+
+
 ## Send multiple files or directories
 
 Sending large and multiple files trough a data-diode / unidirectional network connection using udpcast and tar.
@@ -161,7 +163,7 @@ Sender:
 
 ## Tail files using netcat
 
-On PONG:
+<b>On PONG</b>
 
 Terminal 1: create a file called /tmp/netcat.log
 
@@ -169,13 +171,13 @@ Terminal 1: create a file called /tmp/netcat.log
 
 Tail (Open the file and wait for new data) /tmp/netcat.log
 
-```tail -f /tmp/netcat.log
+```tail -f /tmp/netcat.log```
 
-Terminal 2
+Terminal 2: Start the netcat listener and add the data to /tmp/netcat.log
 
 ```nc -l -u -p 9999 >> /tmp/netcat.log```
 
-On PING
+<b>On PING</b>
 
 Read the syslog file and send it to PONG on poort 9999
 
@@ -188,7 +190,7 @@ Now open an application like firefox and close it. You should see the data on th
 Open on both machines in a seperate terminal to monitor the UDP queue on destionation port 9999. Still need to test<br>
 ``` watch -n 1 "ss -u -a -p -t '( dport = :9999 )'" ``` 
 
-**Permanent ARP on PONG**
+**Permanent ARP on PING**
 
 ```
 sudo gedit /etc/ethers
