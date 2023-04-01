@@ -1,4 +1,4 @@
-# Simple data-diode proxy examples
+# Get started with Data Diodes
 
 ## Workshop working with data diodes
 [Click here for the workshop](workshop/readme.md)
