@@ -145,7 +145,43 @@ Then start on PING: <br>
 <br>
 ```cat 1gb-testfile.tmp | pv -L 30m | nc -u 10.0.0.2 9999```
 
-## Open items ##
+## Open items, help appreciated to test and improve ##
+
+## Send multiple files or directories
+
+Sending large and multiple files trough a data-diode / unidirectional network connection using udpcast and tar.
+
+Receiver:
+
+```udp-receiver --nosync --interface enp1s0 | tar –x```
+
+Sender: 
+
+```tar -c /data-directory/ | udp-sender --interface enp1s0 --async --fec 8x8/64 --max-bitrate 600Mbps --broadcast --autostart 3 --rexmit-hello-interval 1000  --nokbd ```
+
+## Tail files using netcat
+
+On PONG:
+
+Terminal 1: create a file called /tmp/netcat.log
+
+```touch /tmp/netcat.log```
+
+Tail (Open the file and wait for new data) /tmp/netcat.log
+
+```tail -f /tmp/netcat.log
+
+Terminal 2
+
+```nc -l -u -p 9999 >> /tmp/netcat.log```
+
+On PING
+
+Read the syslog file and send it to PONG on poort 9999
+
+```tail -F /var/log/syslog | nc -u 10.0.0.2 9999```
+
+Now open an application like firefox and close it. You should see the data on the second terminal on PONG.
 
 **ss network queue**
 
