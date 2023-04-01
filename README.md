@@ -1,5 +1,8 @@
 # Simple data-diode proxy examples
 
+## Workshop working with data diodes
+[Click here for the workshop](workshop/readme.md)
+
 ## Packet loss (almost) explained
 [Packet loss explained](packetloss_explained.md)
 
