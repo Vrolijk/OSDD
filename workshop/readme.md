@@ -79,9 +79,8 @@ To tell PING that PONG 'lives' behind interface enp1s0 add the following ARP ent
 Note that we are broadcasting the packets to ff:ff:ff:ff:ff:ff. You could also add the mac address of PONG here.<br><br>
 
 Now ping PONG again from PING. You notice on PONG that there is no more ARP reply. <br>
-``` 14:59:48.026559 IP 10.0.0.1 > 004: ICMP echo request, id 2, seq 1, length 64
-14:59:48.026607 IP 004 > 10.0.0.1: ICMP echo reply, id 2, seq 1, length 64 
-``` <br>
+``` 14:59:48.026559 IP 10.0.0.1 > 004: ICMP echo request, id 2, seq 1, length 64 ``` <br>
+ ```14:59:48.026607 IP 004 > 10.0.0.1: ICMP echo reply, id 2, seq 1, length 64 ``` 
 
 ## Step 6: Netcat hello world
 On PONG start: <br>
