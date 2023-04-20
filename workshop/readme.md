@@ -212,6 +212,7 @@ ff:ff:ff:ff:ff:ff 10.0.0.2
 
 
 **Permanent UDP queue increase**
+
 To make the udp buffer change permanent you need to edit /etc/sysctl.conf file on both machines and put following lines so that after reboot the setting will remain as it is:
 ```sudo gedit /etc/sysctl.conf```
 
