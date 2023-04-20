@@ -69,15 +69,15 @@ On PING you only see the request, not the reply. This is the most common problem
 Remember: For troubleshooting data diodes using <b>tcpdump</b> on both machines is the first thing to do. Check if you see traffic on both machines, check for ARP replies on PONG.
 
 ## Step 5: Add ARP entry to PING
-To tell PONG that 10.0.0.2 is behind the interface enp1s0 we need to add an ARP entry. This is needed after every reboot. <br><br>
+To tell PING that 10.0.0.2 is behind the interface enp1s0 we need to add an ARP entry. This is needed after every reboot. <br><br>
 
-First install net-tools <br>
+First install net-tools on PING <br>
 ```sudo apt install net-tools -y``` <br>
 To tell PING that PONG 'lives' behind interface enp1s0 add the following ARP entry. <br>
 ```sudo arp -i enp1s0 -s 10.0.0.2 ff:ff:ff:ff:ff:ff``` <br>
 Note that we are broadcasting the packets to ff:ff:ff:ff:ff:ff. You could also add the mac address of PONG here.<br><br>
 Now ping PONG again. You notice that there is no more ARP reply on PONG. <br>
-``` << To do: add succesfull tcpdump example >> ``` <br>
+``` 14:41:17.776478 IP PING001 > 10.0.0.1: ICMP echo reply, id 3, seq 5, length 64 ``` <br>
 
 ## Step 6: Netcat hello world
 On PONG start: <br>
@@ -88,6 +88,10 @@ Then start on PING: <br>
 
 ## Step 7: Send large files using UDPCAST
 UDPCAST sends data using UDP and has the possibility to send the data over unidirectional connections like radio. It also adds the possibility to add FEC (Forward Error Correction) and to limit the transfer speed. This makes UDPcast an ideal tool to send data trough a data-diode.
+
+First install udpcast on PING and PONG <br>
+```sudo apt install udpcast -y``` <br>
+
 
 **Create random file of 1Gb**
 
@@ -111,6 +115,10 @@ On both proxies the outcome should be identical. It often happens that after sta
 ```sha256sum 1gb-testfile.tmp```
 
 ## Step 8: Send audio or video stream using VLC media player
+
+First install vlc on PING and PONG <br>
+```sudo apt vlc -y``` <br>
+
 
 PONG:
 
