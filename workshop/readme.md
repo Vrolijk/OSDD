@@ -7,7 +7,7 @@ By the end of the workshop, you will have a strong understanding of data diodes 
 
 <b> CAUTION: WORK IN PROGRESS!! </b>
 
-# Target 
+# First some basics to understand the concept 
 
 # Data diode basics and problems
 Position of the data diode in the security landscape 
