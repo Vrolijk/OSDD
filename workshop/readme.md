@@ -80,7 +80,7 @@ To tell PING that PONG 'lives' behind interface enp1s0 add the following ARP ent
 ```sudo arp -i enp1s0 -s 10.0.0.2 ff:ff:ff:ff:ff:ff``` <br>
 Note that we are broadcasting the packets to ff:ff:ff:ff:ff:ff. You could also add the mac address of PONG here.<br><br>
 
-Now ping PONG again from PING. You notice on PONG that there is no more ARP reply. <br>
+Now ping PONG again from PING. You notice on PONG that there is no more ARP but an ICMP reply. You have moved up one step in the OSI stack.<br>
 ``` 14:59:48.026559 IP 10.0.0.1 > 004: ICMP echo request, id 2, seq 1, length 64 ``` <br>
  ```14:59:48.026607 IP 004 > 10.0.0.1: ICMP echo reply, id 2, seq 1, length 64 ``` 
 
