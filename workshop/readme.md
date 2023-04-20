@@ -33,6 +33,7 @@ And the data layer. If we want to prevent data leakage we need to filter on the 
 ***
 # Setup 
 ## step 1: Prepare the data diode
+For this workshop we will use the TP-link TL-SG105e managed switch. Any other data diode will also work.
 If not already prepared follow the instructions on [€25,- data diode demonstrator](https://github.com/Vrolijk/OSDD/blob/main/examples/25_euro_data-diode_demonstator.md) <br>
 
 Connect PING to the IN (port 1) and PONG to OUT (port 5) connection.<br>
