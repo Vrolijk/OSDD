@@ -156,7 +156,6 @@ Then start on PING: <br>
 ## Open items, help appreciated to test and improve ##
 
 
-
 ## Send multiple files or directories
 
 Sending large and multiple files trough a data-diode / unidirectional network connection using udpcast and tar.
@@ -168,6 +167,7 @@ Receiver:
 Sender: 
 
 ```tar -c /data-directory/ | udp-sender --interface enp1s0 --async --fec 8x8/64 --max-bitrate 600Mbps --broadcast --autostart 3 --rexmit-hello-interval 1000  --nokbd ```
+
 
 ## Tail files using netcat
 
@@ -193,17 +193,23 @@ Read the syslog file and send it to PONG on poort 9999
 
 Now open an application like firefox and close it. You should see the data on the second terminal on PONG.
 
-**ss network queue**
+
+
+**Monitor packetloss using ss network queue**
 
 Open on both machines in a seperate terminal to monitor the UDP queue on destionation port 9999. Still need to test<br>
 ``` watch -n 1 "ss -u -a -p -t '( dport = :9999 )'" ``` 
+
+
 
 **Permanent ARP on PING**
 
 ```
 sudo gedit /etc/ethers
 ff:ff:ff:ff:ff:ff 10.0.0.2
-``` 
+```
+
+
 **Permanent UDP queue increase**
 To make the udp buffer change permanent you need to edit /etc/sysctl.conf file on both machines and put following lines so that after reboot the setting will remain as it is:
 ```sudo gedit /etc/sysctl.conf```
