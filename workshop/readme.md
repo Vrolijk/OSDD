@@ -63,8 +63,8 @@ sudo sysctl -w net.core.netdev_max_backlog=100000
 * In a new terminal ping 10.0.0.2 from PING<br>
 ```ping 10.0.0.2```
 * Note that on PONG tcpdump shows is an ARP reply <br>
-```1c:6f:65:4f:54:6b > ff:ff:ff:ff:ff:ff, ARP, length 42: Request who-has 10.0.0.2 (ff:ff:ff:ff:ff:ff) tell 192.168.1.3, length 28 ```
-```1c:6f:65:4d:bb:98 > 1c:6f:65:4f:54:6b, ARP, length 60: Reply 10.0.0.2 is-at 1c:6f:65:4d:bb:98, length 46 ```
+```1c:6f:65:4f:54:6b > ff:ff:ff:ff:ff:ff, <b>ARP</b>, length 42: Request who-has 10.0.0.2 (ff:ff:ff:ff:ff:ff) tell 192.168.1.3, length 28 ```
+```1c:6f:65:4d:bb:98 > 1c:6f:65:4f:54:6b, <b>ARP</b>, length 60: Reply 10.0.0.2 is-at 1c:6f:65:4d:bb:98, length 46 ```
   <br>
 On PING you only see the request, not the reply. This is the most common problem when working with data diodes because PING has no information about PONG. Pong tries to inform PING but the data diode blocks the reply. In the next step we will manualy supply this information to PING. <br>
 Remember: For troubleshooting data diodes using <b>tcpdump</b> on both machines is the first thing to do. Check if you see traffic on both machines, check for ARP replies on PONG.
@@ -77,8 +77,11 @@ First install net-tools on PING <br>
 To tell PING that PONG 'lives' behind interface enp1s0 add the following ARP entry. <br>
 ```sudo arp -i enp1s0 -s 10.0.0.2 ff:ff:ff:ff:ff:ff``` <br>
 Note that we are broadcasting the packets to ff:ff:ff:ff:ff:ff. You could also add the mac address of PONG here.<br><br>
-Now ping PONG again. You notice that there is no more ARP reply on PONG. <br>
-``` 14:41:17.776478 IP PING001 > 10.0.0.1: ICMP echo reply, id 3, seq 5, length 64 ``` <br>
+
+Now ping PONG again from PING. You notice on PONG that there is no more ARP reply. <br>
+``` 14:59:48.026559 IP 10.0.0.1 > 004: <b>ICMP</b> echo request, id 2, seq 1, length 64
+14:59:48.026607 IP 004 > 10.0.0.1: <b>ICMP</b> echo reply, id 2, seq 1, length 64 
+``` <br>
 
 ## Step 6: Netcat hello world
 On PONG start: <br>
