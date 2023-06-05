@@ -208,10 +208,19 @@ Open on both machines in a seperate terminal to monitor the UDP queue on destion
 
 
 **Permanent ARP on PING**
-
+Run the following command to create a startup script
 ```
-sudo gedit /etc/ethers
-ff:ff:ff:ff:ff:ff 10.0.0.2
+sudo gedit /etc/rc.local
+```
+Add the following:
+```
+#!/bin/bash
+arp -i enp1s0 -s 10.0.0.2 ff:ff:ff:ff:ff:ff 
+exit 0
+```
+Save and close gedit and run from the terminal
+```
+sudo chmod +x /etc/rc.local
 ```
 
 
