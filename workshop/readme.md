@@ -55,6 +55,7 @@ sudo sysctl -w net.core.wmem_max=32777216
 sudo sysctl -w net.core.wmem_default=32777216
 sudo sysctl -w net.core.netdev_max_backlog=100000
 ```
+Or try <b> Permanent UDP queue increase </b> from the bottom of this page and let me know if it works.
 
 ## Step 4: Test connection and ARP
 **tcpdump** 
@@ -157,8 +158,8 @@ Then start on PING: <br>
 ```sudo apt install pv```
 <br>
 ```cat 1gb-testfile.tmp | pv -L 30m | nc -u 10.0.0.2 9999```
-
-## Open items, help appreciated to test and improve ##
+<br><br><br><br>
+# Open items, help appreciated to test and improve ##
 
 
 ## Send multiple files or directories
@@ -200,14 +201,15 @@ Now open an application like firefox and close it. You should see the data on th
 
 
 
-**Monitor packetloss using ss network queue**
+
+## Monitor packetloss using ss network queue
 
 Open on both machines in a seperate terminal to monitor the UDP queue on destionation port 9999. Still need to test<br>
 ``` watch -n 1 "ss -u -a -p -t '( dport = :9999 )'" ``` 
 
 
 
-**Permanent ARP on PING**
+## Permanent ARP on PING
 Run the following command to create a startup script
 ```
 sudo gedit /etc/rc.local
@@ -224,7 +226,7 @@ sudo chmod +x /etc/rc.local
 ```
 
 
-**Permanent UDP queue increase**
+## Permanent UDP queue increase
 
 To make the udp buffer change permanent you need to edit /etc/sysctl.conf file on both machines and put following lines so that after reboot the setting will remain as it is:
 ```sudo gedit /etc/sysctl.conf```
