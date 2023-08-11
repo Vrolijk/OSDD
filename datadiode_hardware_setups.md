@@ -18,7 +18,8 @@ On Gitub [Klockcykel](https://github.com/klockcykel/godiode/tree/main/hardware) 
 
 <img src="https://raw.githubusercontent.com/klockcykel/godiode/main/hardware/setup.jpg" width=300> <img src="https://raw.githubusercontent.com/klockcykel/godiode/main/hardware/routes-modded.jpg" width=300>
 
-# Examples with proxies
+
+# Examples hardware setups in combination with proxies
 
 ## Basic setup
 
