@@ -14,6 +14,12 @@ This way we created a one to many datadiode setup but this could also be done wi
 
 <img src="img/TP-Link-1to4-datadiode.jpg" width=300> <img src="img/TP-Link-1to4-datadiode-simple.jpg" width=300>
 
+## More secure basic setup
+
+In this setup we used 2 TP-Link MC210CS single mode Gigabit mediaconverters, one single mode 50/50 splitter and a fiber filter for additional security.
+
+<img src="img/OSDD_splitter_and_filter.png" width=300>
+
 ## Using only one fiber between the TX and RX
 On Gitub [Klockcykel](https://github.com/klockcykel/godiode/tree/main/hardware) modified the TP-Link mediaconverter to be used with only one fibre. This is a great DIY hardware data diode solution but be aware that modifing hardware could be dangerous.
 
@@ -24,19 +30,13 @@ If you just want to experience the workings of a data diode for development and 
 <br>
 <img src="/img/tp-link_hardware.jpg" width=300> 
 
-# Examples hardware setups in combination with proxies
+# Hardware setups in combination with proxies
 
 ## Basic setup
 
 This is the most common setup wtih a sender and receiver and the data diode in between.
+
 <img src="img/img_simple_datadiode_setup.png" width=300>
-
-
-## More secure basic setup
-
-In this setup we used 2 TP-Link MC210CS single mode Gigabit mediaconverters, one single mode 50/50 splitter and a fiber filter for additional security.
-
-<img src="img/OSDD_splitter_and_filter.png" width=300>
 
 
 ## 2 way uni-directional setup
