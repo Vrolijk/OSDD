@@ -2,7 +2,7 @@
 
 ## Physical data-diode setup
 
-In this setup we used 3 TP-Link ~~MC200CM multi mode~~ MC210CS single mode Gigabit mediaconverters and a PLC Fibre Splitter 1X4 SC/UPC-interface. Please note that the splitter is single mode, not multi mode!
+In this setup we used 3 TP-Link ~~MC200CM multi mode~~ MC210CS single mode Gigabit mediaconverters and a PLC Fibre Splitter 1X4 SC/UPC-interface. Please note that the splitter is single mode, not multi mode! Exmaple on [Amazon](https://www.amazon.com/Optical-Splitter-Singlemode-Pigtail-Distribution/dp/B0B4SHKJBS/ref=sr_1_3?th=1)
 
 The TX-mediaconverter TX-port is connected with the IN-fiber from the splitter and the 4th splitted fiber to the RX-port to simulate a link.<br>
 The RX3 mediaconverter RX-port is connected with the 3th splitter fiber. <br>
