@@ -24,7 +24,7 @@ If we want to prevent data leakage from the TX proxy to the RX proxy need to add
 This makes the data diode is not only a network solution but we need some extra work to add protection on all OSI layers including the user and content (OSI layer 8 and 9?).<br>
 <img src="/img/img_simple_datadiode_setup.png" width="300"> <br>
 
-### Data and packet flow explained
+### Data and packet flow in Linux explained
 
 <img src="/img/datadiode_packetloss.png" width="600"> <br>
 1: The application/script needs to support uni-directional communication. UDP is the most common protocol to use.<br>
