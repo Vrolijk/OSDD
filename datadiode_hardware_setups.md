@@ -2,7 +2,8 @@
 
 ## Physical data-diode setup
 
-In this setup we used 3 TP-Link ~~MC200CM multi mode~~ MC210CS single mode Gigabit mediaconverters and a PLC Fibre Splitter 1X4 SC/UPC-interface. Please note that the splitter is single mode, not multi mode! Example on [Amazon](https://www.amazon.com/Optical-Splitter-Singlemode-Pigtail-Distribution/dp/B0B4SHKJBS/ref=sr_1_3?th=1)
+In this setup we used 3 TP-Link ~~MC200CM multi mode~~ MC210CS single mode Gigabit mediaconverters and a PLC Fibre Splitter 1X4 SC/UPC-interface. 1 for sending, 3 for receiving. This setup can also be done with just 2 or 4 receivers. <br>
+Please note that the splitter is single mode, not multi mode! Example of a 2-way splitter on [Amazon](https://www.amazon.com/Optical-Splitter-Singlemode-Pigtail-Distribution/dp/B0B4SHKJBS/ref=sr_1_3?th=1)
 
 The TX-mediaconverter TX-port is connected with the IN-fiber from the splitter and the 4th splitted fiber to the RX-port to simulate a link.<br>
 The RX3 mediaconverter RX-port is connected with the 3th splitter fiber. <br>
@@ -14,18 +15,21 @@ This way we created a one to many datadiode setup but this could also be done wi
 <img src="img/TP-Link-1to4-datadiode.jpg" width=300> <img src="img/TP-Link-1to4-datadiode-simple.jpg" width=300>
 
 ## Using only one fiber between the TX and RX
-On Gitub [Klockcykel](https://github.com/klockcykel/godiode/tree/main/hardware) modified the TP-Link mediaconverter to be used with only one fibre. We think this is a great DIY hardware data diode solution.
+On Gitub [Klockcykel](https://github.com/klockcykel/godiode/tree/main/hardware) modified the TP-Link mediaconverter to be used with only one fibre. This is a great DIY hardware data diode solution but be aware that modifing hardware could be dangerous.
 
 <img src="https://raw.githubusercontent.com/klockcykel/godiode/main/hardware/setup.jpg" width=300> <img src="https://raw.githubusercontent.com/klockcykel/godiode/main/hardware/routes-modded.jpg" width=300>
 
+## Functional hardware data diode
+If you just want to experience the workings of a data diode for development and experiments, like our workshop, you could use a managed switch like the TP-link TL-SG105e managed switch. This low cast switch can be configured to work like a data diode as described in the [€25 euro functional data-diode demonstrator](https://github.com/Vrolijk/OSDD/blob/main/examples/25_euro_data-diode_demonstator.md)
+<img src="/img/tp-link_hardware.jpg" width=300> 
 
 # Examples hardware setups in combination with proxies
 
 ## Basic setup
 
+This is the most common setup wtih a sender and receiver and the data diode in between.
 <img src="img/img_simple_datadiode_setup.png" width=300>
 
-For training you can use a managed switch: [€25 euro data-diode demonstrator](https://github.com/Vrolijk/OSDD/blob/main/examples/25_euro_data-diode_demonstator.md)
 
 ## More secure basic setup
 
