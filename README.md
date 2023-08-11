@@ -1,6 +1,6 @@
 # Get started with Data Diodes
 
-This Github is created to share knowledge about data diodes to a wider audience. Since the data diode concept of unidirectional traffic is easy to understand we noticed that when starting with the data diode concept in the real world there are some barriers to overcome.
+This Github is created to share knowledge about data diodes to a wider audience. Since the data diode concept of unidirectional traffic is easy to understand we noticed that when starting with the data diodes in the real world there are some barriers to overcome.
 
 First is getting your hands on data diode hardware, this we solved in the [hardware](datadiode_hardware_setups.md) section.
 
