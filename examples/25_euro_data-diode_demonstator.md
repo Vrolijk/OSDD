@@ -8,7 +8,7 @@ data-diode for development purposes. <br>
 Please note: this does not provide the same security as a real data-diode since the configuration could be modified to support bi-directional traffic!
 
 ## Step 1: Buy a €25,- TP-link TL-SG105e managed switch. 
-This can be done with most managed switches that support vlans and port mirroring. We choose the TP-link for the price and easy availability. <br>
+This can be done with most managed switches that support vlans and port mirroring. We choose the TP-link for the price and availability. <br>
 Connect the switch directly to your PC and change your IP for the connected interface manually to 192.168.0.2. <br>
 Open your browser and go to the (default) IP from the TP-link http://192.168.0.1. <br>
 Default UserID/Password is admin/admin.<br> 
@@ -16,7 +16,7 @@ Default UserID/Password is admin/admin.<br>
 <img src="/img/tp-link_hardware.jpg" width=300>
 
 ## Step 2: Modify vlan per port settings
-Go to the menu VLAN -> Port Based VLAN. <br>
+Go to the TP-link menu VLAN -> Port Based VLAN. <br>
 - Enable Port Based VLAN-Configuration
 - Add VLAN ID 2 and select port 1 and press apply
 - Add VLAN ID 5 and select port 5 and press apply
@@ -25,7 +25,7 @@ Go to the menu VLAN -> Port Based VLAN. <br>
 <img src="/img/TP-link_switch_vlan_settings.png" width=400>
 
 ## Step 3: Modify port mirror
-Go to the menu Monitoring -> Port Mirror
+Go to the TP-link menu Monitoring -> Port Mirror
 - Port Mirror: select enable, mirroring Port select Port 5
 - At Mirrored Port select Port 1 (2 -3 is also possible), Ingress select enable, Egress select Disable
 - Press Apply
@@ -34,7 +34,7 @@ Go to the menu Monitoring -> Port Mirror
 ## Step 4: Disable DHCP 
 By default DHCP is enabled to provide access to the web based management interface. We want to disable DHCP to prevent the switch asking for DHCP servers which generates traffic.<br>
 This can also be abused by hackers to identify the management IP and modify the setting back to bi-directional traffic.<br>
-Go to the menu System -> IP Setting
+Go to the TP-link menu System -> IP Setting
 - IP Address Setting, DHCP setting select Disable
 - You could change the IP but this is not needed.
 
@@ -42,7 +42,7 @@ Go to the menu System -> IP Setting
 
 ## Step 5: Disable TP-link loop prevention
 TP-Link has a feature that prevents loops in the network. This feature creates traffic and we don't want that on a data-diode. 
-Go to the menu Monitoring, Loop Prevention
+Go to the TP-link menu Monitoring, Loop Prevention
 - Select Disable
 - Press Apply
 
