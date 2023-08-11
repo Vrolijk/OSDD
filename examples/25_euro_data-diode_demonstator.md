@@ -57,9 +57,12 @@ Enjoy your data-diode demonstrator.
 <img src="/img/img_simple_datadiode_setup.png" width=300>
 
 ## Simple trouble shooting
-- Manually change the TX and RX proxy IP addresses in the same range and disable IPv6
-- Do not forget the ARP injection on the TX proxy when sending traffic directly to the RX proxy
-- Run TCPDump on both the TX and RX proxies to validate packets are sent and received.
+- Manually change the TX and RX proxy IP addresses in the same range and disable IPv6. This will reduce some standard IPv6 networktraffic when monitoring with TCPDump or Wireshark.
+- Do not forget the ARP injection on the TX proxy when sending traffic directly to the RX proxy. An indication that on the TX ARP is an issue can be found on the RX in the message "Request who-has 10.0.0.2". On TCPDump this lookes like: <br> 
+- -  ```ab:6f:65:34:54:6b > ff:ff:ff:ff:ff:ff, ARP, length 42: Request who-has 10.0.0.2 (ff:ff:ff:ff:ff:ff) tell 10.0.0.1, length 28 ``` <br>
+```ab:6f:65:98:bb:98 > 1c:6f:65:4f:54:6b, ARP, length 60: Reply 10.0.0.2 is-at ab:6f:65:98:bb:98, length 46 ```
+
+- Run TCPDump (or Wireshark) on both the TX and RX proxies to validate packets are sent and received.
 
 ## Do not use in production!!!
 Since we are limiting the functionality of bidirectional by VLAN separation and port mirroring its still possible for an attacker to access the web interface on the switch. <br>
