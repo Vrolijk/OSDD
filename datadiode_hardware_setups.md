@@ -34,7 +34,7 @@ If you just want to experience the workings of a data diode for development and 
 
 ## Basic setup
 
-This is the most common setup wtih a sender and receiver and the data diode in between.
+This is the most common setup wtih a sender and receiver and the data diode in the middle.
 
 <img src="img/img_simple_datadiode_setup.png" width=300>
 
