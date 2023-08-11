@@ -13,6 +13,11 @@ This way we created a one to many datadiode setup but this could also be done wi
 
 <img src="img/TP-Link-1to4-datadiode.jpg" width=300> <img src="img/TP-Link-1to4-datadiode-simple.jpg" width=300>
 
+## Using only one fiber between the TX and RX
+On Gitub [Klockcykel](https://github.com/klockcykel/godiode/tree/main/hardware) modified the TP-Link mediaconverter to be used with only one fibre. We think this is a great DIY hardware data diode solution.
+
+<img src="https://raw.githubusercontent.com/klockcykel/godiode/main/hardware/setup.jpg" width=300> <img src="https://raw.githubusercontent.com/klockcykel/godiode/main/hardware/routes-modded.jpg" width=300>
+
 # Examples with proxies
 
 ## Basic setup
