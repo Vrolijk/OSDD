@@ -18,7 +18,7 @@ By the end of the workshop you should be able to proceed with your own projects 
 
 ## Example data-diode hardware setups
 [Datadiode hardware setups](datadiode_hardware_setups.md) <br>
-Extra: [€25 euro functional data-diode demonstrator](https://github.com/Vrolijk/OSDD/blob/main/examples/25_euro_data-diode_demonstator.md) (Try before you buy a real data diode)
+Extra: [€25 euro functional data-diode demonstrator](https://github.com/Vrolijk/OSDD/blob/main/examples/25_euro_data-diode_demonstator.md) Try could/should this before buying a real data diode.
 
 ## Various links 
 [Various links to related content](external_content.md)
