@@ -1,7 +1,7 @@
 # Securing Your Network: A Hands-On Workshop on Data Diodes and Proxies
-Welcome to this exciting workshop on the basics of data diodes and proxies. Over the next few hours, we will be diving into the world of network security and learning how to use two laptops named PING and PONG, a data diode, and proxies to secure data communication.
+Welcome to this workshop on the basics of data diodes and proxies. Over the next few hours, we will be diving into the world of network security and learning how to use two laptops named PING and PONG, a data diode, and proxies to secure data communication.
 
-Throughout the workshop, we will be working with Ubuntu and learning how to update the operating system, change IP settings, and manipulate the ARP table. Additionally, we will test the connection from laptop PING to PONG and install software to start three different data streams through the data diode.
+Throughout the workshop, we will be working with 2 Ubuntu computers to learn how to update the operating system configuration, change IP settings, and manipulate the ARP table. Additionally, we will test the connection from laptop PING to PONG and install software to start three different data streams through the data diode.
 
 By the end of the workshop, you will have a strong understanding of data diodes and proxies, and how they can be used to enhance network security. So, let's get started and dive into the exciting world of network security!
 
@@ -10,15 +10,19 @@ By the end of the workshop, you will have a strong understanding of data diodes 
 # First some basics to understand the concept 
 
 # Data diode basics and problems
-Position of the data diode in the security landscape 
+The data diode isn't the solution for all your problems. Here is an overview of the various ways to bridge 2 networks. <br><i>Note: This overview misses the Cross Domain Solutions (CDS). </i><br>
 
 <img src="/img/datadiode_position_security_landscape.png" width="600"> <br>
-And Cross Domain Solutions.. <br>
 
-High level overview of the network connection layers 
+
+This is a high level overview of the network connection layers. The data diode will only send data from A to B. This will break a lot protocols on all OSI layers because handshakes and validations will not work. Example: The TCP protocol first checks the connection by sending a SYN packet, the receiving computer will receive the packet but the diode stops the ACK reply. Since UDP is stateless, no handshake needed, we will use this protocol in most use-cases.
 
 <img src="/img/TCP-IP-model-vs-OSI-model.png" width="300"> <br>
-And the data layer. If we want to prevent data leakage we need to filter on the data level. This makes the data diode not only a network solution but combines all OSI layers including the content (layer 8?).
+
+
+If we want to prevent data leakage from the TX proxy to the RX proxy need to add filters and policies on the sending and/or receiving proxies. The data diode just forwards all packets and doesn't care about the content of the packets.<br> 
+This makes the data diode is not only a network solution but we need some extra work to add protection on all OSI layers including the user and content (OSI layer 8 and 9?).<br>
+<img src="/img/img_simple_datadiode_setup.png" width="300"> <br>
 
 ### Data and packet flow explained
 
