@@ -1,8 +1,11 @@
 # Getting started with Data Diodes
 
-This Github is created to share knowledge about data diodes to a wider audience. The data diode concept of unidirectional traffic is easy to understand but we noticed that when starting with the data diodes in the real world there are some barriers to overcome.
+<img align="right" width="200" src="img/street_sign_one_way-source_wallpaperflare.jpg">
+This Github is created to share knowledge about data diodes to a wider audience. The data diode concept of unidirectional traffic is easy to understand but we noticed that when starting with the data diodes in the real world there are some barriers to overcome. <br><br> 
+
 
 First issue is getting your hands on data diode hardware, this we solved in the [hardware](datadiode_hardware_setups.md) section.
+
 
 Second issue is understanding how data is transfered through a data diode because unidirectional network traffic has some issues which can result in packet loss. This is described in [Packet loss explained](packetloss_explained.md). We think this is one of the main issues you need to understand and overcome before implementing data diodes in production.
 
