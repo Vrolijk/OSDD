@@ -21,7 +21,7 @@ On Gitub [Klockcykel](https://github.com/klockcykel/godiode/tree/main/hardware) 
 
 ## Functional hardware data diode
 If you just want to experience the workings of a data diode for development and experiments, like our workshop, you could use a managed switch like the TP-link TL-SG105e managed switch. This low cast switch can be configured to work like a data diode as described in the [€25 euro functional data-diode demonstrator](https://github.com/Vrolijk/OSDD/blob/main/examples/25_euro_data-diode_demonstator.md)
-<img src="/img/tp-link_hardware.jpg" width=300> 
+<br><img src="/img/tp-link_hardware.jpg" width=300> 
 
 # Examples hardware setups in combination with proxies
 
