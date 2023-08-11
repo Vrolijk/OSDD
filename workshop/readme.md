@@ -64,8 +64,8 @@ Or try <b> Permanent UDP queue increase </b> from the bottom of this page and le
 * In a new terminal ping 10.0.0.2 from PING<br>
 ```ping 10.0.0.2```
 * Note that on PONG tcpdump shows is an ARP reply <br>
-```1c:6f:65:4f:54:6b > ff:ff:ff:ff:ff:ff, ARP, length 42: Request who-has 10.0.0.2 (ff:ff:ff:ff:ff:ff) tell 192.168.1.3, length 28 ```
-```1c:6f:65:4d:bb:98 > 1c:6f:65:4f:54:6b, ARP, length 60: Reply 10.0.0.2 is-at 1c:6f:65:4d:bb:98, length 46 ```
+```ab:6f:65:bb:54:6b > ff:ff:ff:ff:ff:ff, ARP, length 42: Request who-has 10.0.0.2 (ff:ff:ff:ff:ff:ff) tell 10.0.0.1, length 28 ```
+```ab:6f:65:bb:bb:98 > ab:6f:65:bb:54:6b, ARP, length 60: Reply 10.0.0.2 is-at ab:6f:65:bb:bb:98, length 46 ```
   <br>
 
 On PING you only see the request, not the reply. This is the most common problem when working with data diodes because PING has no information about PONG. Pong tries to inform PING but the data diode blocks the reply. In the next step we will manualy supply this information to PING. <br>
