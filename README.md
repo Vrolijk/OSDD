@@ -2,11 +2,11 @@
 
 This Github is created to share knowledge about data diodes to a wider audience. Since the data diode concept of unidirectional traffic is easy to understand we noticed that when starting with the data diode concept in the real world there are some barriers to overcome.
 
-First is getting your hands on data diode hardware, this we solved in the below hardware section.
+First is getting your hands on data diode hardware, this we solved in the [hardware](datadiode_hardware_setups.md) section.
 
-Second is how to transfer data through a data diode because unidirectional network traffic has some unforeseen issues like packet loss. This is described in packet loss (almost) explained. We think this is one of the main issues you need to understand and overcome.
+Second is understanding how data is transfered through a data diode because unidirectional network traffic has some issues which can result in packet loss. This is described in [Packet loss explained](packetloss_explained.md). We think this is one of the main issues you need to understand and overcome before implementing data diodes in production.
 
-Last is getting some first successes when using the data diode technology. For this we created the workshop based on open source tools to support you to send a message, an audio/video stream and a large (>1Gb+) batch file using the data diode.
+Last part is getting some first successes when experimenting the data diode technology. It's a good thing to have a working setup before developing more complex implementations. For this we created the [workshop](workshop/readme.md) based on open source tools to explain you step by step how to send a message, a large (>1Gb+) batch file and an audio/video stream using the data diode.
 
 By the end of the workshop you should be able to proceed with your own projects or research.
 
