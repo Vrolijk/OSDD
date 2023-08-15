@@ -100,7 +100,7 @@ On laptop PONG open a terminal and start: <br>
 Then start on PING: <br>
 ```echo "Hello world" | nc -u -w 1 10.0.0.2 9999```
 
-This is a very simple example to test the data diode. Please remember to start the laptop PONG, the receiver, first. By sending just a small message in most cases there is no problem 
+This is a very simple example to test the data diode. Please remember to start the laptop PONG, the receiver, first. By sending just a small message in most cases there is no problem with [packetloss](https://github.com/Vrolijk/OSDD/blob/main/packetloss_explained.md).
 
 ## Use case 2: Send large files using UDPCAST
 UDPCAST sends data using UDP and has the possibility to send the data over unidirectional connections like radio. It also adds the possibility to add FEC (Forward Error Correction) and to limit the transfer speed. This makes UDPcast an ideal tool to send data through a data-diode.
@@ -125,10 +125,12 @@ On PING:
 
 **Validate received file using sha256sum**
 
-On both proxies the outcome should be identical. It often happens that after starting udpcast for the first time PONG stops receiving data before the transfer is done. We assume this is due to how Linux handles the udp queue. When you restart Udpcast a second time it will often works. 
-<< to do: add udp-sender screen when the session is not complete >> 
 
-```sha256sum 1gb-testfile.tmp```
+Open a terminal on PING and PONG and start the following command. On both proxies the sha256 hash should be identical. 
+
+```sha256sum 1gb-testfile.tmp``` <br> <br> 
+It often happens that after starting udpcast for the first time PONG stops receiving data before the transfer is done. We assume this is due to how Linux handles the udp queue that results in [packetloss](https://github.com/Vrolijk/OSDD/blob/main/packetloss_explained.md). When you restart the Udpcast commands on both laptops it will often work. <br> <br>
+<< to do: add udp-sender screen when the session is not complete >> <br> 
 
 ## Use case 3: Send audio or video stream using VLC media player
 
@@ -148,11 +150,12 @@ Open VLC media player and go to
 
 ``` Media -> stream -> https://stream.qmusic.nl/fouteuur/mp3 -> Stream button-> next -> new destination -> RTP / MPEG transport stream -> add -> address 10.0.0.2 base Port 5004 stream name OSDD -> next -> profile Video - H264 + mp3 (mp4) -> next -> stream ```
 
-It takes a few seconds to start the video on the receiver because of caching.
-For a videostream use: https://live-hls-web-aje.getaj.net/AJE/05.m3u8
-For more Dutch radio genres: https://mediamagazine.nl/live-links-nederland/livestreams-nederland-landelijk/ 
-  
-<br><Br>
+It takes a few seconds to start the video on the receiver because of caching. <br>
+For a videostream use: ```https://live-hls-web-aje.getaj.net/AJE/05.m3u8``` <br>
+For more Dutch radio genres: ```https://mediamagazine.nl/live-links-nederland/livestreams-nederland-landelijk/``` 
+<br><br>
+# End of the workshop! :)
+
 # Open items, help appreciated to test and improve ##
 
 ## Send multiple files or directories
