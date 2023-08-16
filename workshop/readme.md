@@ -204,26 +204,26 @@ Now open an application like firefox and close it. You should see the data on th
 ## Monitor packetloss using ss network queue
 
 Open on both machines in a separate terminal to monitor the UDP queue on destination port 9999. Still need to test<br>
-``` watch -n 1 "ss -u -a -p -t '( dport = :9999 )'" ``` 
+``` watch -n 1 "ss -u -a -p" ``` 
 
 
 
 ## Force network queue to drop packets: Netcat pipe large file
 On PONG start: <br>
-```nc -l -u -p 9999 > 1gb-testfile.tmp```
+```nc -l -u -w 1 -p 9999 > 1gb-testfile.tmp```
 
 Then start on PING: <br>
-```cat 1gb-testfile.tmp | nc -u 10.0.0.2 9999```
+```cat 1gb-testfile.tmp | nc -w 1 -u 10.0.0.2 9999```
 
 
 Probably this went wrong. Try to reduce the speed with PipeViewer PV. <br>
 On PONG start: <br>
-```nc -l -u -p 9999 > 1gb-testfile.tmp```
+```nc -l -u -w 1 -p 9999 > 1gb-testfile.tmp```
 
 Then start on PING: <br>
 ```sudo apt install pv```
 <br>
-```cat 1gb-testfile.tmp | pv -L 30m | nc -u 10.0.0.2 9999```
+```cat 1gb-testfile.tmp | pv -L 30m | nc -w 1 -u 10.0.0.2 9999```
 <br><br><br><br>
 
 # Data diode basics and problems
@@ -242,8 +242,7 @@ TThis makes the data diode not only a network solution but we need some extra wo
 <img src="/img/img_simple_datadiode_setup.png" width="300"> <br>
 
 
-***
-Futher reading:
-[^1]: https://blog.cloudflare.com/how-to-receive-a-million-packets/ 
+
+Futher reading about udp and network tuning:  https://blog.cloudflare.com/how-to-receive-a-million-packets/ 
 
 [^2]: https://alibaba-cloud.medium.com/analysis-of-udp-packet-loss-problem-in-linux-system-a5b6bd59d97b
