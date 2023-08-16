@@ -244,7 +244,7 @@ This is a high level overview of the network connection layers. The data diode w
 
 
 If we want to prevent data leakage from the TX proxy to the RX proxy need to add filters and policies on the sending and/or receiving proxies. The data diode just forwards all packets and doesn't care about the content of the packets.<br> 
-TThis makes the data diode not only a network solution but we need some extra work to add protection on all OSI layers including the user and content (OSI layer 8 and 9?) by including filtering and processes.<br>
+This makes the data diode not only a network solution but we need some extra work to add protection on all OSI layers including the user and content (OSI layer 8 and 9?) by including filtering and processes.<br>
 <img src="/img/img_simple_datadiode_setup.png" width="300"> <br>
 
 
