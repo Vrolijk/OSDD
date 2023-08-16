@@ -59,11 +59,16 @@ Reboot to activate the setting or add the manual settings from the beginning of 
 * Note that on PONG tcpdump shows is an ARP reply <br>
 ```ab:6f:65:bb:54:6b > ff:ff:ff:ff:ff:ff, ARP, length 42: Request who-has 10.0.0.2 (ff:ff:ff:ff:ff:ff) tell 10.0.0.1, length 28 ```
 ```ab:6f:65:bb:bb:98 > ab:6f:65:bb:54:6b, ARP, length 60: Reply 10.0.0.2 is-at ab:6f:65:bb:bb:98, length 46 ```
-  <br>
+  <br><br>
+Press ctrl-c to stop ping or tcpdump. <br>
 
 On PING you only see the <b>Request who-has</b>, not the reply. This is the most common problem when working with data diodes because PING has no information about PONG. PONG tries to inform PING but the data diode blocks the reply. In the next step we will manually supply this information to PING. <br>
 
 Remember: For troubleshooting data diodes using <b>tcpdump</b> on both machines is the first thing to do. Check if you see traffic on both machines, check for ARP replies on PONG. Next to packet loss this is a common issue that is often overlooked. Now let's fix this in step 5.
+
+
+This are the traffic patterns for the following steps and why ping behaves different in Tcpdump depending on the ARP inject or ICMP reply. In both cases you will not get a reply on PING because the data diode blocks the reply's.
+<img src="/img/traffic_example.png" width="600"> <br>
 
 ## Step 5: Add ARP entry to PING laptop
 To tell PING that 10.0.0.2 is behind the interface enp1s0 we need to add an ARP entry. This is needed after every reboot or you can make the entry permanent. <br>
@@ -79,7 +84,8 @@ Now ping PONG again from PING. You notice on laptop PONG that there is no more A
  ```14:59:48.026607 IP 004 > 10.0.0.1: ICMP echo reply, id 2, seq 1, length 64 ``` 
 
 ### Advice: make the ARP entry permanent on PING
-Run the following commands to create a startup script. This way you will not forget to add the ARP entry after a reboot. You need to install net-tools to add the application Arp.
+Run the following commands to create a startup script. This way you will not forget to add the ARP entry after a reboot. <br>
+You need to install net-tools to add the application Arp.
 ```
 sudo gedit /etc/network/if-up.d/add-my-static-arp
 ```
