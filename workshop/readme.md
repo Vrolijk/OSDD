@@ -53,6 +53,7 @@ net.core.netdev_max_backlog = 100000
 Reboot to activate the setting or add the manual settings from the beginning of step 3. <br> 
 
 ## Step 4: Test connection and fail on ARP resolution (troubleshoot ARP issues)
+This is next to [packetloss](https://github.com/Vrolijk/OSDD/blob/main/packetloss_explained.md) one of the issues when working with data diodes. By doing this step you will learn how the system reacts and how to fix ARP requests that result in not sending data trough the data diode. In simple words ARP can be explained as the mechanism that PING needs to send information to PONG on the right network interface. To experience what happens without this follow this steps, otherwise continue with step 5. <br><br>
 **tcpdump** 
 * Open <b>tcpdump</b> on both laptops on the interface connected, often enp1s0, to the data diode <br>
 ```sudo tcpdump -i enp1s0```
