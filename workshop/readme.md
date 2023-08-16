@@ -70,7 +70,7 @@ Remember: For troubleshooting data diodes using <b>tcpdump</b> on both machines 
 
 
 This are the traffic patterns for the following steps and why ping behaves different in Tcpdump depending on the ARP inject or ICMP reply. In both cases you will not get a reply on PING because the data diode blocks the reply.<br>
-<img src="/img/traffic_example.png" width="400"> <br>
+<img src="/img/traffic_example-1.png" width="400"> <br>
 
 ## Step 5: Add ARP entry to PING laptop
 To tell PING that 10.0.0.2 is behind the interface enp1s0 we need to add an ARP entry. This is needed after every reboot or you can make the entry permanent. <br>
@@ -84,6 +84,8 @@ Note that we are broadcasting the packets to ff:ff:ff:ff:ff:ff. You could also a
 Now ping PONG again from PING. You notice on laptop PONG that there is no more ARP but shows ICMP reply.PING will not receive the echo reply.<br>
 ``` 14:59:48.026559 IP 10.0.0.1 > 004: ICMP echo request, id 2, seq 1, length 64 ``` <br>
  ```14:59:48.026607 IP 004 > 10.0.0.1: ICMP echo reply, id 2, seq 1, length 64 ``` 
+ <br>
+<img src="/img/traffic_example-2.png" width="400"> <br>
 
 ### Advice: make the ARP entry permanent on PING
 Run the following commands to create a startup script. This way you will not forget to add the ARP entry after a reboot. <br>
