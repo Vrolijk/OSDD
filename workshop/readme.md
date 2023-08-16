@@ -20,7 +20,7 @@ Laptop PONG: Change the IP to 10.0.0.2 and subnet 255.255.255.0 <br>
 <img src="/img/datadiode_workshop_ip.png" width="600"> <br>
 If needed enlarge the image and follow step 1 to 5 (Numbers in red)
 
-## Step 3 Possibilities for tweaking
+## Step 3: Enlarge the network buffers via sysctl
 
 Since UDP is a low priority protocol the Linux kernel can, and will, drop packet on PING and PONG. <br>
 !! This is one of the main reasons of packetloss when working with data diodes, not the data diode itself.<br>
@@ -34,8 +34,9 @@ sudo sysctl -w net.core.wmem_max=32777216
 sudo sysctl -w net.core.wmem_default=32777216
 sudo sysctl -w net.core.netdev_max_backlog=100000
 ```
-### Or permanently increase the UDP queue sizes.
-To make the udp buffer change permanent you need to edit /etc/sysctl.conf file on both machines and put following lines so that after reboot the setting will remain as it is:  <br>
+### Advice: permanently increase the UDP queue sizes.
+To make the udp buffer change permanent you need to edit /etc/sysctl.conf file on both machines and put following lines so that after reboot the setting will remain as it is:  <br><br>
+
 Open a terminal and run the command: <br>
 ```sudo gedit /etc/sysctl.conf```
 
@@ -47,7 +48,9 @@ net.core.wmem_max = 32777216
 net.core.wmem_default = 32777216
 net.core.netdev_max_backlog = 100000
 ```
-## Step 4: Test connection and fail on ARP resolution
+Reboot to activate the setting or add the manual settings from the beginning of step 3. <br> 
+
+## Step 4: Test connection and fail on ARP resolution (troubleshoot ARP issues)
 **tcpdump** 
 * Open <b>tcpdump</b> on both laptops on the interface connected, often enp1s0, to the data diode <br>
 ```sudo tcpdump -i enp1s0```
@@ -75,10 +78,10 @@ Now ping PONG again from PING. You notice on laptop PONG that there is no more A
 ``` 14:59:48.026559 IP 10.0.0.1 > 004: ICMP echo request, id 2, seq 1, length 64 ``` <br>
  ```14:59:48.026607 IP 004 > 10.0.0.1: ICMP echo reply, id 2, seq 1, length 64 ``` 
 
-### Optional: make the ARP entry permanent on PING
-Run the following command to create a startup script. This way you will not forget to add the ARP entry after a reboot. You need to install net-tools to add the application Arp.
+### Advice: make the ARP entry permanent on PING
+Run the following commands to create a startup script. This way you will not forget to add the ARP entry after a reboot. You need to install net-tools to add the application Arp.
 ```
-sudo gedit /etc/rc.local
+sudo gedit /etc/network/if-up.d/add-my-static-arp
 ```
 Add the following:
 ```
@@ -88,9 +91,9 @@ exit 0
 ```
 Save and close gedit and run from the terminal
 ```
-sudo chmod +x /etc/rc.local
+sudo chmod +x /etc/network/if-up.d/add-my-static-arp
 ```
-Reboot
+Reboot the computers
 
 # Preparations are done, now let's start with the 3 examples.
 ## Use case 1: Simple message using Netcat "Hello world"
