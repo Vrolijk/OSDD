@@ -99,7 +99,7 @@ Save and close gedit and run from the terminal
 ```
 sudo chmod +x /etc/network/if-up.d/add-my-static-arp
 ```
-Reboot the computers
+Reboot PING and PONG completly. 
 
 # Preparations are done, now let's start with the 3 examples.
 ## Use case 1: Simple message using Netcat "Hello world"
