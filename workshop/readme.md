@@ -67,8 +67,8 @@ On PING you only see the <b>Request who-has</b>, not the reply. This is the most
 Remember: For troubleshooting data diodes using <b>tcpdump</b> on both machines is the first thing to do. Check if you see traffic on both machines, check for ARP replies on PONG. Next to packet loss this is a common issue that is often overlooked. Now let's fix this in step 5.
 
 
-This are the traffic patterns for the following steps and why ping behaves different in Tcpdump depending on the ARP inject or ICMP reply. In both cases you will not get a reply on PING because the data diode blocks the reply's.
-<img src="/img/traffic_example.png" width="600"> <br>
+This are the traffic patterns for the following steps and why ping behaves different in Tcpdump depending on the ARP inject or ICMP reply. In both cases you will not get a reply on PING because the data diode blocks the reply.<br>
+<img src="/img/traffic_example.png" width="400"> <br>
 
 ## Step 5: Add ARP entry to PING laptop
 To tell PING that 10.0.0.2 is behind the interface enp1s0 we need to add an ARP entry. This is needed after every reboot or you can make the entry permanent. <br>
