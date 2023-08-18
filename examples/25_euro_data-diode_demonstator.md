@@ -67,4 +67,9 @@ Enjoy your data-diode demonstrator.
 ## Do not use in production!!!
 Since we are limiting the functionality of bidirectional by VLAN separation and port mirroring its still possible for an attacker to access the web interface on the switch. <br>
 A real data-diode doesn't have any function for bi-directional traffic.
-Example how to hack the TP-Link: https://www.pentestpartners.com/security-blog/how-i-can-gain-control-of-your-tp-link-home-switch/
+Example how to hack the TP-Link: https://www.pentestpartners.com/security-blog/how-i-can-gain-control-of-your-tp-link-home-switch 
+
+Active community to find exploits in SOHO hardware: http://conference.hitb.org/files/hitbsecconf2023ams/materials/D1T1%20-%20Your%20Not%20So%20Home%20Office%20-%20Soho%20Hacking%20at%20Pwn2Own%20-%20McCaulay%20Hudson%20&%20Alex%20Plaskett.pdf 
+
+
+
