@@ -1,5 +1,6 @@
 # Workshop level 2
 
+<img align="right" width="200" src="../img/bb_round_2.jpg">
 After finishing the easy part of the workshop you should understand the basics. From here you could start some more use cases. If you can solve or help with one or more of the more advanced use cases. Please add your results under [discussions](https://github.com/Vrolijk/OSDD/discussions/7).
 
 ## Use Case XDP to prevent Packetloss
