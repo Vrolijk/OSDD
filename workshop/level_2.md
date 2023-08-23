@@ -1,7 +1,7 @@
 # Workshop level 2
 
 <img align="right" width="200" src="../img/bb_round_2.jpg">
-After finishing the easy part of the workshop you should understand the basics. From here you could start some more use cases. If you can solve or help with one or more of the more advanced use cases. Please add your results under [discussions](https://github.com/Vrolijk/OSDD/discussions/7).
+After finishing the easy part of the workshop you should understand the basics. From here you could start some more use cases. If you can solve or help with one or more of the more advanced use cases please share your results under [discussions](https://github.com/Vrolijk/OSDD/discussions/7).
 
 ## Use Case XDP to prevent Packetloss
 We still have a problem with packetloss because of the way the Linux networkstack handles UDP packets. In this use case we challenge you to configure the sender and receiver (Ping and Pong) to bypass the network stack by using UDP.
