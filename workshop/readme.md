@@ -168,4 +168,4 @@ It takes a few seconds to start the video on the receiver because of caching. <b
 For a videostream use: ```https://live-hls-web-aje.getaj.net/AJE/05.m3u8``` <br>
 For more Dutch radio genres: ```https://mediamagazine.nl/live-links-nederland/livestreams-nederland-landelijk/``` 
 <br><br>
-# End of the workshop! :)
+# End of the workshop! :) Are you ready for [Level 2](level_2.md)
