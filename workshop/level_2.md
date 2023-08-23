@@ -13,7 +13,7 @@ https://www.tigera.io/learn/guides/ebpf/ebpf-xdp/ <br>
 On https://github.com/ypo/flute there is an example for filetransfer using the FLUTE protocol. Are you able to implement this in your setup? 
 
 ## Use Case Streaming media server (Mistserver)
-In the workshop you played a little with a single mediastream from VLC to VLC. Can you expand this to a more advanced setup using https://mistserver.org/ <br>  
+In the workshop you played a little with a single mediastream from VLC to VLC. Can you expand this to a more advanced setup using https://mistserver.org/   
 
 ## Use Case File transfer on Windows using Powershell
 Sans published a wonderfull document "Tactical Data Diodes in Industrial Automation and Control Systems". On page 23 there is a PowerShell TFTP example for batch file transfer. Are you able to reproduce and/or improve this? 
