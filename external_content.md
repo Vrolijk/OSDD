@@ -57,7 +57,14 @@ Please note: Soldering requires a microscope due to the size of the pcb
 
 https://github.com/klockcykel/godiode 
 
-### Mitcdh 
+## Design for a TCP/IP transparent FPGA-based network diode
+
+Design for a TCP/IP transparent FPGA-based network diode by J. Kerkhof
+to obtain the degree of Master of Science in Copmuter Engineering at the Delft University of Technology, to be defended publicly on January 27, 2020 at 10:00 AM.
+
+https://repository.tudelft.nl/islandora/object/uuid:1cfcbc79-910a-41e5-8a2f-3a43b3c6abb3/datastream/OBJ/download
+
+## Mitcdh 
 
 Example how to configure a Cisco switch as a data-diode
 
