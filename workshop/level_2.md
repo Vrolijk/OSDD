@@ -27,6 +27,9 @@ On https://github.com/wavestone-cdt/dyode/tree/master/DYODE%20v1%20(full) there 
 - Modbus data transfer
 - Screen sharing
 
+## Use Case file transfer using Go
+On https://github.com/klockcykel/godiode is a nice example to transfer files using Go. This project also supports Jumbo Frames. 
+
 ## Read the following documents
 
 ### SANS: Tactical Data Diodes in Industrial Automation and Control Systems
@@ -38,8 +41,6 @@ https://scadahacker.com/library/Documents/White_Papers/Owl%20-%20All%20Data%20Di
 ### FEND: Low-Cost, Plug-and-Play Data Diodes for Protection and Monitoring of DoD Facility Equipment 
 https://apps.dtic.mil/sti/pdfs/AD1187369.pdf
 
-## Use Case file transfer using Go
-On https://github.com/klockcykel/godiode is a nice example to transfer files using Go. This project also supports Jumbo Frames. 
 
 
 For more external sources see: https://github.com/Vrolijk/OSDD/blob/main/external_content.md
