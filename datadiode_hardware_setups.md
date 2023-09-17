@@ -8,7 +8,7 @@ can be orderd at most shops.
 
 ## Secure basic setup using mediaconverters and Y-cable.
 
-In this setup we used 2 TP-Link MC210CS single mode Gigabit mediaconverters, one single mode 50/50 splitter and an optional fiber filter for additional security.
+In this setup we used 2 TP-Link MC210CS single mode Gigabit mediaconverters, one single mode 50/50 splitter and an optional fiber filter for additional security. The main idea behind this setup is that we connect the TX to the RX on the sender and use the Y-cable to listen on the sender. Since there is no TX connected on the receiving mediaconverter data cannot flow back.
 
 <img src="img/OSDD_splitter_and_filter.png" width=300>
 
