@@ -16,6 +16,8 @@ Last issue is getting your first successes when experimenting with data diodes i
 
 By the end of the workshop you should be able to understand how to use data diodes in your own projects or research.
 
+# Summary 
+
 ## Workshop working with data diodes
 [Click here for the workshop](workshop/readme.md)
 
