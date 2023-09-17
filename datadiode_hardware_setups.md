@@ -1,8 +1,8 @@
 # Example data-diode hardware setups
 
 ## Functional data diode for DEV & Training
-This simple and cheap setup is the easiest way to give data diode trainings/workshops and develop dataflows. Since this is not a real data diode it should not be used in production. This [€25 euro functional data-diode demonstrator](https://github.com/Vrolijk/OSDD/blob/main/examples/25_euro_data-diode_demonstator.md) 
-can be orderd at most shops.
+This simple and cheap setup is the easiest way to give data diode training/workshops and develop dataflows. Since this is not a real data diode it should not be used in production. This [€25 euro functional data-diode demonstrator](https://github.com/Vrolijk/OSDD/blob/main/examples/25_euro_data-diode_demonstator.md) 
+can be ordered at most shops.
 <img src="img/tp-link_hardware.jpg" width=300> <img src="tp-link_hardware.jpg" width=300>
 
 
@@ -13,7 +13,7 @@ In this setup we used 2 TP-Link MC210CS single mode Gigabit mediaconverters, one
 <img src="img/OSDD_splitter_and_filter.png" width=300>
 
 ## Using only one fiber between the TX and RX
-On Gitub [Klockcykel](https://github.com/klockcykel/godiode/tree/main/hardware) modified the TP-Link mediaconverter to be used with only one fibre. This is a great DIY hardware data diode solution but be aware that modifing hardware could be dangerous.
+On Gitub [Klockcykel](https://github.com/klockcykel/godiode/tree/main/hardware) modified the TP-Link mediaconverter to be used with only one fibre. This is a great DIY hardware data diode solution but be aware that modifying hardware could be dangerous.
 
 <img src="https://raw.githubusercontent.com/klockcykel/godiode/main/hardware/setup.jpg" width=300> <img src="https://raw.githubusercontent.com/klockcykel/godiode/main/hardware/routes-modded.jpg" width=300>
 
@@ -27,7 +27,7 @@ The RX3 mediaconverter RX-port is connected with the 3th splitter fiber. <br>
 The RX2 mediaconverter RX-port is connected with the 2th splitter fiber. <br>
 The 1th fiber is not connected but could also be connected to a  mediaconverter but i only had three converters available.
 
-This way we created a one to many datadiode setup but this could also be done with a 1x2 PLC splitter with only 2 mediaconverters. <br> See 2nd simplyfied image.
+This way we created a one to many data diode setup but this could also be done with a 1x2 PLC splitter with only 2 mediaconverters. <br> See 2nd simplified image.
 
 <img src="img/TP-Link-1to4-datadiode.jpg" width=300> <img src="img/TP-Link-1to4-datadiode-simple.jpg" width=300>
 
@@ -35,21 +35,21 @@ This way we created a one to many datadiode setup but this could also be done wi
 
 ## Basic setup
 
-This is the most common setup wtih a sender and receiver and the data diode in the middle.
+This is the most common setup with a sender and receiver and the data diode in the middle.
 
 <img src="img/img_simple_datadiode_setup.png" width=300>
 
 
 ## 2 way uni-directional setup
 
-To be able to send and receive data via separate interfaces causing a protocol break for most network attacks. This setup also provides control over the received and send data.
-In this example we send an OpenSSL certificate request trough the data-diode to be signed by the CA. After signing the CA sends the signed certificate trough the second data-diode back to the sender.
+To be able to send and receive data via separate interfaces causing a protocol break for most network attacks. This setup also provides control over the received and sent data. You could argue that this is not the idea when using data diodes but 2 unidirectional sessions with separated and software filterd paths are more secure than a bidirectional firewall. 
+In this example we send an OpenSSL certificate request through the data diode to be signed by the CA. After signing the CA sends the signed certificate trough the second data-diode back to the sender.
 
 <img src="img/img_2_way_datadiode_setup.png" width=300>
 
 ## One proxy to many destinations
 
-Since we are using one way communication it's also possible to use multiple data-diodes and destinations using a switch.
+Since we are using one way communication it's also possible to use multiple data diodes and destinations using a switch.
 
 <img src="img/img_one_to_many_datadiode_setup.png" width=300>
 
@@ -67,7 +67,7 @@ In this example we prevent the IDS to connect back to the switch via the SPAN po
 
 ## Virtual data-diode
 
-For testing data-diode applications on one machine its possible to create a Ubuntu VM with 2 interfaces connected to separate local networks.
+For testing data diode applications on one machine its possible to create a Ubuntu VM with 2 interfaces connected to separate local networks.
 Using the application daemonlogger you can forward all packets from the first interface to the second.
 
 <img src="img/img_virtual_datadiode_setup.png" width=300>
