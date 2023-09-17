@@ -2,7 +2,7 @@
 
 ## Functional data diode for DEV & Training
 This simple and cheap setup is the easiest way to give data diode training/workshops and develop dataflows. Since this is not a real data diode it should not be used in production. This [€25 euro functional data-diode demonstrator](https://github.com/Vrolijk/OSDD/blob/main/examples/25_euro_data-diode_demonstator.md) 
-can be ordered at most shops.
+can be ordered at most electronic shops.
 <img src="img/tp-link_hardware.jpg" width=300> <img src="tp-link_hardware.jpg" width=300>
 
 
