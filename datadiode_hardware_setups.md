@@ -25,7 +25,7 @@ In this setup we used 3 TP-Link ~~MC200CM multi mode~~ MC210CS single mode Gigab
 The TX-mediaconverter TX-port is connected with the IN-fiber from the splitter and the 4th splitted fiber to the RX-port to simulate a link.<br>
 The RX3 mediaconverter RX-port is connected with the 3th splitter fiber. <br>
 The RX2 mediaconverter RX-port is connected with the 2th splitter fiber. <br>
-The 1th fiber is not connected but could also be connected to a  mediaconverter but i only had three converters available.
+The 1th fiber is not connected but could also be connected to a  mediaconverter but there were only three mediaconverters available.
 
 This way we created a one to many data diode setup but this could also be done with a 1x2 PLC splitter with only 2 mediaconverters. <br> See 2nd simplified image.
 
@@ -42,8 +42,8 @@ This is the most common setup with a sender and receiver and the data diode in t
 
 ## 2 way uni-directional setup
 
-To be able to send and receive data via separate interfaces causing a protocol break for most network attacks. This setup also provides control over the received and sent data. You could argue that this is not the idea when using data diodes but 2 unidirectional sessions with separated and software filterd paths are more secure than a bidirectional firewall. 
-In this example we send an OpenSSL certificate request through the data diode to be signed by the CA. After signing the CA sends the signed certificate trough the second data-diode back to the sender.
+To be able to send and receive data via separate interfaces causing a protocol break for most network attacks. This setup also provides control over the received and sent data. You could argue that this is not the idea when using data diodes but 2 unidirectional sessions with separated and software filterd paths is more secure than a bidirectional firewall. 
+In this example we send an OpenSSL certificate request through the data diode to be signed by the CA. After signing the CA sends the signed certificate through the second data-diode back to the sender.
 
 <img src="img/img_2_way_datadiode_setup.png" width=300>
 
@@ -61,13 +61,13 @@ This example shows an example to distribute NTP to multiple networks. Note that 
 
 ## Guaranteed one way span port to IDS
 
-In this example we prevent the IDS to connect back to the switch via the SPAN port.
+In this example we prevent the IDS from connecting to the switch via the SPAN port.
 
 <img src="img/img_span_port_with_diode.png" width=300>
 
 ## Virtual data-diode
 
-For testing data diode applications on one machine its possible to create a Ubuntu VM with 2 interfaces connected to separate local networks.
+For testing data diode applications on one machine it's possible to create a Ubuntu VM with 2 interfaces connected to separate local networks.
 Using the application daemonlogger you can forward all packets from the first interface to the second.
 
 <img src="img/img_virtual_datadiode_setup.png" width=300>
