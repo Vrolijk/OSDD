@@ -6,9 +6,9 @@ can be orderd at most shops.
 <img src="img/tp-link_hardware.jpg" width=300> <img src="tp-link_hardware.jpg" width=300>
 
 
-## More secure basic setup
+## Secure basic setup using mediaconverters and Y-cable.
 
-In this setup we used 2 TP-Link MC210CS single mode Gigabit mediaconverters, one single mode 50/50 splitter and a fiber filter for additional security.
+In this setup we used 2 TP-Link MC210CS single mode Gigabit mediaconverters, one single mode 50/50 splitter and an optional fiber filter for additional security.
 
 <img src="img/OSDD_splitter_and_filter.png" width=300>
 
