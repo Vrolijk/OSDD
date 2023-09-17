@@ -1,5 +1,5 @@
 # Securing Your Network: A Hands-On Workshop on Data Diodes and Proxies
-Welcome to this workshop on the basics of data diodes and proxies. Over the next few hours, we will be diving into the world of network security and learning how to use two laptops named PING and PONG and a data diode to setup a unidirectional data communication path.
+Welcome to this workshop on the basics of data diodes and proxies. Over the next few hours, we will be diving into the world of network security and learning how to use two laptops named PING and PONG and a data diode to set up a unidirectional data communication path.
 
 Throughout the workshop, we will be working with 2 Ubuntu computers to learn how to update the operating system configuration, change IP settings, and manipulate the ARP table. Additionally, we will test the connection from laptop PING to PONG and install software to start three different data streams through the data diode.
 
@@ -15,7 +15,7 @@ Connect laptop PING to the IN (port 1) and laptop PONG to OUT (port 5) connectio
 <img src="/img/datadiode_workshop_setup.png" width="600"> <br>
 
 ## Step 2: Change the IP settings
-Since there is no DHCP available on the data diode we need to configure the network settings manualy.
+Since there is no DHCP available on the data diode we need to configure the network settings manually.
 
 Laptop PING: Change the IP to 10.0.0.1 and subnet 255.255.255.0 <br>
 Laptop PONG: Change the IP to 10.0.0.2 and subnet 255.255.255.0 <br>
@@ -24,7 +24,7 @@ If needed enlarge the image and follow step 1 to 5 (Numbers in red)
 
 ## Step 3: Enlarge the network buffers via sysctl
 
-Since UDP is a low priority protocol the Linux kernel can, and will, drop packet on PING and PONG. <br>
+Since UDP is a low priority protocol the Linux kernel can, and will, drop packets on PING and PONG. <br>
 !! This is one of the main reasons of packetloss when working with data diodes, not the data diode itself.<br>
 See [Packetloss explained](https://github.com/Vrolijk/OSDD/blob/main/packetloss_explained.md) for a more in depth explanation. 
 
@@ -53,7 +53,7 @@ net.core.netdev_max_backlog = 100000
 Reboot to activate the setting or add the manual settings from the beginning of step 3. <br> 
 
 ## Step 4: Test connection and fail on ARP resolution (troubleshoot ARP issues)
-This is next to [packetloss](https://github.com/Vrolijk/OSDD/blob/main/packetloss_explained.md) one of the issues when working with data diodes. By doing this step you will learn how the system reacts and how to fix ARP requests that result in not sending data trough the data diode. In simple words ARP can be explained as the mechanism that PING needs to send information to PONG on the right network interface. To experience what happens without this follow this steps, otherwise continue with step 5. <br><br>
+This is next to [packetloss](https://github.com/Vrolijk/OSDD/blob/main/packetloss_explained.md) one of the issues when working with data diodes. By doing this step you will learn how the system reacts and how to fix ARP requests that result in not sending data through the data diode. In simple words ARP can be explained as the mechanism that PING needs to send information to PONG on the right network interface. To experience what happens without these follow this steps, otherwise continue with step 5. <br><br>
 **tcpdump** 
 * Open <b>tcpdump</b> on both laptops on the interface connected, often enp1s0, to the data diode <br>
 ```sudo tcpdump -i enp1s0```
@@ -70,7 +70,7 @@ On PING you only see the <b>Request who-has</b>, not the reply. This is the most
 Remember: For troubleshooting data diodes using <b>tcpdump</b> on both machines is the first thing to do. Check if you see traffic on both machines, check for ARP replies on PONG. Next to packet loss this is a common issue that is often overlooked. Now let's fix this in step 5.
 
 
-This are the traffic patterns for the following steps and why ping behaves different in Tcpdump depending on the ARP inject or ICMP reply. In both cases you will not get a reply on PING because the data diode blocks the reply.<br>
+These are the traffic patterns for the following steps and why ping behaves differently in Tcpdump depending on the ARP inject or ICMP reply. In both cases you will not get a reply on PING because the data diode blocks the reply.<br>
 <img src="/img/traffic_example-1.png" width="400"> <br>
 
 ## Step 5: Add ARP entry to PING laptop
@@ -104,7 +104,7 @@ Save and close gedit and run from the terminal
 ```
 sudo chmod +x /etc/network/if-up.d/add-my-static-arp
 ```
-Reboot PING and PONG completly. 
+Reboot PING and PONG completely. 
 
 # Preparations are done, now let's start with the 3 examples.
 ## Use case 1: Simple message using Netcat "Hello world"
