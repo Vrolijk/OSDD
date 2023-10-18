@@ -10,6 +10,11 @@ Slides: https://csiac.org/wp-content/uploads/2021/11/CSIAC_Deck_Final_1-2022.pdf
 https://youtube.com/watch?v=HC3_Dd8KM0E&si=EnSIkaIECMiOmarE <br>
 https://www.serdp-estcp.org/projects/details/30717e9d-8325-43fd-a813-6396ae5f7ff6/ew19-5156-project-overview
 
+### SANS Institute 2003, As part of GIAC practical repository.
+Unidirectional Networking <br>
+GIAC Security Essential Certification Practical Assignment Version 1.4b  <br>
+Jason Westmacot <br>
+https://www.giac.org/paper/gsec/2848/unidirectional-networking/104817
 
 # Vendors
 ## Link22
