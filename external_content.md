@@ -35,6 +35,15 @@ https://github.com/azzid/pmddft
 
 # Helpful links
 
+
+## Building an Affordable Data Diode to Protect Journalists
+
+Python alternative for UDPcast. Paper claims no packetloss. <br>
+
+https://github.com/ClarkuCSCI/pydiode 
+paper: https://pep23.com/assets/pdf/pep23-paper7.pdf 
+
+
 ## Wavestone-cdt DIY Dyode
 
 DIY Datadiode using 3 copper to fiber converters and a light version using 2 PI zero's and an optocoupler.
