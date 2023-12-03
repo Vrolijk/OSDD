@@ -169,3 +169,9 @@ For a videostream use: ```https://live-hls-web-aje.getaj.net/AJE/05.m3u8``` <br>
 For more Dutch radio genres: ```https://mediamagazine.nl/live-links-nederland/livestreams-nederland-landelijk/``` 
 <br><br>
 # End of the workshop! :) Are you ready for [Level 2](level_2.md)
+<br><br>
+# Feedback
+The creation of this workshop took quite some time. I would realy like to get your feedback and ideas for future development.<br> 
+Please leave a commont in the [discussions section](https://github.com/Vrolijk/OSDD/discussions/) or send me an email to rrvrolijk@gmail.com.<br>
+
+
