@@ -172,6 +172,6 @@ For more Dutch radio genres: ```https://mediamagazine.nl/live-links-nederland/li
 <br><br>
 # Feedback
 The creation of this workshop took quite some time. I would realy like to get your feedback and ideas for future development.<br> 
-Please leave a commont in the [discussions section](https://github.com/Vrolijk/OSDD/discussions/) or send me an email to rrvrolijk@gmail.com.<br>
+Please leave your thoughts in the [discussions section](https://github.com/Vrolijk/OSDD/discussions/) or send an email to rrvrolijk@gmail.com.<br>
 
 
