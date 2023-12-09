@@ -1,7 +1,7 @@
 # Getting started with Data Diodes
 
 <img align="right" width="200" src="img/street_sign_one_way-source_wallpaperflare.jpg">
-This Github is created to share knowledge about data diodes to a wider audience. The data diode concept of unidirectional traffic is easy to understand but we noticed that when starting with the data diodes in the real world there are some barriers to overcome. This workshop will help you to start with the basic concept of data diodes while keeping the costs to a minimum<br><br> 
+This Github is created to share knowledge about data diodes, also known as unidirectional gateways, to a wider audience. The data diode concept of unidirectional traffic is easy to understand but we noticed that when starting with the data diodes in the real world there are some barriers to overcome. This workshop will help you to start with the basic concept of data diodes while keeping the costs to a minimum<br><br> 
 
 
 First issue is getting your hands on data diode hardware, which we solved in the [hardware](datadiode_hardware_setups.md) section.
