@@ -31,6 +31,9 @@ Note: Try this demonstrator in combination with the workshop before buying or bu
 ## Various links 
 [Various links to related content](external_content.md)
 
+## Motivation
+[Interview on why this project is created](Motivation.md)
+
 ## Help needed to improve this project
 [Linux kernel packet loss - Help needed!](https://github.com/Vrolijk/OSDD/issues/6)
 
