@@ -123,7 +123,7 @@ First install udpcast on PING and PONG <br>
 ```sudo apt install udpcast -y``` <br>
 
 
-**Create random file of 1Gb**
+**Create random file of 1Gb on PONG**
 
 ```head -c 1024M /dev/urandom > 1gb-testfile.tmp```
 
@@ -162,7 +162,7 @@ PING:
 
 Open VLC media player and go to
 
-``` Media -> stream -> https://stream.qmusic.nl/fouteuur/mp3 -> Stream button-> next -> new destination -> RTP / MPEG transport stream -> add -> address 10.0.0.2 base Port 5004 stream name OSDD -> next -> profile Video - H264 + mp3 (mp4) -> next -> stream ```
+``` Media -> stream -> network tab -> add: https://stream.qmusic.nl/fouteuur/mp3 -> Stream button-> next -> new destination -> RTP / MPEG transport stream -> add -> address 10.0.0.2 base Port 5004 stream name OSDD -> next -> profile Video - H264 + mp3 (mp4) -> next -> stream ```
 
 It takes a few seconds to start the video on the receiver because of caching. <br>
 For a videostream use: ```https://live-hls-web-aje.getaj.net/AJE/05.m3u8``` <br>
