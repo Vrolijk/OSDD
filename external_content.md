@@ -132,3 +132,10 @@ https://github.com/BHanq/DataDiode
 https://github.com/maqp/tfc/wiki/TTL-Data-Diode-(PCB) <br>
 https://www.kitploit.com/2020/03/tinfoil-chat-onion-routed-endpoint.html 
 
+
+### Leaky Diode
+
+Leaky diode is a data exfiltration test tool for smart data diodes, that is data diodes with support for TCP pass-through with the help of some side channel from the isolated side. The attacks used are flow modulation and/or close. <br>
+https://github.com/secnot/leaky_diode
+
+
