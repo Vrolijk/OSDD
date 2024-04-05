@@ -64,7 +64,7 @@ Monitoring the softnet_stat we saw no increase of queues.
 
 ```cat /proc/net/softnet_stat```
 
-### Dropwatch
+### Monitoring using Dropwatch
 https://www.cyberciti.biz/faq/linux-show-dropped-packets-per-interface-command/
 
 ```
@@ -90,7 +90,7 @@ sudo dropwatch -l kas
 start
 ```
 
-### To do 
+# To do 
 
 Good story about tuning TCP. Perhaps lowering the garbage collection could help to reduce packet loss on the receiving side.
 
