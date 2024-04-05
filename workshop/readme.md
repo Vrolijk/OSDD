@@ -123,7 +123,7 @@ First install udpcast on PING and PONG <br>
 ```sudo apt install udpcast -y``` <br>
 
 
-**Create random file of 1Gb on PONG**
+**Create random file of 1Gb on PING**
 
 ```head -c 1024M /dev/urandom > 1gb-testfile.tmp```
 
