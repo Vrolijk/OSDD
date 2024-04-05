@@ -64,6 +64,32 @@ Monitoring the softnet_stat we saw no increase of queues.
 
 ```cat /proc/net/softnet_stat```
 
+### Dropwatch
+https://www.cyberciti.biz/faq/linux-show-dropped-packets-per-interface-command/
+
+```
+sudo apt-get install libpcap-dev libnl-3-dev libnl-genl-3-dev binutils-dev libreadline6-dev autoconf libtool pkg-config build-essential```
+
+git clone https://github.com/nhorman/dropwatch
+cd dropwatch
+./autogen.sh
+./configure
+make
+sudo make install
+```
+<b> check the current settings</b>
+```
+cat /proc/sys/kernel/kptr_restrict
+sudo su
+echo 0 > /proc/sys/kernel/kptr_restrict
+
+dropwatch -l list
+
+sudo dropwatch -l kas
+
+start
+```
+
 ### To do 
 
 Good story about tuning TCP. Perhaps lowering the garbage collection could help to reduce packet loss on the receiving side.
