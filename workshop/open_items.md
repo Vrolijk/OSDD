@@ -86,69 +86,7 @@ Futher reading about udp and network tuning:  https://blog.cloudflare.com/how-to
 
 [^2]: https://alibaba-cloud.medium.com/analysis-of-udp-packet-loss-problem-in-linux-system-a5b6bd59d97b
 
-# Gemini instructie om ruwe ethernet frames te sturen. nog valideren
-## Instructie: Bestand versturen via unidirectionele raw ethernet frames met socat (geen UDP)
-
-**Vereisten:**
-
-* Twee computers met een netwerkverbinding
-* Socat geinstalleerd op beide computers
-* Het te versturen bestand
-
-**Stappen:**
-
-1. **Bepaal de netwerkinterfaces:**
-
-   Op beide computers, voer de volgende opdracht uit om de netwerkinterfaces te bekijken:
-
-   ```
-   ifconfig
-   ```
-
-   Noteer de namen van de interfaces die verbonden zijn met het netwerk.
-
-2. **Start de server op ontvangende computer:**
-
-   Op de ontvangende computer, voer de volgende opdracht uit om een socat-server te starten die luistert op raw ethernet frames op interface `eth0`:
-
-   ```
-   socat -d -u RAW-RECV:eth0
-   ```
-
-   Vervang `eth0` door de naam van de juiste netwerkinterface.
-
-3. **Verstuur het bestand vanaf verzendende computer:**
-
-   Op de verzendende comouter, voer de volgende opdracht uit om het bestand te versturen naar de ontvangende computer:
-
-   ```
-   socat -d -u RAW-SEND:10.0.0.2 < file.txt
-   ```
-
-   Vervang `10.0.0.2` door het IP-adres van de ontvangende computer en `file.txt` door de naam van het te versturen bestand.
-
-5. **Controleer of het bestand is ontvangen:**
-
-   Controleer of het bestand is ontvangen in de huidige directory.
-
-**Opmerkingen:**
-
-* Deze instructie verstuurt het bestand in raw ethernet frames zonder headers of andere informatie.
-* De server op de ontvangende computer moet continu draaien terwijl het bestand wordt verstuurd.
-* De maximale bestandsgrootte die kan worden verstuurd is afhankelijk van de MTU (Maximum Transmission Unit) van het netwerk.
-
-**Verder lezen:**
-
-* Socat website:
-* Raw ethernet frames: [https://en.wikipedia.org/wiki/Ethernet_frame](https://en.wikipedia.org/wiki/Ethernet_frame)
-
-**Waarschuwing:**
-
-* Het overslaan van de kernel kan de stabiliteit van het systeem beïnvloeden.
-* Deze methode is niet geschikt voor alle toepassingen.
-
-**Alternatieven:**
-
-* Het is ook mogelijk om een ​​eigen applicatie te ontwikkelen om bestanden te versturen via raw ethernet frames.
+# socat
+socat can send packets via various protocols and as raw packets. Need to test the options. 
 
 
