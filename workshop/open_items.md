@@ -55,7 +55,7 @@ Then start on PING: <br>
 ```cat 1gb-testfile.tmp | nc -w 1 -u 10.0.0.2 9999```
 
 
-Probably this went wrong. Try to reduce the speed with PipeViewer PV. <br>
+Probably this went wrong. Try to reduce the speed with PipeViewer PV to find an optimal speed for your configuration.<br>
 On PONG start: <br>
 ```nc -l -u -w 1 -p 9999 > 1gb-testfile.tmp```
 
