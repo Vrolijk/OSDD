@@ -89,7 +89,7 @@ Now ping PONG again from PING. You notice on laptop PONG that there is no more A
 <img src="/img/traffic_example-2.png" width="400"> <br>
 
 ### Advice: make the ARP entry permanent on PING
-Run the following commands to create a startup script. This way you will not forget to add the ARP entry after a reboot. <br>
+Run the following commands to create a startup script. This way you will not forget to add the ARP entry after a reboot. We also set the MTU to 9000.<br>
 You need to install net-tools to add the application Arp.
 ```
 sudo gedit /etc/network/if-up.d/add-my-static-arp
@@ -97,7 +97,8 @@ sudo gedit /etc/network/if-up.d/add-my-static-arp
 Add the following:
 ```
 #!/bin/bash
-arp -i enp1s0 -s 10.0.0.2 ff:ff:ff:ff:ff:ff 
+arp -i enp1s0 -s 10.0.0.2 ff:ff:ff:ff:ff:ff
+ip link set dev enp1s0 mtu 9000
 exit 0
 ```
 Save and close gedit and run from the terminal
