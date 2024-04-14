@@ -18,12 +18,15 @@ Edit the excec node<br>
 <img width="400" src="/img/node-red_flow_2.png"><br>
 
 Use the command: <br>
-``` tc -s qdisc show dev enp1s0 | awk -F 'backlog ' '{print $2}' | awk -F 'b' '{print $1}' | awk 'NF'``` 
+```tc -s qdisc show dev enp1s0 | awk -F 'backlog ' '{print $2}' | awk -F 'b' '{print $1}' | awk 'NF'``` 
 <br><i> I'm open for a more efficient way </i>:) <br><br>
 Edit the switch node<br>
 <img width="400" src="/img/node-red_flow_3.png"><br>
 
 Use the following filter: (note the number variable)<br><br>
+
+To make sure the UDP fills up use the following command from the terminal: <br>
+```cat /dev/random | nc -w 1 -u 10.0.0.2 8888```
 
 Since i'm new to Node-red i'm still looking for a way to wait untill the UDP queue is 0 before sending the event to the UDP-out node. 
 
