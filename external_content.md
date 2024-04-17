@@ -27,6 +27,11 @@ Massively scalable multicast distribution solution
 The library implements a unidirectional file delivery, without the need of a return channel.
 https://github.com/ypo/flute 
 
+### LIDI - Transfer a raw TCP or Unix stream or files through a unidirectional link with forward error correction 
+High-speed data diode software developed in rust by the French cybersecurity agency, with raptorq error correction.
+
+https://github.com/ANSSI-FR/lidi
+Documentation: https://anssi-fr.github.io/lidi/
 
 ## UDPcast as a service
 
