@@ -170,7 +170,7 @@ It takes a few seconds to start the video on the receiver because of caching. <b
 For a videostream use: ```https://live-hls-web-aje.getaj.net/AJE/05.m3u8``` <br>
 For more Dutch radio genres: ```https://mediamagazine.nl/live-links-nederland/livestreams-nederland-landelijk/``` 
 <br><br>
-# End of the workshop! :) Are you ready for [Level 2](level_2.md)
+# End of the workshop! :) Are you ready for [the Node-red framework?](Node-red_AIS.md)
 <br><br>
 # Feedback
 The creation of this workshop took quite some time. I would realy like to get your feedback and ideas for future development.<br> 
