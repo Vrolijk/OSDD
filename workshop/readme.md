@@ -49,6 +49,7 @@ net.core.rmem_default = 32777216
 net.core.wmem_max = 32777216 
 net.core.wmem_default = 32777216
 net.core.netdev_max_backlog = 100000
+net.ipv4.udp_mem="12148128 16197504 67108864"
 ```
 Reboot to activate the setting or add the manual settings from the beginning of step 3. <br> 
 
