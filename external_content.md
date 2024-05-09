@@ -1,6 +1,7 @@
 # Youtube presentations / Webinars
 
-### Webinar CSIAC: Physical Cybersecurity: Using One-Way Data Diodes to Secure Asset Monitoring 1:04:27
+### Webinar CSIAC: Physical Cybersecurity: Using One-Way Data Diodes to Secure Asset Monitoring
+<br> Duration 1:04:27
 
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/VSNhiVtTQFA/0.jpg)](https://www.youtube.com/watch?v=VSNhiVtTQFA)
 
