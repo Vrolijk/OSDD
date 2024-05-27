@@ -92,7 +92,9 @@ start
 
 # To do 
 
-CPU - NIC Isolation: https://github.com/Vrolijk/OSDD/issues/10 
+CPU - NIC Isolation: https://github.com/Vrolijk/OSDD/issues/10 First step in exploration.. 
+
+
 
 Good story about tuning TCP. Perhaps lowering the garbage collection could help to reduce packet loss on the receiving side.
 
