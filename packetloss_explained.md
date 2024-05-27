@@ -90,11 +90,11 @@ sudo dropwatch -l kas
 start
 ```
 
-# To do 
+# To do 1
 
 CPU - NIC Isolation: https://github.com/Vrolijk/OSDD/issues/10 First step in exploration.. 
 
-
+# To do 2
 
 Good story about tuning TCP. Perhaps lowering the garbage collection could help to reduce packet loss on the receiving side.
 
