@@ -30,3 +30,6 @@ To make sure the UDP fills up use the following command from the terminal: <br>
 
 Since i'm new to Node-red i'm still looking for a way to wait untill the UDP queue is 0 before sending the event to the UDP-out node. 
 
+
+# Next step: combine the data diode, AI and node-red
+https://kazuhitoyokoi.medium.com/local-llm-on-industrial-raspberry-pi-d6e88e545028
