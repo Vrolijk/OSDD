@@ -1,7 +1,7 @@
 # Securing Your Network: A Hands-On Workshop on Data Diodes and Proxies
 Welcome to this workshop on the basics of data diodes and proxies. Over the next few hours, we will be diving into the world of network security and learning how to use two laptops named PING and PONG and a data diode to set up a unidirectional data communication path.
 
-Throughout the workshop, we will be working with 2 Ubuntu computers to learn how to update the operating system configuration, change IP settings, and manipulate the ARP table. Additionally, we will test the connection from laptop PING to PONG and install software to start three different data streams through the data diode.
+Throughout the workshop, we will be working with 2 Ubuntu 22.04 LTS (24.04 uses a different network stack) computers to learn how to update the operating system configuration, change IP settings, and manipulate the ARP table. Additionally, we will test the connection from laptop PING to PONG and install software to start three different data streams through the data diode.
 
 By the end of the workshop, you will have a strong understanding of data diodes and proxy software, and how they can be used to enhance network security. So, let's get started and dive into the exciting world of network security!
 
