@@ -51,7 +51,10 @@ net.core.wmem_default = 32777216
 net.core.netdev_max_backlog = 100000
 net.ipv4.udp_mem="12148128 16197504 67108864"
 ```
-Reboot to activate the setting or add the manual settings from the beginning of step 3. <br> 
+Activate sysctl changes:
+```
+sudo sysctl -p /etc/sysctl.conf 
+```
 
 ## Step 4: Test connection and fail on ARP resolution (troubleshoot ARP issues)
 This is next to [packetloss](https://github.com/Vrolijk/OSDD/blob/main/packetloss_explained.md) one of the issues when working with data diodes. By doing this step you will learn how the system reacts and how to fix ARP requests that result in not sending data through the data diode. In simple words ARP can be explained as the mechanism that PING needs to send information to PONG on the right network interface. To experience what happens without these follow this steps, otherwise continue with step 5. <br><br>
