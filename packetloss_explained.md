@@ -89,6 +89,56 @@ sudo dropwatch -l kas
 
 start
 ```
+# Tip 1: tc qdisc adjustment
+
+```
+sudo gedit /etc/systemd/system/optimize-fq_codel.service
+```
+
+```
+[Unit]
+Description=Optimize and Limit fq_codel qdisc for Gigabit Data Diode
+After=network.target
+
+[Service]
+Type=oneshot
+ExecStartPre=/sbin/ip link set enp1s0 txqueuelen 10000
+ExecStartPre=/sbin/ip link set enp1s0 mtu 9000
+# Remove any existing qdisc before adding new one
+ExecStartPre=/sbin/tc qdisc del dev enp1s0 root
+ExecStart=/sbin/tc qdisc add dev enp1s0 root handle 1: htb default 10
+ExecStart=/sbin/tc class add dev enp1s0 parent 1: classid 1:1 htb rate 990Mbit ceil 990Mbit
+ExecStart=/sbin/tc class add dev enp1s0 parent 1:1 classid 1:10 htb rate 990Mbit ceil 990Mbit
+ExecStart=/sbin/tc qdisc add dev enp1s0 parent 1:10 handle 10: fq_codel limit 20000 flows 4096 quantum 9000 memory_limit 64M target 1ms interval 10ms noecn
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target
+```
+
+```
+sudo systemctl enable optimize-fq_codel.service
+sudo systemctl start optimize-fq_codel.service
+```
+Note: Also modify the sysctl queues, not doing this caused packet loss.
+
+```
+sudo gedit /etc/sysctl.conf
+```
+Append a config directive as follow at the end of the file, save and close the document:
+
+```
+net.core.rmem_max = 32777216
+net.core.rmem_default = 32777216
+net.core.wmem_max = 32777216 
+net.core.wmem_default = 32777216
+net.core.netdev_max_backlog = 100000
+net.ipv4.udp_mem="12148128 16197504 67108864"
+```
+Activate sysctl changes:
+```
+sudo sysctl -p /etc/sysctl.conf 
+```
 
 # To do 1
 
