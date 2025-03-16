@@ -1,4 +1,4 @@
-Below is a manual designed by Grok AI for a student to build a cheap 1Gb unidirectional network device based on the PCB design we’ve developed. It includes step-by-step instructions, research questions, and alternatives where applicable to encourage learning and experimentation. The manual assumes basic electronics knowledge (e.g., soldering, reading schematics) but keeps explanations clear for a student audience.
+Below is a manual designed by Grok AI for a student to build a cheap 1Gb unidirectional network device based on a PCB design. It includes step-by-step instructions, research questions, and alternatives where applicable to encourage learning and experimentation. The manual assumes basic electronics knowledge (e.g., soldering, reading schematics) but keeps explanations clear for a student audience.
 
 ---
 
