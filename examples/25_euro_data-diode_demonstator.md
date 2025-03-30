@@ -71,5 +71,31 @@ Example how to hack the TP-Link: https://www.pentestpartners.com/security-blog/h
 
 Active community to find exploits in SOHO hardware: http://conference.hitb.org/files/hitbsecconf2023ams/materials/D1T1%20-%20Your%20Not%20So%20Home%20Office%20-%20Soho%20Hacking%20at%20Pwn2Own%20-%20McCaulay%20Hudson%20&%20Alex%20Plaskett.pdf 
 
+# (need to test first!!) Hardware modification to protect data diode configuration
 
+The TP-Link TL-SG105E  uses the cFeon QH16B-104HIP flash chip. Modify this chip to read-only to protect the configuration from tampering or reset, here’s how you can proceed:
+Steps to Configure and Make Flash Read-Only
+1. Configure the Switch
+Before modifying the hardware, ensure the switch is fully configured:
+* Set up VLANs, QoS, port mirroring, or any other desired features using the web-based management interface.
+* Save the configuration using the "Save Configuration" option in the interface.
+* Test thoroughly to confirm that all settings are functioning as expected.
+2. Locate the Flash Chip
+The cFeon QH16B-104HIP chip is visible on the PCB of your TL-SG105E switch (as shown in your image). This chip stores firmware and configuration data.
+Making the Flash Chip Read-Only
+Hardware Write Protection
+The cFeon QH16B-104HIP flash chip has a WP# (Write Protect) pin that can enforce hardware-level write protection. Here's how to use it:
+1. Identify WP# Pin:
+    * On an 8-pin SOIC package like this, WP# is typically Pin 3.
+    * Refer to the datasheet for confirmation of pinout.
+2. Solder WP# to VCC:
+    * Connect WP# (Pin 3) directly to VCC (Pin 8) using a small wire or solder bridge.
+    * This ensures that write protection is permanently enabled.
+3. Verify Write Protection:
+    * After connecting WP# to VCC, test by attempting configuration changes via the web interface. The changes should fail if protection is active.
+Considerations
+* Permanent Modification: Once WP# is tied to VCC, firmware updates or configuration changes will no longer be possible unless you physically reverse this modification.
+* Risk of Bricking: If something goes wrong during soldering or software configuration, the device may become unusable.
+* Warranty Void: Hardware modifications will void any warranty from TP-Link.
+By combining software and hardware write protection methods, you can make the TL-SG105E tamper-proof and ensure that its configuration survives even a hard reset.
 
