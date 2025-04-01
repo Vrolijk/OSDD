@@ -93,9 +93,12 @@ The cFeon QH16B-104HIP flash chip has a WP# (Write Protect) pin that can enforce
     * This ensures that write protection is permanently enabled.
 3. Verify Write Protection:
     * After connecting WP# to VCC, test by attempting configuration changes via the web interface. The changes should fail if protection is active.
+
 Considerations
 * Permanent Modification: Once WP# is tied to VCC, firmware updates or configuration changes will no longer be possible unless you physically reverse this modification.
 * Risk of Bricking: If something goes wrong during soldering or software configuration, the device may become unusable.
 * Warranty Void: Hardware modifications will void any warranty from TP-Link.
 By combining software and hardware write protection methods, you can make the TL-SG105E tamper-proof and ensure that its configuration survives even a hard reset.
 
+Security issues
+* The webinterface is available on all ports (1-5). Potential attack vector.
