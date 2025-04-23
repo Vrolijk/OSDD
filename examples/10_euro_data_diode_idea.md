@@ -32,13 +32,3 @@ This €10 data diode concept, inspired by projects like the Open Source Data Di
 What do you think—could this approach work in your OT environment? Have you explored other low-cost cybersecurity hacks? Let’s start a conversation about making security accessible for all!
 
 #Cybersecurity #OTSecurity #DataDiode #Microsegmentation #Networking #Innovation
-
----
-
-**Notes**:
-- The post is concise yet informative, suitable for LinkedIn’s professional audience.
-- It emphasizes the RTL8367S chip, EEPROM modification, and the €10 cost to align with your input.
-- The bank vault vs. good lock analogy is woven in to address the misconception about data diodes.
-- The OT and microsegmentation focus highlights practical use cases.
-- If you’d like to add specific technical details (e.g., exact register settings or tools), share them, and I can refine the post.
-- Let me know if you want to adjust the tone, length, or include a call-to-action (e.g., linking to a project repo or inviting collaboration).
