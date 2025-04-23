@@ -1,4 +1,4 @@
-# Turning a €10 Switch into a Data Diode: Affordable Cybersecurity for OT Environments**
+# Turning a €10 Switch into a Data Diode: Affordable Cybersecurity for OT Environments
 
 In the world of cybersecurity, **data diodes** are often seen as the bank vaults of secure data transfer—impenetrable, expensive, and complex. But what if you could achieve robust, unidirectional data flow for just €10 using a common network switch? By tweaking the EEPROM registers of an unmanaged switch with an RTL8367S chip, we can create a low-cost data diode perfect for operational technology (OT) environments and microsegmentation. Sometimes, all you need is a good lock, not a vault.
 
