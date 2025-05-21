@@ -31,4 +31,47 @@ This €10 data diode concept, inspired by projects like the Open Source Data Di
 
 What do you think—could this approach work in your OT environment? Have you explored other low-cost cybersecurity hacks? Let’s start a conversation about making security accessible for all!
 
+# The experiment
+For this we bought a €9,99 TP-Link LS1005G 5 port switch, removed the eeprom and placed it on an external print and made a connector on the switch. Via the CH341 USB we connected the eeprom to a PC to read the firmware/register.
+<img src="../img/LS1005G-eeprom-mod.JPG" width="600"> <br>
+
+**Full register including blank (FF)**
+56 80 16 1D 69 0A 01 1D  E0 03 1B 20 9A 80 1C 20 <br> 
+11 89 1B 20 A3 80 1C 20  33 92 1B 20 AC 80 1C 20  <br>
+44 A4 1B 20 9F 80 1C 20  20 6B 1B 20 A8 80 1C 20  <br>
+22 6B 1B 20 B1 80 1C 20  23 6B 01 1D 1F 00 18 00  <br>
+00 00 38 00 00 00 58 00  00 00 78 00 00 00 98 00  <br>
+00 00 41 1D 00 00 FF FF  FF FF FF FF FF FF FF FF  <br>
+FF FF FF FF FF FF FF FF  FF FF FF FF FF FF FF FF  <br>
+FF FF FF FF FF FF FF FF  FF FF FF FF FF FF FF FF  <br>
+FF FF FF FF FF FF FF FF  FF FF FF FF FF FF FF FF  <br>
+FF FF FF FF FF FF FF FF  FF FF FF FF FF FF FF FF  <br>
+FF FF FF FF FF FF FF FF  FF FF FF FF FF FF FF FF  <br>
+FF FF FF FF FF FF FF FF  FF FF FF FF FF FF FF FF  <br>
+FF FF FF FF FF FF FF FF  FF FF FF FF FF FF FF FF  <br>
+FF FF FF FF FF FF FF FF  FF FF FF FF FF FF FF FF  <br>
+FF FF FF FF FF FF FF FF  FF FF FF FF FF FF FF FF  <br>
+FF FF FF FF FF FF FF FF  FF FF FF FF FF FF FF FF <br>
+ <br>
+**Register breakdown:**
+56 80                    *Read eeprom untill position 0x00000056 (see first FF)* <br>
+16 1D 69 0A 01 1D E0 03  *Unknown* <br>
+ <br>
+1B 20 9A 80 1C 20 11 89  *Pattern 1B 20 xx yy 1C 20 xx yy (6 times)*  <br>
+1B 20 A3 80 1C 20 33 92  <br>
+1B 20 AC 80 1C 20 44 A4  <br>
+1B 20 9F 80 1C 20 20 6B  <br>
+1B 20 A8 80 1C 20 22 6B  <br>
+1B 20 B1 80 1C 20 23 6B  <br>
+ <br>
+01 1D 1F 00 *Unknown* <br>
+18 00 00 00 *Pattern 18, 38, 58, 78, 98* <br>
+38 00 00 00  <br>
+58 00 00 00  <br>
+78 00 00 00  <br>
+98 00 00 00  <br>
+41 1D 00 00 FF FF FF FF <br>
+ <br>
+Good resource: https://github.com/tomazas/RTL8XXX-Switch. Added port mirroring to the TP-Link SG105 and SG108 including firmware samples. <br>
+
 #Cybersecurity #OTSecurity #DataDiode #Microsegmentation #Networking #Innovation
