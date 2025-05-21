@@ -35,7 +35,7 @@ What do you think—could this approach work in your OT environment? Have you ex
 For this we bought a €9,99 TP-Link LS1005G 5 port switch, removed the eeprom and placed it on an external print and made a connector on the switch. Via the CH341 USB we connected the eeprom to a PC to read the firmware/register.
 <img src="../img/LS1005G-eeprom-mod.JPG" width="600"> <br>
 
-**Full register including blank (FF)**
+**Full register including blank (FF)** <br>
 56 80 16 1D 69 0A 01 1D  E0 03 1B 20 9A 80 1C 20 <br> 
 11 89 1B 20 A3 80 1C 20  33 92 1B 20 AC 80 1C 20  <br>
 44 A4 1B 20 9F 80 1C 20  20 6B 1B 20 A8 80 1C 20  <br>
@@ -53,8 +53,8 @@ FF FF FF FF FF FF FF FF  FF FF FF FF FF FF FF FF  <br>
 FF FF FF FF FF FF FF FF  FF FF FF FF FF FF FF FF  <br>
 FF FF FF FF FF FF FF FF  FF FF FF FF FF FF FF FF <br>
  <br>
-**Register breakdown:**
-56 80                    *Read eeprom untill position 0x00000056 (see first FF)* <br>
+**Register breakdown:** <br>
+56 80                    *Read eeprom untill position 0x00000056 (see first FF), change to 13 C2 00 00 to brick the switch... * <br>
 16 1D 69 0A 01 1D E0 03  *Unknown* <br>
  <br>
 1B 20 9A 80 1C 20 11 89  *Pattern 1B 20 xx yy 1C 20 xx yy (6 times)*  <br>
