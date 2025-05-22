@@ -57,7 +57,7 @@ FF FF FF FF FF FF FF FF  FF FF FF FF FF FF FF FF <br>
 56 80                    *Read eeprom untill position 0x00000056 (see first FF), change to 13 C2 00 00 to brick the switch... * <br>
 16 1D 69 0A 01 1D E0 03  *Unknown* <br>
  <br>
-1B 20 9A 80 1C 20 11 89  *Pattern 1B 20 xx yy 1C 20 xx yy (6 times)*  <br>
+1B 20 9A 80 1C 20 11 89  *Pattern 1B 20 ?? 80 1C 20 ?? ?? (6 times)*  <br>
 1B 20 A3 80 1C 20 33 92  <br>
 1B 20 AC 80 1C 20 44 A4  <br>
 1B 20 9F 80 1C 20 20 6B  <br>
