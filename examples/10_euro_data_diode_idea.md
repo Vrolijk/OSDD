@@ -25,6 +25,7 @@ While this approach is powerful, it’s not without caveats:
 - **Technical Expertise**: Modifying EEPROM registers requires some hardware and networking knowledge, though open-source tools and community guides can help.
 - **Limited Features**: Unlike commercial data diodes, this solution prioritizes simplicity over advanced features like protocol conversion or high throughput.
 - **Validation**: For critical deployments, rigorous testing is essential to ensure no reverse traffic leaks through misconfigured settings.
+- **Undocumented features**: Undocumented and vendor specific features are a major security risk in this setup. 
 
 ### A Game-Changer for OT Security
 This €10 data diode concept, inspired by projects like the Open Source Data Diode (OSDD) initiative, shows how creativity and open-source principles can democratize cybersecurity. By repurposing commodity hardware, we can protect OT environments, enable microsegmentation, and challenge the notion that security must be expensive.
