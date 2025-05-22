@@ -76,6 +76,7 @@ Good resource: https://github.com/tomazas/RTL8XXX-Switch. Added port mirroring t
 RTL8367S datasheet https://www.framboise314.fr/wp-content/uploads/2021/06/RTL8367S-CG_Datasheet.pdf <br>
 RTL8367 programming guide https://cdn.jsdelivr.net/gh/libc0607/Realtek_switch_hacking@files/Realtek_Unmanaged_Switch_ProgrammingGuide.pdf <br>
 Realtek_Unmanaged_Switch_API_driver https://github.com/shiroichiheisen/Realtek-Unmanaged-Switch-Arduino-Library/blob/main/programming%20guide/Realtek_Unmanaged_Switch_ReleaseNote.pdf <br>
+Realtek Unmanaged switch API document https://github.com/shiroichiheisen/Realtek-Unmanaged-Switch-Arduino-Library/blob/main/programming%20guide/Realtek_Unmanaged_Switch_API_Document.pdf <br>
 
 
 #Cybersecurity #OTSecurity #DataDiode #Microsegmentation #Networking #Innovation
