@@ -73,5 +73,8 @@ FF FF FF FF FF FF FF FF  FF FF FF FF FF FF FF FF <br>
 41 1D 00 00 FF FF FF FF <br>
  <br>
 Good resource: https://github.com/tomazas/RTL8XXX-Switch. Added port mirroring to the TP-Link SG105 and SG108 including firmware samples. <br>
+RTL8367S datasheet https://www.framboise314.fr/wp-content/uploads/2021/06/RTL8367S-CG_Datasheet.pdf <br>
+RTL8367 programming guide https://cdn.jsdelivr.net/gh/libc0607/Realtek_switch_hacking@files/Realtek_Unmanaged_Switch_ProgrammingGuide.pdf <br>
+
 
 #Cybersecurity #OTSecurity #DataDiode #Microsegmentation #Networking #Innovation
