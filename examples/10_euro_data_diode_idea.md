@@ -73,6 +73,60 @@ FF FF FF FF FF FF FF FF  FF FF FF FF FF FF FF FF <br>
 98 00 00 00  <br>
 41 1D 00 00 FF FF FF FF <br>
  <br>
+
+## how to read the vaules: (please note that this is my intrepertation trying to understand.. )
+
+The register works in pairs. So the first pair [56 80 16 1D] set how far the register should be read. <br>
+You can read the pair as an instruction to SET value [56 80] TO [16 1D] 
+
+You can translate [56 80] to hex '0x5680'.  Decode the Value `0x5680` 
+
+Hex `0x5680` in binary is:
+
+```
+0x5680 = 0101 0110 1000 0000 (binary)
+          |||| |||| |||| ||||
+          |||| |||| |||| |||└─ Bit 0
+          |||| |||| |||| ||└── Bit 1
+          |||| |||| |||| |└─── Bit 2
+          |||| |||| |||| └──── Bit 3
+          |||| |||| |||└────── Bit 4
+          |||| |||| ||└─────── Bit 5
+          |||| |||| |└──────── Bit 6
+          |||| |||| └───────── Bit 7
+          |||| |||└─────────── Bit 8
+          |||| ||└──────────── Bit 9
+          |||| |└───────────── Bit 10
+          |||| └────────────── Bit 11
+          |||└─────────────── Bit 12
+          ||└──────────────── Bit 13
+          |└───────────────── Bit 14
+          └────────────────── Bit 15
+
+```
+
+So:
+
+```
+Bit 15 = 0
+Bit 14 = 1
+Bit 13 = 0
+Bit 12 = 1
+Bit 11 = 0
+Bit 10 = 1
+Bit 9  = 1
+Bit 8  = 0
+Bit 7  = 1
+Bit 6  = 0
+Bit 5  = 0
+Bit 4  = 0
+Bit 3  = 0
+Bit 2  = 0
+Bit 1  = 0
+Bit 0  = 0
+```
+
+
 Good resource: https://github.com/tomazas/RTL8XXX-Switch. Added port mirroring to the TP-Link SG105 and SG108 including firmware samples. <br>
 RTL8367S datasheet https://www.framboise314.fr/wp-content/uploads/2021/06/RTL8367S-CG_Datasheet.pdf <br>
 RTL8367 programming guide https://cdn.jsdelivr.net/gh/libc0607/Realtek_switch_hacking@files/Realtek_Unmanaged_Switch_ProgrammingGuide.pdf <br>
