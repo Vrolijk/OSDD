@@ -33,7 +33,7 @@ This €10 data diode concept, inspired by projects like the Open Source Data Di
 What do you think—could this approach work in your OT environment? Have you explored other low-cost cybersecurity hacks? Let’s start a conversation about making security accessible for all!
 
 # The experiment
-For this we bought a €9,99 TP-Link LS1005G 5 port switch, removed the eeprom and placed it on an external print and made a connector on the switch. Via the CH341 USB we connected the eeprom to a PC to read the firmware/register.
+For this we bought a €9,99 TP-Link LS1005G 5 port switch, removed the eeprom and placed it on an external print and made a connector on the switch. Via the CH341 USB we connected the eeprom to a PC to read the firmware/register. In AsProgrammer we used the setting IC-> I2C -> 24cxxx -> _24C02. <br>
 <img src="../img/LS1005G-eeprom-mod.JPG" width="600"> <br>
 
 **Full register including blanks (FF)** <br>
