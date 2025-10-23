@@ -4,6 +4,7 @@ In the world of cybersecurity, **data diodes** are often seen as the bank vaults
 
 ### The Idea: A €10 Data Diode
 The RTL8367S, a chip found in many affordable unmanaged switches (and even cheaper than some managed ones), handles Ethernet switching with remarkable flexibility. By accessing and modifying the switch’s EEPROM registers, you can reprogram its behavior to enforce **unidirectional data flow**—the hallmark of a data diode. This means data can move from a source (e.g., an OT sensor) to a destination (e.g., a monitoring system) without any possibility of reverse communication, all for the price of a coffee.
+Tip: also read https://www.linkedin.com/pulse/making-firmware-data-diode-from-10-network-switch-laurence-halfpenny-s4uge
 
 Here’s how it works:
 1. **Identify the Switch**: Choose an unmanaged switch with the RTL8367S chip, often found in budget models costing around €10.
