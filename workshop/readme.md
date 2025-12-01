@@ -176,8 +176,7 @@ For more Dutch radio genres: ```https://mediamagazine.nl/live-links-nederland/li
 # End of the workshop! :) <br> 
 Are you ready for [the Node-red framework?](Node-red_AIS.md)
 <br>
-Or [Security Onion - Kafka - NIFI]([
-](https://github.com/Vrolijk/OSDD/blob/f7d604a7dcc2baaf0378ba71fc2440c6dd927958/examples/so-labs-en.pdf)
+Or [Security Onion - Kafka - NIFI](https://github.com/Vrolijk/OSDD/blob/f7d604a7dcc2baaf0378ba71fc2440c6dd927958/examples/so-labs-en.pdf)
 <br><br>
 # Feedback
 The creation of this workshop took quite some time. I would realy like to get your feedback and ideas for future development.<br> 
