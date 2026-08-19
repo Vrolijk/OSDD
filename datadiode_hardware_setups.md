@@ -31,6 +31,9 @@ This way we created a one to many data diode setup but this could also be done w
 
 <img src="img/TP-Link-1to4-datadiode.jpg" width=300> <img src="img/TP-Link-1to4-datadiode-simple.jpg" width=300>
 
+## 10 Euro logical data diode based on firmware
+This cheap setup is based on modifying the firmware of a TP-Link unmanaged switch. This [€10 euro functional data-diode idea](10_euro_data_diode_idea.md) is the cheapest way we could find to created a 1Gb data diode.<br>
+
 # Hardware setups in combination with proxies
 
 ## Basic setup
