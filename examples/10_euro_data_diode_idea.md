@@ -19,7 +19,7 @@ configuration lives in a small **24C02 EEPROM** that the chip reads on boot. By 
 appending a few **port-isolation** register writes, and writing it back, we can tell the switch
 fabric to forward frames in one direction only. Data can then move from a source (e.g. an OT sensor
 or a SPAN port) to a destination (e.g. a monitoring system) while the reverse path is dropped — for
-the price of a coffee.
+the price of a good coffee.
 
 ## Redefining the data diode mindset
 
@@ -72,7 +72,7 @@ budgets are tight. Commercial diodes cost thousands. A €10 logical diode offer
 
 ## The experiment
 
-We bought a €9.99 TP-Link LS1005G 5-port **gigabit** switch, read its 24C02 EEPROM over a CH341A,
+We bought a €10 TP-Link LS1005G 5-port **gigabit** switch, read its 24C02 EEPROM over a CH341A,
 and captured the stock image.
 
 <br><img src="../img/LS1005G-eeprom-mod.JPG" width="600"> <br>
@@ -102,34 +102,6 @@ register R*. For example the first quad after the header:
 ```
 16 1D 69 0A   ->   write 0x0A69 to register 0x1D16
 ```
-
-Read `16 1D` low-byte-first as register `0x1D16`, and `69 0A` as value `0x0A69`.
-
-**The 2-byte header** (`56 80`) is special — it is **not** a register write. Read little-endian it is
-`0x8056`:
-
-```
-0x8056 = 1000 0000 0101 0110   (stored as bytes: 56 80)
-         │              └────────────────┐
-         │   bits 0–14 = stop offset = 0x0056 (86)
-         └── bit 15 = 1  (auto-load enable / marker)
-
-         Bit 15 = 1     Bit 7  = 0
-         Bit 14 = 0     Bit 6  = 1
-         Bit 13 = 0     Bit 5  = 0
-         Bit 12 = 0     Bit 4  = 1
-         Bit 11 = 0     Bit 3  = 0
-         Bit 10 = 0     Bit 2  = 1
-         Bit  9 = 0     Bit 1  = 1
-         Bit  8 = 0     Bit 0  = 0
-```
-
-The low 15 bits hold the **stop offset** — the byte position where the loader stops reading. Here
-that is `0x56`, which is exactly where the `FF` padding begins. (Reading the same two bytes
-big-endian as `0x5680` gives a nonsense offset that does not match the data — the little-endian
-reading is the correct one, and it agrees with the register-write byte order.) The top bit
-(`0x8000`) is set as the auto-load marker; corrupting the header can stop the switch initialising, so
-only change the stop-offset field, and only by the number of bytes you actually append.
 
 ## Decoding the stock dump
 
@@ -195,6 +167,32 @@ A2 08 02 00   ->   write 0x0002 to register 0x08A2   (P0 may forward only to P1)
 Each quad you append is **+4 bytes**, so remember to raise the header’s stop offset by 4 for every
 quad added.
 
+### Beginner cheat-sheet
+
+**How to read one 4-byte instruction (a "quad"):**
+
+```
+A2 08 02 00
+└──┬──┘ └──┬──┘
+   │       └── value    = 0x0002   (bytes are low-first: 02 00  ->  0x0002)
+   └────────── register = 0x08A2   (bytes are low-first: A2 08  ->  0x08A2)
+```
+
+**What does the value mean?** For an isolation register it is simply the list of ports a frame is
+*allowed* to travel to:
+
+| Value    | Frame may leave by… |
+|----------|---------------------|
+| `0x0001` | Port 0 |
+| `0x0002` | Port 1 |
+| `0x0004` | Port 2 |
+| `0x0008` | Port 3 |
+| `0x0010` | Port 4 |
+| `0x0000` | nowhere — blocked  |
+
+So `iso(P0) = 0x0002` literally reads as *"a frame that arrived on Port 0 may only leave by Port 1."*
+Set one bit = one allowed direction. Set `0x0000` = the port is muted. That is the whole trick.
+
 ## Build 1 — a simple gigabit diode (Port 0 → Port 1)
 
 Append five isolation writes and move the stop header from `0x56` to `0x6A` (`56 80` → `6A 80`):
@@ -210,6 +208,37 @@ A6 08 00 00   iso(P4) = 0x0000   P4 isolated (unused)
 Because bit 0 (P0) appears in no mask, P0 can only **receive**; because P1’s mask is `0`, anything a
 receiver sends in is dropped. The result is a clean one-way path **source → P0 … P1 → receiver at
 full gigabit** — the mask is a wire-speed permission check, so there is no throughput penalty.
+
+### Hex view — spot the difference
+
+Below, **red** lines are the original (stock) bytes and **green** lines are what you flash. Only the
+header and two data rows change:
+
+```diff
+- 00000000: 56 80 16 1D 69 0A 01 1D  E0 03 1B 20 9A 80 1C 20
++ 00000000: 6A 80 16 1D 69 0A 01 1D  E0 03 1B 20 9A 80 1C 20
+  ... rows 0x10 – 0x40 are unchanged ...
+- 00000050: 00 00 41 1D 00 00 FF FF  FF FF FF FF FF FF FF FF
++ 00000050: 00 00 41 1D 00 00 A2 08  02 00 A3 08 00 00 A4 08
+- 00000060: FF FF FF FF FF FF FF FF  FF FF FF FF FF FF FF FF
++ 00000060: 00 00 A5 08 00 00 A6 08  00 00 FF FF FF FF FF FF
+```
+
+In plain words, there are only **two things to do**:
+
+**1. Change the header** at offset `0x00`: `56 80` → `6A 80`
+(this tells the switch to read 20 more bytes instead of stopping early).
+
+**2. Fill the blanks** at offset `0x56`: replace the `FF` with these five instructions:
+
+```
+offset  bytes         what it does
+0x56    A2 08 02 00   reg 0x08A2 = 0x0002   Port 0  ->  send ONLY to Port 1
+0x5A    A3 08 00 00   reg 0x08A3 = 0x0000   Port 1  ->  send to NOBODY   (kills the way back)
+0x5E    A4 08 00 00   reg 0x08A4 = 0x0000   Port 2  ->  off
+0x62    A5 08 00 00   reg 0x08A5 = 0x0000   Port 3  ->  off
+0x66    A6 08 00 00   reg 0x08A6 = 0x0000   Port 4  ->  off
+```
 
 <details>
 <summary><b>Full 256-byte image — single diode P0 → P1</b></summary>
@@ -250,6 +279,32 @@ This single mask design delivers several properties at once:
   auto-load EEPROM anyway, because VLAN membership is a table write rather than a flat register
   write. The isolation mask gives the same separation in two bytes.)
 
+### Hex view — spot the difference
+
+Same edits as the single diode, with **one byte different**: Port 2’s value is `0x0008` (allow
+Port 3) instead of `0x0000`. **Red** = stock, **green** = what you flash:
+
+```diff
+- 00000000: 56 80 16 1D 69 0A 01 1D  E0 03 1B 20 9A 80 1C 20
++ 00000000: 6A 80 16 1D 69 0A 01 1D  E0 03 1B 20 9A 80 1C 20
+  ... rows 0x10 – 0x40 are unchanged ...
+- 00000050: 00 00 41 1D 00 00 FF FF  FF FF FF FF FF FF FF FF
++ 00000050: 00 00 41 1D 00 00 A2 08  02 00 A3 08 00 00 A4 08
+- 00000060: FF FF FF FF FF FF FF FF  FF FF FF FF FF FF FF FF
++ 00000060: 08 00 A5 08 00 00 A6 08  00 00 FF FF FF FF FF FF
+```
+
+The five instructions written at offset `0x56`:
+
+```
+offset  bytes         what it does
+0x56    A2 08 02 00   reg 0x08A2 = 0x0002   Port 0  ->  send ONLY to Port 1   (lane A)
+0x5A    A3 08 00 00   reg 0x08A3 = 0x0000   Port 1  ->  send to NOBODY
+0x5E    A4 08 08 00   reg 0x08A4 = 0x0008   Port 2  ->  send ONLY to Port 3   (lane B)
+0x62    A5 08 00 00   reg 0x08A5 = 0x0000   Port 3  ->  send to NOBODY
+0x66    A6 08 00 00   reg 0x08A6 = 0x0000   Port 4  ->  off
+```
+
 <details>
 <summary><b>Full 256-byte image — double diode P0 → P1 and P2 → P3</b></summary>
 
@@ -270,23 +325,6 @@ This single mask design delivers several properties at once:
 plus the 20 bytes of isolation writes at `0x56`–`0x69`. Everything else — the entire PHY/analog init
 and the `FF` tail — is byte-identical. To revert, restore `0x00` to `56` and blank `0x56`–`0x69`
 back to `FF`.
-
-## Removing unneeded features (optional hardening)
-
-The stock image only brings up the PHYs, so there is little to strip — but several always-on L2
-behaviours have no place on a one-way port and are worth disabling for defense-in-depth:
-
-- **MAC address learning** — not needed with static one-way forwarding; disabling stops table
-  pollution from spoofed source addresses.
-- **802.3x flow control (pause frames)** — a feed port must never transmit, including pause frames
-  back at the source.
-- **EEE / green-Ethernet LPI signalling** — another source of upstream signalling on the feed port.
-- **Loop detection / BPDU transmit** — stops the chip sourcing its own periodic frames.
-
-These are all settable on the RTL8367S, but the exact register addresses and bits should be taken
-from the SDK header (`rtl8367c_reg.h`) and the programming guide and **verified on the bench** — a
-wrong value in the auto-load image can stop the chip initialising. The isolation writes above are the
-only ones needed to make the diode function.
 
 ## Limitations and threat model
 
@@ -321,8 +359,6 @@ diode).
 confirm **zero** frames egress toward the source before trusting it.
 
 ## Resources
-
-- Discussions / help: <https://github.com/lhalf/OSDD/discussions>
 - Creating the device: <https://www.lhalf.uk/diode.html>
 - [tomazas/RTL8XXX-Switch](https://github.com/tomazas/RTL8XXX-Switch) — port mirroring on TP-Link
   SG105/SG108 with firmware samples; good reference for the EEPROM/register format.
