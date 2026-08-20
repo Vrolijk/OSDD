@@ -34,7 +34,4 @@ Note: Try this demonstrator in combination with the workshop before buying or bu
 ## Motivation
 [Interview on why this project is created](Motivation.md)
 
-## Help needed to improve this project
-[Linux kernel packet loss - Help needed!](https://github.com/Vrolijk/OSDD/issues/6)
-
 keywords: cross domain solution, unidirectional gateway, l2 firewall, cyber, cybersecurity, ot security
