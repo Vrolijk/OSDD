@@ -172,7 +172,7 @@ quad added.
 **How to read one 4-byte instruction (a "quad"):**
 
 ```
-A2 08 02 00
+ A2 08   02 00
 └──┬──┘ └──┬──┘
    │       └── value    = 0x0002   (bytes are low-first: 02 00  ->  0x0002)
    └────────── register = 0x08A2   (bytes are low-first: A2 08  ->  0x08A2)
@@ -196,14 +196,6 @@ Set one bit = one allowed direction. Set `0x0000` = the port is muted. That is t
 ## Build 1 — a simple gigabit diode (Port 0 → Port 1)
 
 Append five isolation writes and move the stop header from `0x56` to `0x6A` (`56 80` → `6A 80`):
-
-```
-A2 08 02 00   iso(P0) = 0x0002   P0 may forward only to P1
-A3 08 00 00   iso(P1) = 0x0000   P1 forwards nowhere (return path dead)
-A4 08 00 00   iso(P2) = 0x0000   P2 isolated (unused)
-A5 08 00 00   iso(P3) = 0x0000   P3 isolated (unused)
-A6 08 00 00   iso(P4) = 0x0000   P4 isolated (unused)
-```
 
 Because bit 0 (P0) appears in no mask, P0 can only **receive**; because P1’s mask is `0`, anything a
 receiver sends in is dropped. The result is a clean one-way path **source → P0 … P1 → receiver at
@@ -261,12 +253,15 @@ offset  bytes         what it does
 The same chip can host **two independent one-way lanes** at once, with P4 unused. Both run at
 gigabit and cannot bridge to each other.
 
+The five instructions written at offset `0x56`:
+
 ```
-A2 08 02 00   iso(P0) = 0x0002   P0 forwards only to P1   (lane A)
-A3 08 00 00   iso(P1) = 0x0000   collector, receive-only
-A4 08 08 00   iso(P2) = 0x0008   P2 forwards only to P3   (lane B)
-A5 08 00 00   iso(P3) = 0x0000   collector, receive-only
-A6 08 00 00   iso(P4) = 0x0000   unused
+offset  bytes         what it does
+0x56    A2 08 02 00   reg 0x08A2 = 0x0002   Port 0  ->  send ONLY to Port 1   (lane A)
+0x5A    A3 08 00 00   reg 0x08A3 = 0x0000   Port 1  ->  send to NOBODY
+0x5E    A4 08 08 00   reg 0x08A4 = 0x0008   Port 2  ->  send ONLY to Port 3   (lane B)
+0x62    A5 08 00 00   reg 0x08A5 = 0x0000   Port 3  ->  send to NOBODY
+0x66    A6 08 00 00   reg 0x08A6 = 0x0000   Port 4  ->  off
 ```
 
 This single mask design delivers several properties at once:
@@ -292,17 +287,6 @@ Port 3) instead of `0x0000`. **Red** = stock, **green** = what you flash:
 + 00000050: 00 00 41 1D 00 00 A2 08  02 00 A3 08 00 00 A4 08
 - 00000060: FF FF FF FF FF FF FF FF  FF FF FF FF FF FF FF FF
 + 00000060: 08 00 A5 08 00 00 A6 08  00 00 FF FF FF FF FF FF
-```
-
-The five instructions written at offset `0x56`:
-
-```
-offset  bytes         what it does
-0x56    A2 08 02 00   reg 0x08A2 = 0x0002   Port 0  ->  send ONLY to Port 1   (lane A)
-0x5A    A3 08 00 00   reg 0x08A3 = 0x0000   Port 1  ->  send to NOBODY
-0x5E    A4 08 08 00   reg 0x08A4 = 0x0008   Port 2  ->  send ONLY to Port 3   (lane B)
-0x62    A5 08 00 00   reg 0x08A5 = 0x0000   Port 3  ->  send to NOBODY
-0x66    A6 08 00 00   reg 0x08A6 = 0x0000   Port 4  ->  off
 ```
 
 <details>
